@@ -216,12 +216,13 @@
   /* ---------- Expertise pillars ---------- */
   .pillars{
     display:grid;
-    grid-template-columns:repeat(3, 1fr);
+    grid-template-columns:repeat(4, 1fr);
     gap:1px;
     background:var(--hairline);
     border:1px solid var(--hairline);
     margin-top:8px;
   }
+  @media (max-width:900px){ .pillars{grid-template-columns:repeat(2, 1fr);} }
   @media (max-width:700px){ .pillars{grid-template-columns:1fr;} }
   .pillar{
     background:var(--panel);
@@ -350,6 +351,32 @@
     margin-bottom:8px;
   }
   .proj-card p{font-size:.9rem; color:var(--muted);}
+
+  .pub-list{
+    margin-top:20px;
+    background:var(--panel);
+    border:1px solid var(--hairline);
+    border-left:3px solid var(--brass);
+    padding:24px 26px;
+  }
+  .pub-list .tag{
+    font-family:var(--font-mono);
+    font-size:10.5px;
+    color:var(--brass);
+    letter-spacing:.08em;
+  }
+  .pub-list ul{
+    margin:0;
+    padding-left:1.1em;
+  }
+  .pub-list li{
+    font-size:.9rem;
+    color:var(--muted);
+    margin-bottom:8px;
+    line-height:1.5;
+  }
+  .pub-list li:last-child{margin-bottom:0;}
+  .pub-list em{color:var(--navy); font-style:italic;}
 
   /* ---------- Book feature ---------- */
   .book-feature{
@@ -514,6 +541,13 @@
           <h3>Regulatory &amp; Government Affairs</h3>
           <p>Coalition-building and anchor partnership management with Korean ministries and
              regulators; policy evaluation at the Prime Minister's Office level.</p>
+        </div>
+        <div class="pillar">
+          <span class="tag">ESG &amp; CLIMATE POLICY</span>
+          <h3>ESG &amp; Climate Disclosure Policy</h3>
+          <p>Published research on ESG-procurement integration, the SEC climate disclosure rule,
+             and international climate cooperation; teaching ESG policy and corporate governance
+             at graduate level.</p>
         </div>
       </div>
     </section>
@@ -699,6 +733,24 @@
           <p>Chair, Yonsei University Graduate School of Public Administration — directing
              applied research at the intersection of ICT infrastructure and public policy.</p>
         </div>
+        <div class="proj-card">
+          <span class="tag">ESG / CLIMATE POLICY</span>
+          <h4>ESG &amp; Climate Disclosure Research</h4>
+          <p>Graduate-level research and teaching on ESG-procurement integration, the SEC
+             climate disclosure rule, and international climate cooperation frameworks;
+             advisory support on a government-commissioned study of market-transparency
+             and rights-management regulation.</p>
+        </div>
+      </div>
+
+      <div class="pub-list reveal">
+        <span class="tag" style="display:block; margin-bottom:12px;">SELECTED PUBLICATIONS &amp; PRESENTATIONS</span>
+        <ul>
+          <li>"Climate Change Response and International Cooperation," <em>Transition Challenges and Policy Issues</em>, Yonsei University (2024)</li>
+          <li>"ESG and Government Procurement: U.S. Federal Procurement Policy and Strategic Implications," <em>GTR Review</em> (2024)</li>
+          <li>"Final SEC Climate Disclosure Rule and Policy Implications," <em>National Management Brief</em>, Yonsei University (2024)</li>
+          <li>Panelist, "Regulatory Reform in Procurement," Korea Policy Institute Spring Conference (2024)</li>
+        </ul>
       </div>
     </section>
 
