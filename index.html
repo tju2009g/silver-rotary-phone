@@ -1,9 +1,62 @@
+프로필 랜딩 페이지 개편을 완료했습니다.
+
+주요 변경 사항:
+
+출판 프로젝트를 Profile 바로 다음 핵심 섹션으로 이동
+인지와판단연구소를 “독립 연구·출판 프로젝트”로 소개
+『카프카의 경고』, 『전두엽 마비』, 『케이팝 산업의 미래』를 한·영문으로 소개
+첫 화면의 정체성을 Counsel · Strategist · Publisher로 확장
+LIG넥스원 방산 수출계약, 기술이전, 절충교역, 수출통제, FCPA 업무 구체화
+KOTRA 워싱턴에서 UAV 기업을 포함한 약 30개 한국 기업 자문 경력 추가
+오래되거나 현재 포지셔닝과 관련성이 낮은 publication 일부 정리
+연구실 명칭을 Public Contract Policy Research Lab으로 바로잡음
+기존 인지와판단연구소 페이지 연결
+
+수정본: 
+index.html
+
+GitHub 저장소에는 커밋까지 만들어졌지만, 현재 환경에 GitHub 인증이 없어 실제 페이지에는 아직 반영되지 않았습니다. 로컬 커밋은 다음과 같습니다.
+
+0c3e2fe Refocus profile on publishing and defense expertise
+
+파일을 GitHub 저장소의 기존 index.html에 덮어쓰면 현재 주소에 자동 반영됩니다. 제 솔직한 평가는, 이번 구조가 기존의 “온라인 영문 이력서”보다 훨씬 낫습니다. 출판이 갑자기 추가된 부업처럼 보이지 않고, 법률·정책·교육·연구 경험이 책으로 확장되는 하나의 지적 비즈니스로 읽힙니다.
+
+index.html
+HTML
+케이팝 산업의 미래는 케이링크글로벌 (공동 창업자) 프로젝트이니까 별도로 구분. 그리고 디자인을 전체적으로 좀 빠꿔봐. 현재는 좀 답답하고 formal한 느낌이 있음. 현대적이고 밝은 느낌이 나게. 보라색이나 오랜지색 중심으로. 
+
+수정했습니다.
+
+전체 색상을 밝은 보라색–오렌지 중심으로 변경
+네이비색 법률 문서형 디자인을 현대적인 포트폴리오 스타일로 전환
+둥근 카드, 넓은 여백, 밝은 배경과 그라데이션 적용
+첫 화면에서 Counsel · Strategist · Publisher 정체성을 강조
+인지와판단연구소 출판물은 『카프카의 경고』와 『전두엽 마비』만 배치
+『케이팝 산업의 미래』는 아래쪽에 K-Link Global · Co-founder Project로 별도 구분
+모바일 화면에서도 출판 카드와 프로젝트가 한 열로 정리되도록 조정
+
+수정 파일: 
+index.html
+
+이번 버전은 훨씬 덜 딱딱하고, 법률가의 이력 페이지보다는 여러 지적·사업적 프로젝트를 연결하는 개인 브랜드 랜딩 페이지에 가까워졌습니다. GitHub 인증 문제 때문에 실제 사이트에는 아직 자동 반영되지 않았으므로 기존 index.html을 이 파일로 교체하면 됩니다.
+
+index.html
+HTML
+html 코드를 카피할 수 있게 해줘
+
+전체 HTML은 표지 이미지가 Base64로 삽입되어 있어 채팅 코드 블록에 붙이면 지나치게 길어집니다. 아래 파일을 열어 Ctrl+A → Ctrl+C로 전체 코드를 복사해 GitHub의 index.html에 붙여 넣으면 됩니다.
+
+수정된 index.html 전체 코드
+
+GitHub에서는 기존 index.html을 연 뒤 연필 아이콘을 누르고, 전체 선택하여 이 코드로 교체한 후 Commit changes를 누르면 됩니다.
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Taejin "Brian" Um — Policy Counsel &amp; Governance Strategist</title>
+<title>Taejin Um — Counsel, Strategist &amp; Publisher</title>
+<meta name="description" content="Taejin Um is a Seoul-based U.S.-licensed attorney, policy strategist, defense-trade advisor, and director of the Institute for Cognition and Judgment.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -493,6 +546,27 @@
   }
   .book-feature p{color:#C7D0E0; font-size:.94rem; max-width:560px;}
 
+  /* ---------- Publishing studio ---------- */
+  .publishing-intro{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(240px,.75fr);gap:36px;align-items:end;margin-bottom:34px;}
+  @media (max-width:760px){.publishing-intro{grid-template-columns:1fr;gap:18px;}}
+  .publishing-mark{font-family:var(--font-mono);font-size:11px;line-height:1.7;letter-spacing:.08em;color:var(--muted);border-left:2px solid var(--brass);padding-left:18px;}
+  .book-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hairline);border:1px solid var(--hairline);}
+  @media (max-width:760px){.book-grid{grid-template-columns:1fr;}}
+  .book-card{background:var(--panel);padding:30px 26px;display:flex;flex-direction:column;min-height:340px;}
+  .book-card.featured{background:var(--navy);color:#F2F4F8;}
+  .book-card .status{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.11em;color:var(--brass);margin-bottom:28px;}
+  .book-card.featured .status{color:var(--brass-dim);}
+  .book-card h3{font-family:var(--font-display);font-size:1.65rem;font-weight:500;line-height:1.18;color:var(--navy);}
+  .book-card.featured h3{color:#fff;}
+  .book-card .en{font-family:var(--font-display);font-style:italic;color:var(--muted);margin:7px 0 20px;}
+  .book-card.featured .en{color:#AEBAD0;}
+  .book-card p{font-size:.92rem;color:var(--muted);margin-bottom:14px;}
+  .book-card.featured p{color:#D4DBE7;}
+  .book-card .ko{margin-top:auto;padding-top:18px;border-top:1px solid var(--hairline);color:var(--ink);}
+  .book-card.featured .ko{border-top-color:rgba(255,255,255,.18);color:#F2F4F8;}
+  .studio-link{display:inline-block;margin-top:28px;font-family:var(--font-mono);font-size:12px;color:var(--navy);border-bottom:1px solid var(--brass);padding-bottom:3px;}
+  #book{display:none;}
+
   /* ---------- Contact ---------- */
   .contact-grid{
     display:flex;
@@ -535,12 +609,12 @@
   <nav class="rail" id="rail">
     <div class="rail-mark">TU / DOCKET</div>
     <a href="#profile" class="num-link"><span class="num">01</span>Profile</a>
-    <a href="#expertise" class="num-link"><span class="num">02</span>Expertise</a>
-    <a href="#experience" class="num-link"><span class="num">03</span>Experience</a>
-    <a href="#credentials" class="num-link"><span class="num">04</span>Credentials</a>
-    <a href="#projects" class="num-link"><span class="num">05</span>Selected Work</a>
-    <a href="#publications" class="num-link"><span class="num">06</span>Publications</a>
-    <a href="#book" class="num-link"><span class="num">07</span>Book</a>
+    <a href="#publishing" class="num-link"><span class="num">02</span>Books / 출판</a>
+    <a href="#expertise" class="num-link"><span class="num">03</span>Expertise</a>
+    <a href="#experience" class="num-link"><span class="num">04</span>Experience</a>
+    <a href="#credentials" class="num-link"><span class="num">05</span>Credentials</a>
+    <a href="#projects" class="num-link"><span class="num">06</span>Selected Work</a>
+    <a href="#publications" class="num-link"><span class="num">07</span>Writing</a>
     <a href="#contact" class="num-link"><span class="num">08</span>Contact</a>
   </nav>
 
@@ -560,18 +634,19 @@
         <line x1="100" y1="80" x2="100" y2="105" stroke="#C9AE85" stroke-width="1.5"/>
       </svg>
 
-      <div class="eyebrow">Seoul, South Korea · Policy &amp; Governance Counsel</div>
+      <div class="eyebrow">Seoul · Counsel · Strategist · Publisher</div>
       <h1 class="name">Taejin <em>"Brian"</em> Um</h1>
       <p class="role-line">
-        U.S.-licensed attorney and policy strategist bridging active Washington D.C. Bar
-        credentialing with two decades of direct access to Korean regulatory institutions —
-        across AI governance, music &amp; copyright policy, and government relations.
+        U.S.-licensed attorney, policy strategist, and publishing-project director working
+        across defense trade, AI governance, music &amp; copyright policy, and the future of
+        human judgment in the age of intelligent systems.
       </p>
       <div class="hero-meta">
         <span>20+ Years Practice</span>
         <span>D.C. Bar · Active Since 2004</span>
         <span>Native Korean / Fluent English</span>
         <span>COO, K-Link Global</span>
+        <span>Director, Institute for Cognition and Judgment</span>
       </div>
       <div class="hero-cta">
         <a class="btn primary" href="mailto:tju2009@gmail.com">Email Taejin</a>
@@ -582,26 +657,54 @@
     <section id="profile">
       <div class="sec-head reveal"><span class="sec-num">01</span><h2>Profile</h2></div>
       <p class="lede reveal">
-        Twenty years spent on both sides of the regulatory table — as in-house counsel,
-        as a government evaluator, and as outside advisor to global institutions operating in Korea.
+        Two decades across law, government, industry, and research — now brought together
+        in an expanding portfolio of books, policy studies, and advisory projects.
       </p>
       <p class="body-text reveal">
         Taejin Um is a Seoul-based senior attorney and policy professional whose career spans
-        in-house counsel, government relations, regulatory advisory, AI and copyright policy,
-        and international commercial contracting. His differentiator is structural: an active
-        U.S. legal credential (Washington D.C. Bar, since 2004) paired with sustained, direct
-        access to Korean regulatory bodies — MCST, KCC, KFTC, MND, and DAPA among them.
+        in-house counsel, defense-industry contracting, government relations, regulatory advisory,
+        AI and copyright policy, and international commercial transactions. His differentiator
+        is structural: an active U.S. legal credential (Washington D.C. Bar, since 2004) paired
+        with sustained experience navigating Korean regulatory institutions — including MCST,
+        KCC, KFTC, MND, and DAPA.
       </p>
       <p class="body-text reveal">
-        He currently serves as COO and Principal Consultant at K-Link Global, External AI Policy
-        Advisor at Wesley Quest, Adjunct Professor and Chair of the ICT &amp; Public Policy Research
-        Lab at Yonsei University's Graduate School of Public Administration, and Advisor / Of
-        Counsel at ClassHankyul Law Group.
+        He currently leads and contributes to consulting, research, teaching, and publishing
+        initiatives. He is COO and Principal Consultant at K-Link Global; an Adjunct Professor
+        and Head of the Public Contract Policy Research Lab at Yonsei University's Graduate School
+        of Public Administration; Advisor / Of Counsel at ClassHankyul Law Group; and Director of
+        the Institute for Cognition and Judgment, his independent research and publishing project.
       </p>
     </section>
 
+    <section id="publishing">
+      <div class="sec-head reveal"><span class="sec-num">02</span><h2>Books &amp; Publishing / 출판 프로젝트</h2></div>
+      <div class="publishing-intro reveal">
+        <p class="lede" style="margin-bottom:0;">Ideas become more useful when they are given a durable form: a book, a framework, or a question readers can carry forward.</p>
+        <div class="publishing-mark">인지와판단연구소<br>Institute for Cognition and Judgment<br>Independent research &amp; publishing project</div>
+      </div>
+      <div class="book-grid reveal">
+        <article class="book-card featured">
+          <div class="status">NEW · 2026 · 인지와판단연구소</div><h3>카프카의 경고</h3><div class="en">Kafka's Warning</div>
+          <p>Kafka's scenes of waiting, obedience, guilt, and institutional absurdity become a lens for examining modern workplaces, evaluation systems, and algorithmic life.</p>
+          <p class="ko">카프카의 작품 속 기다림과 복종, 죄책감과 부조리를 오늘날의 조직·평가 시스템·알고리즘 사회로 확장해, 우리가 어떻게 판단권과 자기 자신을 잃는지를 탐구합니다.</p>
+        </article>
+        <article class="book-card">
+          <div class="status">2026 · 인지와판단연구소</div><h3>전두엽 마비</h3><div class="en">Frontal Lobe Paralysis</div>
+          <p>A critical inquiry into how digital platforms, short-form media, and AI can weaken attention, reflection, and independent judgment—and how those capacities can be rebuilt.</p>
+          <p class="ko">디지털 플랫폼과 숏폼 콘텐츠, AI가 인간의 주의력과 사고력, 독립적 판단을 어떻게 약화시키는지 살펴보고 이를 회복하기 위한 질문과 실천을 제안합니다.</p>
+        </article>
+        <article class="book-card">
+          <div class="status">CO-AUTHORED · 2026 · K-LINK GLOBAL</div><h3>케이팝 산업의 미래</h3><div class="en">The Future of the K-Pop Industry</div>
+          <p>A study of the regulatory, industrial, rights-data, and technological forces shaping the next phase of Korea's music economy.</p>
+          <p class="ko">규제, 산업 구조, 권리 데이터와 기술 변화가 케이팝 산업의 다음 단계를 어떻게 바꾸는지 분석한 공동 저서입니다.</p>
+        </article>
+      </div>
+      <a class="studio-link" href="ICJ.html">Visit the Institute for Cognition and Judgment / 인지와판단연구소 소개 →</a>
+    </section>
+
     <section id="expertise">
-      <div class="sec-head reveal"><span class="sec-num">02</span><h2>Expertise</h2></div>
+      <div class="sec-head reveal"><span class="sec-num">03</span><h2>Expertise</h2></div>
       <div class="pillars reveal">
         <div class="pillar">
           <span class="tag">AI &amp; TECH POLICY</span>
@@ -612,9 +715,9 @@
         <div class="pillar">
           <span class="tag">GOVERNMENT PROCUREMENT &amp; DEFENSE</span>
           <h3>Procurement &amp; Defense Trade</h3>
-          <p>U.S. federal procurement (FAR) and Korean B2G market entry, defense export
-             contracting and offset programs, FCPA/export-control compliance, and
-             international defense trade relationships.</p>
+          <p>International defense sales, R&amp;D and technology-transfer agreements, offsets,
+             U.S. and Korean export controls, FCPA/anti-bribery compliance, and engagement
+             with MND, DAPA, overseas governments, and prime contractors.</p>
         </div>
         <div class="pillar">
           <span class="tag">BUSINESS DEVELOPMENT</span>
@@ -646,7 +749,7 @@
     </section>
 
     <section id="experience">
-      <div class="sec-head reveal"><span class="sec-num">03</span><h2>Experience</h2></div>
+      <div class="sec-head reveal"><span class="sec-num">04</span><h2>Experience</h2></div>
       <div class="docket reveal">
 
         <div class="entry current">
@@ -718,6 +821,9 @@
           <div>
             <div class="role">Legal Counsel</div>
             <div class="org">LIG Nex1</div>
+            <div class="desc">Advised on international defense sales, R&amp;D, technology transfer,
+              offset arrangements, export controls, FCPA compliance, and government-facing
+              matters involving Korea's MND and DAPA.</div>
           </div>
         </div>
 
@@ -726,6 +832,8 @@
           <div>
             <div class="role">Legal &amp; Commercial Affairs</div>
             <div class="org">KOTRA, Washington D.C.</div>
+            <div class="desc">Advised approximately 30 Korean companies—including a UAV company—on
+              U.S. market entry, federal procurement, contracting, and regulatory strategy.</div>
           </div>
         </div>
 
@@ -749,7 +857,7 @@
     </section>
 
     <section id="credentials">
-      <div class="sec-head reveal"><span class="sec-num">04</span><h2>Credentials</h2></div>
+      <div class="sec-head reveal"><span class="sec-num">05</span><h2>Credentials</h2></div>
       <div class="cred-wrap reveal">
         <div class="cred-list">
           <div class="cred-row">
@@ -796,8 +904,15 @@
     </section>
 
     <section id="projects">
-      <div class="sec-head reveal"><span class="sec-num">05</span><h2>Selected Work</h2></div>
+      <div class="sec-head reveal"><span class="sec-num">06</span><h2>Selected Work</h2></div>
       <div class="proj-grid reveal">
+        <div class="proj-card">
+          <span class="tag">DEFENSE / INTERNATIONAL TRADE</span>
+          <h4>Defense Export, Technology Transfer &amp; Compliance</h4>
+          <p>In-house and advisory experience across defense export contracts, R&amp;D and
+             technology-transfer arrangements, offsets, export controls, anti-bribery controls,
+             and government/prime-contractor engagement in Korea and overseas markets.</p>
+        </div>
         <div class="proj-card">
           <span class="tag">MUSIC / COPYRIGHT POLICY</span>
           <h4>Broadcast Music Royalty Regulation — Expert Advisory Contribution</h4>
@@ -849,8 +964,8 @@
     </section>
 
     <section id="publications">
-      <div class="sec-head reveal"><span class="sec-num">06</span><h2>Publications &amp; Presentations</h2></div>
-      <p class="lede reveal">Writing, panels, and lectures organized across three practice tracks.</p>
+      <div class="sec-head reveal"><span class="sec-num">07</span><h2>Selected Writing &amp; Presentations</h2></div>
+      <p class="lede reveal">A concise record of work that supports the current advisory, teaching, and publishing practice.</p>
 
       <div class="pub-tracks reveal">
 
@@ -860,12 +975,9 @@
           <ul>
             <li><span class="k">Article</span>"Foreign Product Restrictions in U.S. Federal Procurement," <em>Hankyul Law Group Newsletter</em> (2020)</li>
             <li><span class="k">Article</span>"The U.S. Department of Defense JEDI Contract and the U.S. Procurement Contract Method," <em>Hankyul Law Group Newsletter</em> (2019)</li>
-            <li><span class="k">Article</span>"The Growth of the Korean Blockchain Industry and the U.S. Government Procurement Market," <em>The Center / Seoul Economy</em> (2019)</li>
             <li><span class="k">Article</span>"ESG and Government Procurement: U.S. Federal Procurement Policy and Strategic Implications," <em>GTR Review</em>, Yonsei University (2024)</li>
             <li><span class="k">Panel</span>"Regulatory Reform in Procurement," Korea Policy Institute Spring Conference (2024)</li>
             <li><span class="k">Lecture</span>"Entering the U.S. Government Procurement Market," Public Procurement Service / Government Procurement Export Promotion Association (2024–2025)</li>
-            <li><span class="k">Lecture</span>"U.S. Government Procurement Market," Seoul B2G Marketer Training Program (2022)</li>
-            <li><span class="k">Lecture</span>"Impact of the KORUS FTA on Procurement," KOTRA Korea Technology Week (2011)</li>
             <li><span class="k">Interview</span>Aju Economy — "U.S. Department of Defense Cancels USD 10 Billion JEDI Cloud Contract" (2021)</li>
           </ul>
         </div>
@@ -877,7 +989,7 @@
             <li><span class="k">Article</span>"New ICT Technology and Regulation," SamilI.com (2021)</li>
             <li><span class="k">Lecture</span>"Technological Innovation and Social Change," Yonsei University Institute of Public Affairs (2021)</li>
           </ul>
-          <p class="track-note">Extends into ongoing advisory work chairing IFPI Korea's AI &amp; copyright policy engagement (2021–present), including the Public Performance Rights Working Group.</p>
+          <p class="track-note">This work now extends through graduate teaching in AI policy and ongoing research on AI, copyright, model governance, and human judgment.</p>
         </div>
 
         <div class="pub-track track-c">
@@ -887,7 +999,6 @@
             <li><span class="k">Article</span>"Final SEC Climate Disclosure Rule and Policy Implications," <em>National Management Brief</em>, Yonsei University (2024)</li>
             <li><span class="k">Article</span>"Climate Change Response and International Cooperation," <em>Transition Challenges and Policy Issues</em>, Yonsei University (2024)</li>
             <li><span class="k">Lecture</span>"Music Industry and Copyright Protection," Korea University (2022)</li>
-            <li><span class="k">Advisory</span>Korea Creative Content Agency content-export training program — lecturer, "Intellectual Property Rights" (2022–2023)</li>
             <li><span class="k">Interview</span>Hankyoreh — "K-Pop and the Music Industry" (2024)</li>
           </ul>
         </div>
@@ -955,3 +1066,5 @@
 
 </body>
 </html>
+index.html
+HTML
