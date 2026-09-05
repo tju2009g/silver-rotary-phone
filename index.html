@@ -11,9 +11,9 @@
   :root{
     --navy:#1F3864;
     --navy-dark:#101E36;
-    --accent:#2E5FAC;
-    --brass:#AD8A54;
-    --brass-dim:#C9AE85;
+    --accent:#7C3AED;
+    --brass:#F2660D;
+    --brass-dim:#FFA65C;
     --paper:#F5F6F8;
     --panel:#FFFFFF;
     --ink:#1B1F27;
@@ -78,7 +78,7 @@
   }
   .rail-mark{
     font-family:var(--font-mono);
-    font-size:11px;
+    font-size:12px;
     letter-spacing:.14em;
     color:var(--brass);
     padding:0 18px 16px;
@@ -86,7 +86,7 @@
   @media (max-width:860px){ .rail-mark{display:none;} }
   .rail a{
     font-family:var(--font-mono);
-    font-size:12px;
+    font-size:13px;
     letter-spacing:.05em;
     color:var(--muted);
     padding:10px 18px;
@@ -124,7 +124,7 @@
   }
   .eyebrow{
     font-family:var(--font-mono);
-    font-size:12px;
+    font-size:13px;
     letter-spacing:.18em;
     color:var(--brass-dim);
     text-transform:uppercase;
@@ -133,15 +133,15 @@
   h1.name{
     font-family:var(--font-display);
     font-weight:500;
-    font-size:clamp(2.4rem, 5vw, 3.6rem);
+    font-size:clamp(2.7rem, 5.5vw, 4rem);
     line-height:1.08;
     max-width:640px;
   }
   .name em{font-style:italic; color:var(--brass-dim); font-weight:400;}
   .role-line{
     font-family:var(--font-body);
-    font-size:1.05rem;
-    color:#C7D0E0;
+    font-size:1.16rem;
+    color:#C9C3E8;
     margin-top:20px;
     max-width:560px;
   }
@@ -151,8 +151,8 @@
     gap:10px 28px;
     margin-top:34px;
     font-family:var(--font-mono);
-    font-size:12.5px;
-    color:#9FADC4;
+    font-size:14px;
+    color:#A8A6D6;
   }
   .hero-meta span{position:relative; padding-left:16px;}
   .hero-meta span::before{
@@ -164,15 +164,15 @@
   .hero-cta{margin-top:40px; display:flex; gap:14px; flex-wrap:wrap;}
   .btn{
     font-family:var(--font-mono);
-    font-size:12.5px;
+    font-size:14px;
     letter-spacing:.04em;
     padding:13px 22px;
     border:1px solid rgba(255,255,255,.28);
     border-radius:2px;
     transition:background .2s, border-color .2s, transform .15s;
   }
-  .btn.primary{background:var(--brass); border-color:var(--brass); color:#1A1408;}
-  .btn.primary:hover{background:#c19d63; transform:translateY(-1px);}
+  .btn.primary{background:var(--brass); border-color:var(--brass); color:#FFFFFF;}
+  .btn.primary:hover{background:#D9550A; transform:translateY(-1px);}
   .btn.ghost:hover{border-color:#fff; transform:translateY(-1px);}
 
   /* ---------- Sections ---------- */
@@ -191,26 +191,26 @@
   }
   .sec-num{
     font-family:var(--font-mono);
-    font-size:13px;
+    font-size:14.5px;
     color:var(--brass);
     letter-spacing:.1em;
   }
   h2{
     font-family:var(--font-display);
     font-weight:500;
-    font-size:1.7rem;
+    font-size:1.87rem;
     color:var(--navy);
   }
   .lede{
     font-family:var(--font-display);
     font-style:italic;
-    font-size:1.3rem;
+    font-size:1.43rem;
     line-height:1.55;
     color:var(--navy);
     max-width:760px;
     margin-bottom:22px;
   }
-  p.body-text{max-width:720px; color:var(--ink); font-size:1rem;}
+  p.body-text{max-width:720px; color:var(--ink); font-size:1.1rem;}
   p.body-text + p.body-text{margin-top:14px;}
 
   /* ---------- Expertise pillars ---------- */
@@ -229,7 +229,7 @@
   }
   .pillar .tag{
     font-family:var(--font-mono);
-    font-size:11px;
+    font-size:12px;
     color:var(--brass);
     letter-spacing:.1em;
     display:block;
@@ -238,11 +238,11 @@
   .pillar h3{
     font-family:var(--font-display);
     font-weight:500;
-    font-size:1.15rem;
+    font-size:1.26rem;
     color:var(--navy);
     margin-bottom:10px;
   }
-  .pillar p{font-size:.92rem; color:var(--muted);}
+  .pillar p{font-size:1.01rem; color:var(--muted);}
 
   /* ---------- Docket / experience ---------- */
   .docket{border-top:1px solid var(--hairline); margin-top:8px;}
@@ -256,27 +256,27 @@
   @media (max-width:700px){ .entry{grid-template-columns:1fr; gap:6px;} }
   .entry .period{
     font-family:var(--font-mono);
-    font-size:12px;
+    font-size:13px;
     color:var(--muted);
     padding-top:3px;
   }
   .entry .role{
     font-family:var(--font-body);
     font-weight:600;
-    font-size:1.02rem;
+    font-size:1.12rem;
     color:var(--navy);
   }
   .entry .org{
     font-family:var(--font-body);
-    font-size:.92rem;
+    font-size:1.01rem;
     color:var(--accent);
     margin-bottom:6px;
   }
-  .entry .desc{font-size:.93rem; color:var(--muted); max-width:640px;}
+  .entry .desc{font-size:1.02rem; color:var(--muted); max-width:640px;}
   .entry.current .role::after{
     content:"ACTIVE";
     font-family:var(--font-mono);
-    font-size:9.5px;
+    font-size:10.5px;
     color:var(--brass);
     border:1px solid var(--brass);
     padding:2px 6px;
@@ -301,11 +301,11 @@
     gap:16px;
     padding:16px 0;
     border-bottom:1px solid var(--hairline);
-    font-size:.95rem;
+    font-size:1.04rem;
   }
   .cred-row .deg{color:var(--navy); font-weight:600;}
-  .cred-row .inst{color:var(--muted); font-size:.88rem;}
-  .cred-row .yr{font-family:var(--font-mono); font-size:.82rem; color:var(--brass); white-space:nowrap;}
+  .cred-row .inst{color:var(--muted); font-size:0.97rem;}
+  .cred-row .yr{font-family:var(--font-mono); font-size:0.9rem; color:var(--brass); white-space:nowrap;}
   .seal-box{
     display:flex; flex-direction:column; align-items:center;
     text-align:center;
@@ -314,7 +314,7 @@
   .seal-box svg{width:150px; height:150px;}
   .seal-box .cap{
     font-family:var(--font-mono);
-    font-size:10.5px;
+    font-size:11.5px;
     color:var(--muted);
     margin-top:10px;
     letter-spacing:.06em;
@@ -336,7 +336,7 @@
   }
   .proj-card .tag{
     font-family:var(--font-mono);
-    font-size:10.5px;
+    font-size:11.5px;
     color:var(--accent);
     letter-spacing:.08em;
     margin-bottom:8px;
@@ -344,12 +344,12 @@
   }
   .proj-card h4{
     font-family:var(--font-display);
-    font-size:1.05rem;
+    font-size:1.16rem;
     font-weight:500;
     color:var(--navy);
     margin-bottom:8px;
   }
-  .proj-card p{font-size:.9rem; color:var(--muted);}
+  .proj-card p{font-size:0.99rem; color:var(--muted);}
 
   .pub-list{
     margin-top:20px;
@@ -360,7 +360,7 @@
   }
   .pub-list .tag{
     font-family:var(--font-mono);
-    font-size:10.5px;
+    font-size:11.5px;
     color:var(--brass);
     letter-spacing:.08em;
   }
@@ -369,7 +369,7 @@
     padding-left:1.1em;
   }
   .pub-list li{
-    font-size:.9rem;
+    font-size:0.99rem;
     color:var(--muted);
     margin-bottom:8px;
     line-height:1.5;
@@ -380,7 +380,7 @@
     display:inline-block;
     margin-top:16px;
     font-family:var(--font-mono);
-    font-size:11px;
+    font-size:12px;
     letter-spacing:.06em;
     color:var(--accent);
     border-bottom:1px solid var(--accent);
@@ -408,7 +408,7 @@
   .pub-track.track-c{border-top-color:var(--navy);}
   .pub-track .tag{
     font-family:var(--font-mono);
-    font-size:10.5px;
+    font-size:11.5px;
     letter-spacing:.07em;
     color:var(--navy);
     display:block;
@@ -418,7 +418,7 @@
   .pub-track.track-b .tag{color:var(--accent);}
   .pub-track.track-c .tag{color:var(--navy);}
   .track-intro{
-    font-size:.86rem;
+    font-size:0.95rem;
     color:var(--muted);
     margin-bottom:16px;
     padding-bottom:16px;
@@ -426,7 +426,7 @@
   }
   .pub-track ul{list-style:none; margin:0; padding:0;}
   .pub-track li{
-    font-size:.86rem;
+    font-size:0.95rem;
     color:var(--ink);
     line-height:1.55;
     margin-bottom:13px;
@@ -437,7 +437,7 @@
   .pub-track .k{
     display:inline-block;
     font-family:var(--font-mono);
-    font-size:9.5px;
+    font-size:10.5px;
     letter-spacing:.06em;
     text-transform:uppercase;
     color:var(--muted);
@@ -451,7 +451,7 @@
     margin-top:16px;
     padding-top:14px;
     border-top:1px dashed var(--hairline);
-    font-size:.82rem;
+    font-size:0.9rem;
     font-style:italic;
     color:var(--muted);
   }
@@ -479,7 +479,7 @@
   }
   .book-feature .tag{
     font-family:var(--font-mono);
-    font-size:11px;
+    font-size:12px;
     color:var(--brass-dim);
     letter-spacing:.1em;
     display:block;
@@ -487,11 +487,11 @@
   }
   .book-feature h3{
     font-family:var(--font-display);
-    font-size:1.4rem;
+    font-size:1.54rem;
     font-weight:500;
     margin-bottom:10px;
   }
-  .book-feature p{color:#C7D0E0; font-size:.94rem; max-width:560px;}
+  .book-feature p{color:#C9C3E8; font-size:1.03rem; max-width:560px;}
 
   /* ---------- ICJ publishing block ---------- */
   .icj-block{
@@ -508,13 +508,13 @@
   }
   .icj-head .tag{
     font-family:var(--font-mono);
-    font-size:11px;
+    font-size:12px;
     letter-spacing:.07em;
     color:var(--brass);
     display:block;
     margin-bottom:10px;
   }
-  .icj-head p{font-size:.9rem; color:var(--muted); max-width:760px;}
+  .icj-head p{font-size:0.99rem; color:var(--muted); max-width:760px;}
   .icj-head a{color:var(--accent); border-bottom:1px solid var(--accent); padding-bottom:1px;}
   .icj-head a:hover{color:var(--navy); border-color:var(--navy);}
   .icj-book a{color:var(--accent); border-bottom:1px solid var(--accent); padding-bottom:1px; font-style:normal;}
@@ -527,14 +527,14 @@
   @media (max-width:700px){ .icj-books{grid-template-columns:1fr;} }
   .icj-book .kicker{
     font-family:var(--font-mono);
-    font-size:10px;
+    font-size:11px;
     letter-spacing:.06em;
     color:var(--brass);
     display:block;
     margin-bottom:8px;
   }
   .icj-book h3{
-    font-size:1.15rem;
+    font-size:1.26rem;
     font-weight:600;
     color:var(--navy);
     margin-bottom:10px;
@@ -542,16 +542,16 @@
   .icj-book h3 .en{
     display:block;
     font-family:var(--font-mono);
-    font-size:11px;
+    font-size:12px;
     font-weight:400;
     letter-spacing:.04em;
     color:var(--muted);
     text-transform:uppercase;
     margin-top:4px;
   }
-  .icj-book p.kr{font-size:.86rem; color:var(--ink); line-height:1.6; margin-bottom:10px;}
+  .icj-book p.kr{font-size:0.95rem; color:var(--ink); line-height:1.6; margin-bottom:10px;}
   .icj-book p.en-desc{
-    font-size:.82rem;
+    font-size:0.9rem;
     color:var(--muted);
     line-height:1.6;
     font-style:italic;
@@ -569,14 +569,14 @@
   }
   .kr-summary .tag{
     font-family:var(--font-mono);
-    font-size:10.5px;
+    font-size:11.5px;
     letter-spacing:.08em;
     color:var(--navy);
     display:block;
     margin-bottom:10px;
   }
   .kr-summary p{
-    font-size:.92rem;
+    font-size:1.01rem;
     color:var(--ink);
     line-height:1.75;
   }
@@ -590,19 +590,19 @@
   }
   .contact-item .k{
     font-family:var(--font-mono);
-    font-size:10.5px;
+    font-size:11.5px;
     color:var(--brass);
     letter-spacing:.1em;
     display:block;
     margin-bottom:6px;
   }
-  .contact-item .v{font-size:1.05rem; color:var(--navy); font-weight:600;}
+  .contact-item .v{font-size:1.16rem; color:var(--navy); font-weight:600;}
   .contact-item a:hover{color:var(--accent);}
 
   footer{
     padding:28px 56px 40px;
     font-family:var(--font-mono);
-    font-size:11px;
+    font-size:12px;
     color:var(--muted);
     display:flex;
     justify-content:space-between;
@@ -637,16 +637,16 @@
 
     <header class="hero">
       <svg class="hero-seal" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="100" cy="100" r="96" fill="none" stroke="#C9AE85" stroke-width="1.5"/>
-        <circle cx="100" cy="100" r="84" fill="none" stroke="#C9AE85" stroke-width="1"/>
-        <text font-family="IBM Plex Mono" font-size="10" fill="#C9AE85" letter-spacing="2">
+        <circle cx="100" cy="100" r="96" fill="none" stroke="#FFA65C" stroke-width="1.5"/>
+        <circle cx="100" cy="100" r="84" fill="none" stroke="#FFA65C" stroke-width="1"/>
+        <text font-family="IBM Plex Mono" font-size="11" fill="#FFA65C" letter-spacing="2">
           <textPath href="#sealpath" startOffset="2%">WASHINGTON D.C. BAR · ACTIVE SINCE 2004 ·</textPath>
         </text>
         <path id="sealpath" d="M 100,100 m -84,0 a 84,84 0 1,1 168,0 a 84,84 0 1,1 -168,0" fill="none"/>
-        <line x1="70" y1="105" x2="130" y2="105" stroke="#C9AE85" stroke-width="1.5"/>
-        <line x1="80" y1="95" x2="80" y2="115" stroke="#C9AE85" stroke-width="1.5"/>
-        <line x1="120" y1="95" x2="120" y2="115" stroke="#C9AE85" stroke-width="1.5"/>
-        <line x1="100" y1="80" x2="100" y2="105" stroke="#C9AE85" stroke-width="1.5"/>
+        <line x1="70" y1="105" x2="130" y2="105" stroke="#FFA65C" stroke-width="1.5"/>
+        <line x1="80" y1="95" x2="80" y2="115" stroke="#FFA65C" stroke-width="1.5"/>
+        <line x1="120" y1="95" x2="120" y2="115" stroke="#FFA65C" stroke-width="1.5"/>
+        <line x1="100" y1="80" x2="100" y2="105" stroke="#FFA65C" stroke-width="1.5"/>
       </svg>
 
       <div class="eyebrow">Seoul, South Korea · Policy &amp; Governance Counsel</div>
@@ -698,7 +698,7 @@
         <div>
           <span class="tag">인지와판단연구소 · SELF-PUBLISHED · SEP 2026</span>
           <h3>When We Stop Thinking</h3>
-          <p style="font-family:var(--font-mono); font-size:11px; letter-spacing:.06em;
+          <p style="font-family:var(--font-mono); font-size:12px; letter-spacing:.06em;
              color:var(--brass-dim); text-transform:uppercase; margin:-6px 0 12px;">
              How AI Is Outsourcing Human Judgment</p>
           <p>A full-length English-language study of how convenience, speed, and constant AI
@@ -749,7 +749,7 @@
       <div class="icj-block reveal">
         <div class="icj-head">
           <span class="tag">CO-AUTHORED · MAY 2026</span>
-          <h3 style="font-family:var(--font-display); font-size:1.15rem; font-weight:500;
+          <h3 style="font-family:var(--font-display); font-size:1.26rem; font-weight:500;
              color:var(--navy); margin-top:8px;">The Future of the K-Pop Industry</h3>
           <p style="margin-top:8px;">A co-authored study of the structural forces — regulatory,
              industrial, and technological — shaping the next phase of Korea's music export
@@ -979,9 +979,9 @@
         </div>
         <div class="seal-box">
           <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="100" cy="100" r="94" fill="none" stroke="#AD8A54" stroke-width="2"/>
-            <circle cx="100" cy="100" r="80" fill="none" stroke="#AD8A54" stroke-width="1"/>
-            <text font-family="IBM Plex Mono" font-size="10.5" fill="#1F3864" letter-spacing="2">
+            <circle cx="100" cy="100" r="94" fill="none" stroke="#F2660D" stroke-width="2"/>
+            <circle cx="100" cy="100" r="80" fill="none" stroke="#F2660D" stroke-width="1"/>
+            <text font-family="IBM Plex Mono" font-size="11.5" fill="#1F3864" letter-spacing="2">
               <textPath href="#sealpath2" startOffset="1%">WASHINGTON D.C. BAR  ·  ACTIVE SINCE 2004  ·</textPath>
             </text>
             <path id="sealpath2" d="M 100,100 m -80,0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0" fill="none"/>
