@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NFL Dynamic Power Ranking Prototype</title>
+  <!-- Tailwind CSS & React/Babel CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen">
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState, useMemo } = React;
+
+    // 1. 프로토타입용 샘플 데이터 (상위 12개 팀 예시, 0~100 스케일 정규화 완료 상태)
+    const initialTeams = [
+      { id: 'KC', name: 'Kansas City Chiefs', record: '4-0', normElo: 96, normEpa: 92, normSr: 88, normRecency: 94, prevRank: 1, logo: '🔴' },
+      { id: 'SF', name: 'San Francisco 49ers', record: '3-1', normElo: 91, normEpa: 89, normSr: 93, normRecency: 84, prevRank: 2, logo: '🟡' },
+      { id: 'BAL', name: 'Baltimore Ravens', record: '3-1', normElo: 88, normEpa: 94, normSr: 85, normRecency: 92, prevRank: 4, logo: '🟣' },
+      { id: 'DET', name: 'Detroit Lions', record: '3-1', normElo: 89, normEpa: 87, normSr: 90, normRecency: 86, prevRank: 3, logo: '🔵' },
+      { id: 'BUF', name: 'Buffalo Bills', record: '3-1', normElo: 87, normEpa: 91, normSr: 84, normRecency: 80, prevRank: 5, logo: '🦬' },
+      { id: 'HOU', name: 'Houston Texans', record: '3-1', normElo: 82, normEpa: 81, normSr: 82, normRecency: 85, prevRank: 6, logo: '🐂' },
+      { id: 'PHI', name: 'Philadelphia Eagles', record: '2-2', normElo: 80, normEpa: 76, normSr: 79, normRecency: 72, prevRank: 7, logo: '🦅' },
+      { id: 'GB', name: 'Green Bay Packers', record: '2-2', normElo: 78, normEpa: 82, normSr: 77, normRecency: 79, prevRank: 9, logo: '🧀' },
+      { id: 'DAL', name: 'Dallas Cowboys', record: '2-2', normElo: 79, normEpa: 73, normSr: 75, normRecency: 70, prevRank: 8, logo: '⭐' },
+      { id: 'PIT', name: 'Pittsburgh Steelers', record: '3-1', normElo: 83, normEpa: 68, normSr: 71, normRecency: 84, prevRank: 11, logo: '⚙️' },
+      { id: 'SEA', name: 'Seattle Seahawks', record: '3-1', normElo: 77, normEpa: 75, normSr: 76, normRecency: 78, prevRank: 10, logo: '🦅' },
+      { id: 'CIN', name: 'Cincinnati Bengals', record: '1-3', normElo: 74, normEpa: 80, normSr: 72, normRecency: 65, prevRank: 12, logo: '🐯' },
+    ];
+
+    const getTierBadge = (score) => {
+      if (score >= 90) return { label: 'S (Super Bowl Favorite)', color: 'bg-amber-500/20 text-amber-400 border-amber-500/30' };
+      if (score >= 82) return { label: 'A (Championship Tier)', color: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30' };
+      if (score >= 75) return { label: 'B (Playoff Contender)', color: 'bg-sky-500/20 text-sky-400 border-sky-500/30' };
+      return { label: 'C (In the Hunt)', color: 'bg-slate-500/20 text-slate-400 border-slate-500/30' };
+    };
+
+    function App() {
+      // 4대 지표 가중치 상태 (기본값: Elo 40%, Net EPA 30%, Success Rate 15%, Recency 15%)
+      const [weights, setWeights] = useState({
+        elo: 40,
+        epa: 30,
+        successRate: 15,
+        recency: 15,
+      });
+
+      // 가중치 프리셋 버튼 핸들러
+      const applyPreset = (type) => {
+        if (type === 'analytics') setWeights({ elo: 15, epa: 55, successRate: 20, recency: 10 });
+        if (type === 'traditional') setWeights({ elo: 60, epa: 15, successRate: 10, recency: 15 });
+        if (type === 'momentum') setWeights({ elo: 20, epa: 20, successRate: 10, recency: 50 });
+        if (type === 'default') setWeights({ elo: 40, epa: 30, successRate: 15, recency: 15 });
+      };
+
+      // 실시간 DPS 랭킹 계산 연산
+      const rankedTeams = useMemo(() => {
+        const total = weights.elo + weights.epa + weights.successRate + weights.recency || 1;
+        const wElo = weights.elo / total;
+        const wEpa = weights.epa / total;
+        const wSr = weights.successRate / total;
+        const wRec = weights.recency / total;
+
+        const calculated = initialTeams.map((team) => {
+          const score = (team.normElo * wElo) + (team.normEpa * wEpa) + (team.normSr * wSr) + (team.normRecency * wRec);
+          return {
+            ...team,
+            dpsScore: score.toFixed(1),
+            rawScore: score,
+          };
+        });
+
+        // 점수 내림차순 정렬
+        calculated.sort((a, b) => b.rawScore - a.rawScore);
+
+        // 순위 및 순위 변동 계산
+        return calculated.map((team, idx) => {
+          const currentRank = idx + 1;
+          const delta = team.prevRank - currentRank; // 양수: 상승, 음수: 하락
+          return { ...team, rank: currentRank, delta };
+        });
+      }, [weights]);
+
+      return (
+        <div className="max-w-4xl mx-auto px-4 py-8 space-y-6">
+          {/* Header */}
+          <header className="border-b border-slate-800 pb-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div>
+              <h1 className="text-2xl font-black tracking-tight text-white flex items-center gap-2">
+                <span className="text-emerald-400">⚡ NFL</span> DYNAMIC POWER RANKING
+              </h1>
+              <p className="text-sm text-slate-400 mt-1">실시간 가중치 엔진 기반 맞춤형 파워 랭킹 프로토타입</p>
+            </div>
+            <div className="flex gap-2">
+              <button onClick={() => applyPreset('default')} className="px-3 py-1.5 text-xs bg-slate-800 hover:bg-slate-700 rounded-md">기본형</button>
+              <button onClick={() => applyPreset('analytics')} className="px-3 py-1.5 text-xs bg-slate-800 hover:bg-slate-700 rounded-md text-cyan-400">데이터 중심</button>
+              <button onClick={() => applyPreset('momentum')} className="px-3 py-1.5 text-xs bg-slate-800 hover:bg-slate-700 rounded-md text-amber-400">모멘텀 중심</button>
+            </div>
+          </header>
+
+          {/* Metric Control Sliders */}
+          <section className="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-lg">
+            <h2 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">가중치 실시간 조절 (Weight Engine)</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              <div>
+                <div className="flex justify-between text-xs font-semibold mb-1">
+                  <span className="text-slate-300">Elo 승패 레이팅</span>
+                  <span className="text-emerald-400 font-mono">{weights.elo}%</span>
+                </div>
+                <input type="range" min="0" max="100" value={weights.elo}
+                  onChange={(e) => setWeights({ ...weights, elo: Number(e.target.value) })}
+                  className="w-full accent-emerald-400 cursor-pointer" />
+              </div>
+              <div>
+                <div className="flex justify-between text-xs font-semibold mb-1">
+                  <span className="text-slate-300">Net EPA/Play (효율성)</span>
+                  <span className="text-cyan-400 font-mono">{weights.epa}%</span>
+                </div>
+                <input type="range" min="0" max="100" value={weights.epa}
+                  onChange={(e) => setWeights({ ...weights, epa: Number(e.target.value) })}
+                  className="w-full accent-cyan-400 cursor-pointer" />
+              </div>
+              <div>
+                <div className="flex justify-between text-xs font-semibold mb-1">
+                  <span className="text-slate-300">Success Rate (일관성)</span>
+                  <span className="text-indigo-400 font-mono">{weights.successRate}%</span>
+                </div>
+                <input type="range" min="0" max="100" value={weights.successRate}
+                  onChange={(e) => setWeights({ ...weights, successRate: Number(e.target.value) })}
+                  className="w-full accent-indigo-400 cursor-pointer" />
+              </div>
+              <div>
+                <div className="flex justify-between text-xs font-semibold mb-1">
+                  <span className="text-slate-300">최근 경기 모멘텀</span>
+                  <span className="text-amber-400 font-mono">{weights.recency}%</span>
+                </div>
+                <input type="range" min="0" max="100" value={weights.recency}
+                  onChange={(e) => setWeights({ ...weights, recency: Number(e.target.value) })}
+                  className="w-full accent-amber-400 cursor-pointer" />
+              </div>
+            </div>
+          </section>
+
+          {/* Ranking Table */}
+          <section className="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-xl">
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="border-b border-slate-800 bg-slate-950/60 text-xs text-slate-400 uppercase tracking-wider">
+                    <th className="p-3.5 pl-5">순위</th>
+                    <th className="p-3.5">팀</th>
+                    <th className="p-3.5 text-right">DPS 종합점수</th>
+                    <th className="p-3.5 text-center">전력 티어</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-800/60 text-sm">
+                  {rankedTeams.map((team) => {
+                    const badge = getTierBadge(team.rawScore);
+                    return (
+                      <tr key={team.id} className="hover:bg-slate-800/40 transition-colors">
+                        <td className="p-3.5 pl-5 font-bold font-mono">
+                          <span className="text-base text-white mr-2">{team.rank}</span>
+                          {team.delta > 0 && <span className="text-xs text-emerald-400">▲{team.delta}</span>}
+                          {team.delta < 0 && <span className="text-xs text-rose-500">▼{Math.abs(team.delta)}</span>}
+                          {team.delta === 0 && <span className="text-xs text-slate-600">-</span>}
+                        </td>
+                        <td className="p-3.5 flex items-center gap-3">
+                          <span className="text-xl">{team.logo}</span>
+                          <div>
+                            <div className="font-semibold text-white leading-snug">{team.name}</div>
+                            <div className="text-xs text-slate-500 font-mono">{team.record}</div>
+                          </div>
+                        </td>
+                        <td className="p-3.5 text-right font-mono font-bold text-emerald-400 text-base">
+                          {team.dpsScore}
+                        </td>
+                        <td className="p-3.5 text-center">
+                          <span className={`px-2.5 py-1 text-xs rounded-full border ${badge.color}`}>
+                            {badge.label}
+                          </span>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>
