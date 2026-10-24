@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fundamental Principles of Matter and Spacetime</title>
+<meta name="description" content="A note on the hypothesis that the foundation is quantum state plus symmetry structure rather than waves or particles, with an originality assessment.">
+<link rel="alternate" hreflang="ko" href="matter-spacetime.html">
+<style>
+:root{
+  --bg:#fafaf7; --surface:#ffffff; --text:#1c1d22; --muted:#5b5f6b; --line:#e3e2dc;
+  --accent:#3b4cca; --accent-soft:#e8ebff; --warn:#b4531a; --warn-soft:#fdeee2; --ok:#1d7a4f; --ok-soft:#e1f4ea;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#111217; --surface:#1a1c24; --text:#ecedf2; --muted:#9a9eab; --line:#2b2e39;
+    --accent:#8c9bff; --accent-soft:#232844; --warn:#f0a068; --warn-soft:#3a2a1d; --ok:#6fd3a0; --ok-soft:#1b3328;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:"Inter","Segoe UI",system-ui,-apple-system,"Helvetica Neue","Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+  line-height:1.7; font-size:17px; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:780px; margin:0 auto; padding:0 20px 80px}
+header{padding:64px 0 32px; border-bottom:1px solid var(--line)}
+.eyebrow{font-size:13px; letter-spacing:.08em; color:var(--accent); font-weight:700; text-transform:uppercase}
+h1{font-size:clamp(28px,5vw,40px); line-height:1.25; margin:10px 0 16px; letter-spacing:-.02em}
+.lede{font-size:19px; color:var(--muted); margin:0}
+nav{position:sticky; top:0; background:var(--bg); z-index:5; border-bottom:1px solid var(--line); overflow-x:auto; white-space:nowrap}
+nav .wrap{padding:0 20px 0; display:flex; gap:20px}
+nav a{display:inline-block; padding:12px 0; font-size:14px; color:var(--muted); text-decoration:none; border-bottom:2px solid transparent}
+nav a:hover{color:var(--accent); border-color:var(--accent)}
+nav a.lang{margin-left:auto; font-weight:700; color:var(--accent)}
+section{padding:44px 0 8px}
+h2{font-size:24px; margin:0 0 6px; letter-spacing:-.01em}
+h2 .n{color:var(--accent); margin-right:8px}
+h3{font-size:18px; margin:28px 0 6px}
+p{margin:10px 0}
+.callout{background:var(--accent-soft); border-left:4px solid var(--accent); padding:18px 20px; border-radius:0 10px 10px 0; font-size:19px; font-weight:600; line-height:1.6}
+.card{background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:18px 20px; margin:14px 0}
+.card h3{margin-top:0}
+.tag{display:inline-block; font-size:12px; font-weight:700; padding:2px 9px; border-radius:99px; margin-right:6px; vertical-align:middle; white-space:nowrap}
+.t-high{background:var(--ok-soft); color:var(--ok)}
+.t-mid{background:var(--accent-soft); color:var(--accent)}
+.t-low{background:var(--warn-soft); color:var(--warn)}
+table{width:100%; border-collapse:collapse; margin:14px 0; font-size:15px; background:var(--surface); border:1px solid var(--line); border-radius:10px; overflow:hidden}
+th,td{text-align:left; padding:11px 14px; border-bottom:1px solid var(--line); vertical-align:top}
+th{background:var(--accent-soft); font-size:13px; letter-spacing:.03em}
+tr:last-child td{border-bottom:none}
+ul{padding-left:20px} li{margin:6px 0}
+.muted{color:var(--muted); font-size:15px}
+.diagram{margin:20px 0; background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:12px}
+.diagram svg{width:100%; height:auto; display:block}
+.diagram text{font-family:inherit}
+.verdict{background:var(--warn-soft); border-left:4px solid var(--warn); padding:16px 20px; border-radius:0 10px 10px 0}
+.verdict b{color:var(--warn)}
+footer{margin-top:60px; padding-top:20px; border-top:1px solid var(--line); font-size:14px; color:var(--muted)}
+.diagram{overflow-x:auto}
+.diagram figcaption{font-size:14px;color:var(--muted);padding:8px 10px 4px;line-height:1.6}
+.tx{fill:var(--text)} .mu{fill:var(--muted)} .ac{fill:var(--accent)}
+.bx{fill:var(--surface);stroke:var(--line);stroke-width:1.2}
+.bxa{fill:var(--accent-soft);stroke:var(--accent);stroke-width:1.2}
+.bxo{fill:var(--ok-soft);stroke:var(--ok);stroke-width:1.2}
+.bxw{fill:var(--warn-soft);stroke:var(--warn);stroke-width:1.2}
+@media (max-width:560px){ body{font-size:16px} table{font-size:14px} th,td{padding:9px 10px} .diagram svg{min-width:560px} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Working Note · Foundations of Physics</div>
+    <h1>Fundamental Principles of Matter and Spacetime<br>"Structure comes before substance"</h1>
+    <p class="lede">Starting from the intuition that everything is a wave, this note tests how far modern physics accepts that intuition. Established facts, leading hypotheses, and my own bets are kept separate.</p>
+  </div>
+</header>
+
+<nav>
+  <div class="wrap">
+    <a href="#s1">Conclusion</a>
+    <a href="#s2">Confidence</a>
+    <a href="#s3">Four Arguments</a>
+    <a href="#s4">Candidates</a>
+    <a href="#s5">Falsifiers</a>
+    <a href="#s6">Wave Intuition</a>
+    <a href="#s7">Originality</a>
+    <a class="lang" href="matter-spacetime.html" hreflang="ko" lang="ko">한국어</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section id="s1">
+  <h2><span class="n">1</span>One-Line Conclusion</h2>
+  <div class="callout">The foundation is neither wave nor particle. <br>Quantum state and symmetry structure are fundamental; waves, particles, and spacetime are expressions that appear on top of them.</div>
+  <p class="muted">Note: the claim that spacetime emerges is not established fact but one of the currently leading directions, and it is marked here as my bet.</p>
+
+  <div class="diagram">
+    <svg viewBox="0 0 700 330" role="img" aria-label="Layer diagram from the fundamental structure to observed phenomena">
+      <defs>
+        <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M1 1L9 5L1 9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </marker>
+      </defs>
+      <g style="color:var(--muted)">
+        <rect x="150" y="14" width="400" height="64" rx="12" fill="var(--accent-soft)" stroke="var(--accent)"/>
+        <text x="350" y="42" text-anchor="middle" font-size="16" font-weight="700" fill="var(--text)">Foundation: state space + symmetry + dynamics</text>
+        <text x="350" y="64" text-anchor="middle" font-size="13" fill="var(--muted)">(my bet: Hilbert space, entanglement structure)</text>
+
+        <line x1="350" y1="78" x2="350" y2="108" stroke="currentColor" stroke-width="1.6" marker-end="url(#ar)"/>
+
+        <rect x="60" y="110" width="250" height="64" rx="12" fill="var(--surface)" stroke="var(--line)"/>
+        <text x="185" y="138" text-anchor="middle" font-size="16" font-weight="600" fill="var(--text)">Quantum fields / excitations</text>
+        <text x="185" y="159" text-anchor="middle" font-size="13" fill="var(--muted)">Wave/particle: two faces of one state</text>
+
+        <rect x="390" y="110" width="250" height="64" rx="12" fill="var(--surface)" stroke="var(--line)"/>
+        <text x="515" y="138" text-anchor="middle" font-size="16" font-weight="600" fill="var(--text)">Spacetime geometry</text>
+        <text x="515" y="159" text-anchor="middle" font-size="13" fill="var(--muted)">Emerges from entanglement (hypothesis)</text>
+
+        <line x1="185" y1="174" x2="300" y2="212" stroke="currentColor" stroke-width="1.6" marker-end="url(#ar)"/>
+        <line x1="515" y1="174" x2="400" y2="212" stroke="currentColor" stroke-width="1.6" marker-end="url(#ar)"/>
+
+        <rect x="150" y="214" width="400" height="64" rx="12" fill="var(--surface)" stroke="var(--line)"/>
+        <text x="350" y="242" text-anchor="middle" font-size="16" font-weight="600" fill="var(--text)">Observed phenomena</text>
+        <text x="350" y="263" text-anchor="middle" font-size="13" fill="var(--muted)">Matter, velocity, light, gravity</text>
+      </g>
+      <text x="350" y="312" text-anchor="middle" font-size="12" fill="var(--muted)">Going down, verification gets easier; going up, hypothesis weighs more</text>
+    </svg>
+  </div>
+</section>
+
+<section id="s2">
+  <h2><span class="n">2</span>Confidence by Layer</h2>
+  <table>
+    <tr><th>Layer</th><th>Claim</th><th>Confidence</th></tr>
+    <tr><td>Verified</td><td>Matter is described as excitations of quantum fields; gravity as spacetime geometry</td><td><span class="tag t-high">Very high</span></td></tr>
+    <tr><td>Likely</td><td>The two theories are effective limits of a more fundamental theory</td><td><span class="tag t-high">High</span></td></tr>
+    <tr><td>My bet</td><td>Spacetime emerges from quantum information and entanglement structure</td><td><span class="tag t-mid">Medium</span></td></tr>
+    <tr><td>Open</td><td>The concrete form of the fundamental theory (strings, loops, other)</td><td><span class="tag t-low">Low</span></td></tr>
+  </table>
+  <figure class="diagram">
+    <svg viewBox="0 0 700 210" role="img" aria-label="Bar chart of confidence by layer">
+      <g font-size="15">
+        <text x="135" y="43" text-anchor="end" class="tx">Verified</text>
+        <rect x="150" y="26" width="500" height="22" rx="11" fill="var(--line)"/>
+        <rect x="150" y="26" width="475" height="22" rx="11" fill="var(--ok)"/>
+        <text x="135" y="89" text-anchor="end" class="tx">Likely</text>
+        <rect x="150" y="72" width="500" height="22" rx="11" fill="var(--line)"/>
+        <rect x="150" y="72" width="400" height="22" rx="11" fill="var(--ok)"/>
+        <text x="135" y="135" text-anchor="end" class="tx">My bet</text>
+        <rect x="150" y="118" width="500" height="22" rx="11" fill="var(--line)"/>
+        <rect x="150" y="118" width="250" height="22" rx="11" fill="var(--accent)"/>
+        <text x="135" y="181" text-anchor="end" class="tx">Open</text>
+        <rect x="150" y="164" width="500" height="22" rx="11" fill="var(--line)"/>
+        <rect x="150" y="164" width="100" height="22" rx="11" fill="var(--warn)"/>
+      </g>
+    </svg>
+    <figcaption>Bar length is my subjective confidence. The upper bars are experimentally verified territory; the lower ones carry more hypothesis.</figcaption>
+  </figure>
+</section>
+
+<section id="s3">
+  <h2><span class="n">3</span>Four Core Arguments</h2>
+
+  <div class="card">
+    <h3>① A wave describes "how," not "what"</h3>
+    <p>Sound has air and ripples have water as their medium. Ask "a wave of what?" at the foundational level and the answer stops at the field. A field is not a wave on some medium; it is itself a basic entity, so demanding a medium is a leftover of classical intuition.</p>
+    <figure class="diagram">
+      <svg viewBox="0 0 700 250" role="img" aria-label="Comparison of sound, which needs a medium, and a field, which does not">
+        <text x="170" y="28" text-anchor="middle" font-size="16" font-weight="700" class="tx">Sound: needs a medium</text>
+        <path d="M20 90 q18.75 -50 37.5 0 t37.5 0 t37.5 0 t37.5 0 t37.5 0 t37.5 0 t37.5 0 t37.5 0" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+        <g fill="var(--muted)">
+          <circle cx="28" cy="170" r="5"/><circle cx="52" cy="170" r="5"/><circle cx="70" cy="170" r="5"/><circle cx="82" cy="170" r="5"/><circle cx="92" cy="170" r="5"/>
+          <circle cx="118" cy="170" r="5"/><circle cx="146" cy="170" r="5"/><circle cx="164" cy="170" r="5"/><circle cx="176" cy="170" r="5"/><circle cx="186" cy="170" r="5"/>
+          <circle cx="212" cy="170" r="5"/><circle cx="238" cy="170" r="5"/><circle cx="262" cy="170" r="5"/><circle cx="284" cy="170" r="5"/><circle cx="306" cy="170" r="5"/>
+        </g>
+        <text x="170" y="215" text-anchor="middle" font-size="14" class="mu">Air-density changes are the wave</text>
+        <line x1="350" y1="20" x2="350" y2="230" stroke="var(--line)"/>
+        <text x="525" y="28" text-anchor="middle" font-size="16" font-weight="700" class="tx">EM field: no medium</text>
+        <path d="M380 120 q18.75 -50 37.5 0 t37.5 0 t37.5 0 t37.5 0 t37.5 0 t37.5 0 t37.5 0 t37.5 0" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+        <text x="525" y="215" text-anchor="middle" font-size="14" class="mu">The field itself ripples, even in vacuum</text>
+      </svg>
+      <figcaption>Sound needs air, but a field is not a "wave on something"; it is itself a basic entity.</figcaption>
+    </figure>
+  </div>
+
+  <div class="card">
+    <h3>② Waves alone cannot explain discreteness</h3>
+    <p>Detectors always register a single point, and energy is quantized (the photoelectric effect). If it were a pure wave, energy would spread out continuously. That is why Schrödinger's attempt to treat a particle as a wave packet was abandoned. It is more consistent to see wave and particle as <b>two faces of a quantum state, revealed in measurement and interaction</b>.</p>
+    <figure class="diagram">
+      <svg viewBox="0 0 700 275" role="img" aria-label="Double-slit experiment: the wave spreads out and is detected as points">
+        <defs><clipPath id="cs"><rect x="256" y="0" width="364" height="260"/></clipPath></defs>
+        <g stroke="var(--accent)" stroke-width="2" opacity=".45">
+          <line x1="110" y1="50" x2="110" y2="210"/><line x1="160" y1="50" x2="160" y2="210"/><line x1="210" y1="50" x2="210" y2="210"/>
+        </g>
+        <text x="110" y="35" text-anchor="middle" font-size="14" class="mu">Incident wave</text>
+        <g clip-path="url(#cs)" fill="none" stroke="var(--accent)" stroke-width="1.5" opacity=".4">
+          <circle cx="250" cy="100" r="45"/><circle cx="250" cy="100" r="95"/><circle cx="250" cy="100" r="145"/><circle cx="250" cy="100" r="195"/><circle cx="250" cy="100" r="245"/><circle cx="250" cy="100" r="295"/><circle cx="250" cy="100" r="345"/>
+          <circle cx="250" cy="160" r="45"/><circle cx="250" cy="160" r="95"/><circle cx="250" cy="160" r="145"/><circle cx="250" cy="160" r="195"/><circle cx="250" cy="160" r="245"/><circle cx="250" cy="160" r="295"/><circle cx="250" cy="160" r="345"/>
+        </g>
+        <g fill="var(--muted)">
+          <rect x="245" y="20" width="10" height="72"/><rect x="245" y="108" width="10" height="44"/><rect x="245" y="168" width="10" height="72"/>
+        </g>
+        <line x1="620" y1="10" x2="620" y2="250" stroke="var(--text)" stroke-width="2"/>
+        <g fill="var(--accent)">
+          <circle cx="650" cy="124" r="3.5"/><circle cx="660" cy="130" r="3.5"/><circle cx="645" cy="134" r="3.5"/><circle cx="668" cy="127" r="3.5"/><circle cx="655" cy="137" r="3.5"/><circle cx="662" cy="121" r="3.5"/><circle cx="648" cy="129" r="3.5"/><circle cx="672" cy="133" r="3.5"/><circle cx="657" cy="131" r="3.5"/>
+          <circle cx="655" cy="82" r="3.5"/><circle cx="648" cy="88" r="3.5"/><circle cx="663" cy="85" r="3.5"/><circle cx="652" cy="92" r="3.5"/><circle cx="660" cy="79" r="3.5"/>
+          <circle cx="657" cy="172" r="3.5"/><circle cx="650" cy="178" r="3.5"/><circle cx="664" cy="175" r="3.5"/><circle cx="654" cy="168" r="3.5"/><circle cx="661" cy="181" r="3.5"/>
+          <circle cx="655" cy="40" r="3.5"/><circle cx="662" cy="44" r="3.5"/><circle cx="656" cy="218" r="3.5"/><circle cx="650" cy="222" r="3.5"/>
+        </g>
+        <text x="250" y="262" text-anchor="middle" font-size="14" class="mu">Double slit</text>
+        <text x="650" y="268" text-anchor="middle" font-size="14" class="mu">Screen</text>
+      </svg>
+      <figcaption>In transit it spreads like a wave and interferes; on detection it lands as a single point. As points accumulate, the interference pattern appears.</figcaption>
+    </figure>
+  </div>
+
+  <div class="card">
+    <h3>③ A particle's identity is an expression of symmetry</h3>
+    <p>In Wigner's classification, an elementary particle is an irreducible representation of the Poincaré group, and mass and spin are not "properties of a thing" but <b>labels of a symmetry structure</b>. Internal properties such as charge and color also come from gauge symmetry. What defines existence is less "what is it made of" than "under which transformations is it invariant."</p>
+    <figure class="diagram">
+      <svg viewBox="0 0 700 250" role="img" aria-label="Correspondence between symmetries and particle property labels" style="color:var(--muted)">
+        <defs><marker id="ar2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L9 5L1 9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></marker></defs>
+        <text x="180" y="22" text-anchor="middle" font-size="14" class="mu">Symmetry (invariant under what?)</text>
+        <text x="535" y="22" text-anchor="middle" font-size="14" class="mu">Particle property (label)</text>
+
+        <rect x="30" y="36" width="300" height="56" rx="10" class="bxa"/>
+        <text x="180" y="62" text-anchor="middle" font-size="16" font-weight="600" class="tx">Spacetime symmetry</text>
+        <text x="180" y="82" text-anchor="middle" font-size="13" class="mu">Poincaré group (translation, rotation, boost)</text>
+        <line x1="334" y1="64" x2="396" y2="64" stroke="currentColor" stroke-width="1.6" marker-end="url(#ar2)"/>
+        <rect x="400" y="36" width="270" height="56" rx="10" class="bx"/>
+        <text x="535" y="62" text-anchor="middle" font-size="16" font-weight="600" class="tx">Mass · Spin</text>
+        <text x="535" y="82" text-anchor="middle" font-size="13" class="mu">Wigner's classification</text>
+
+        <rect x="30" y="102" width="300" height="56" rx="10" class="bxa"/>
+        <text x="180" y="128" text-anchor="middle" font-size="16" font-weight="600" class="tx">U(1) gauge symmetry</text>
+        <text x="180" y="148" text-anchor="middle" font-size="13" class="mu">Invariance under phase transformations</text>
+        <line x1="334" y1="130" x2="396" y2="130" stroke="currentColor" stroke-width="1.6" marker-end="url(#ar2)"/>
+        <rect x="400" y="102" width="270" height="56" rx="10" class="bx"/>
+        <text x="535" y="128" text-anchor="middle" font-size="16" font-weight="600" class="tx">Electric charge</text>
+        <text x="535" y="148" text-anchor="middle" font-size="13" class="mu">Electromagnetic interaction</text>
+
+        <rect x="30" y="168" width="300" height="56" rx="10" class="bxa"/>
+        <text x="180" y="194" text-anchor="middle" font-size="16" font-weight="600" class="tx">SU(3) gauge symmetry</text>
+        <text x="180" y="214" text-anchor="middle" font-size="13" class="mu">Invariance under color transformations</text>
+        <line x1="334" y1="196" x2="396" y2="196" stroke="currentColor" stroke-width="1.6" marker-end="url(#ar2)"/>
+        <rect x="400" y="168" width="270" height="56" rx="10" class="bx"/>
+        <text x="535" y="194" text-anchor="middle" font-size="16" font-weight="600" class="tx">Color charge</text>
+        <text x="535" y="214" text-anchor="middle" font-size="13" class="mu">Strong interaction</text>
+      </svg>
+      <figcaption>A particle's properties can be read not as attributes attached to an object but as labels assigned by symmetry structure.</figcaption>
+    </figure>
+  </div>
+
+  <div class="card">
+    <h3>④ Spacetime is more likely emergent than a background</h3>
+    <ul>
+      <li>General relativity and quantum mechanics collide at singularities. If spacetime were fundamental, this conflict would stay unresolved.</li>
+      <li>Black-hole entropy scales with area, not volume (Bekenstein–Hawking), a hint that information is encoded on the boundary.</li>
+      <li>In AdS/CFT, entanglement structure determines spacetime geometry. But this is a result proven in a model universe different from ours.</li>
+    </ul>
+    <figure class="diagram">
+      <svg viewBox="0 0 700 300" role="img" aria-label="Holographic picture of boundary entanglement building interior spacetime, and black-hole entropy scaling with area">
+        <text x="180" y="24" text-anchor="middle" font-size="15" font-weight="700" class="tx">From boundary to interior</text>
+        <text x="520" y="24" text-anchor="middle" font-size="15" font-weight="700" class="tx">Information lives in the area</text>
+        <circle cx="180" cy="150" r="110" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+        <g fill="none" stroke="var(--accent)" stroke-width="1.8" opacity=".8">
+          <path d="M290 150 Q185 166 91 215"/><path d="M269 215 Q180 150 91 85"/><path d="M214 255 Q211 160 269 85"/>
+          <path d="M146 255 Q163 150 146 45"/><path d="M70 150 Q175 134 269 85"/><path d="M290 150 Q216 124 214 45"/>
+        </g>
+        <g fill="var(--accent)">
+          <circle cx="290" cy="150" r="5"/><circle cx="269" cy="215" r="5"/><circle cx="214" cy="255" r="5"/><circle cx="146" cy="255" r="5"/><circle cx="91" cy="215" r="5"/>
+          <circle cx="70" cy="150" r="5"/><circle cx="91" cy="85" r="5"/><circle cx="146" cy="45" r="5"/><circle cx="214" cy="45" r="5"/><circle cx="269" cy="85" r="5"/>
+        </g>
+        <text x="180" y="290" text-anchor="middle" font-size="14" class="mu">Entanglement lines = interior connections</text>
+        <line x1="350" y1="20" x2="350" y2="285" stroke="var(--line)"/>
+        <circle cx="520" cy="135" r="80" fill="var(--surface)" stroke="var(--text)" stroke-width="2"/>
+        <g fill="none" stroke="var(--muted)" stroke-width="1.2">
+          <ellipse cx="520" cy="135" rx="80" ry="22"/><ellipse cx="520" cy="90" rx="66" ry="18"/><ellipse cx="520" cy="180" rx="66" ry="18"/>
+          <ellipse cx="520" cy="135" rx="30" ry="80"/><ellipse cx="520" cy="135" rx="60" ry="80"/>
+        </g>
+        <polygon points="545,98 580,100 582,128 548,126" fill="var(--accent)" opacity=".55"/>
+        <text x="520" y="248" text-anchor="middle" font-size="14" class="tx">Entropy scales with area, not volume</text>
+        <text x="520" y="274" text-anchor="middle" font-size="16" font-weight="700" class="ac">S = A / 4ℓₚ²</text>
+      </svg>
+      <figcaption>Left: schematic of AdS/CFT (a model universe). Right: the Bekenstein–Hawking formula. Both point toward "information lives on the boundary."</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="s4">
+  <h2><span class="n">4</span>Candidate Theories and Assessment</h2>
+  <table>
+    <tr><th>Candidate</th><th>Assessment</th></tr>
+    <tr><td>Aether (substantial medium)</td><td>Abandoned; conflicts with Lorentz symmetry</td></tr>
+    <tr><td>Quantum field theory</td><td>The most verified framework, but presupposes a spacetime background</td></tr>
+    <tr><td>String theory</td><td>The most literal version of "everything is vibration." Needs a background spacetime and has no experimental verification</td></tr>
+    <tr><td>Many-worlds / wavefunction realism</td><td>The fundamental entity is a state in Hilbert space; 3D space emerges. <b>Closest to my position</b></td></tr>
+    <tr><td>Entanglement-based spacetime (ER=EPR, etc.)</td><td>The most concrete candidate for emergent spacetime. Still incomplete</td></tr>
+  </table>
+  <figure class="diagram">
+    <svg viewBox="0 0 700 330" role="img" aria-label="Map of candidate theories by experimental verification and degree of emergent spacetime">
+      <line x1="70" y1="290" x2="665" y2="290" stroke="var(--muted)" stroke-width="1.5"/>
+      <line x1="70" y1="15" x2="70" y2="290" stroke="var(--muted)" stroke-width="1.5"/>
+      <text x="665" y="312" text-anchor="end" font-size="13" class="mu">Experimental verification: high →</text>
+      <text x="70" y="312" font-size="13" class="mu">Low</text>
+      <text x="66" y="30" text-anchor="end" font-size="11" class="mu">Emergent</text>
+      <text x="66" y="288" text-anchor="end" font-size="11" class="mu">Background</text>
+      <text x="80" y="14" font-size="13" class="mu">↑ How far spacetime is treated as emergent</text>
+      <ellipse cx="290" cy="88" rx="125" ry="58" fill="var(--accent-soft)" stroke="var(--accent)" stroke-dasharray="6 5" opacity=".8"/>
+      <text x="415" y="48" font-size="13" font-weight="700" class="ac">← My-bet region</text>
+      <circle cx="240" cy="62" r="9" fill="var(--accent)"/>
+      <text x="256" y="67" font-size="14" class="tx">Entanglement-based spacetime</text>
+      <circle cx="330" cy="118" r="9" fill="var(--accent)"/>
+      <text x="346" y="123" font-size="14" class="tx">Many-worlds / wavefunction realism</text>
+      <circle cx="190" cy="195" r="9" fill="var(--warn)"/>
+      <text x="206" y="200" font-size="14" class="tx">String theory</text>
+      <circle cx="600" cy="262" r="9" fill="var(--ok)"/>
+      <text x="586" y="267" text-anchor="end" font-size="14" class="tx">Quantum field theory</text>
+      <circle cx="105" cy="262" r="9" fill="var(--muted)" opacity=".5"/>
+      <text x="121" y="267" font-size="14" class="mu">Aether (abandoned)</text>
+    </svg>
+    <figcaption>Positions are qualitative. Toward "emergent," the share of hypothesis grows, and experimental verification has not yet reached the right side.</figcaption>
+  </figure>
+</section>
+
+<section id="s5">
+  <h2><span class="n">5</span>When This Position Would Be Wrong</h2>
+  <ul>
+    <li><b>If gravity's quantum nature is never observed.</b> If experiments such as gravity-mediated entanglement between two bodies show no quantum behavior, the emergence scenario retreats.</li>
+    <li><b>If quantum mechanics' linearity breaks.</b> Physical evidence of wavefunction collapse would shake the state-space picture.</li>
+    <li><b>Note:</b> Even if spacetime has a minimum length or a discrete structure, the claim that "the foundation is state space" itself stands.</li>
+  </ul>
+  <figure class="diagram">
+    <svg viewBox="0 0 700 250" role="img" aria-label="How the outcomes of two tests strengthen or weaken the position" style="color:var(--muted)">
+      <rect x="40" y="16" width="270" height="60" rx="10" class="bxa"/>
+      <text x="175" y="42" text-anchor="middle" font-size="16" font-weight="700" class="tx">Quantum gravity test</text>
+      <text x="175" y="63" text-anchor="middle" font-size="13" class="mu">e.g. gravity-mediated entanglement</text>
+      <line x1="175" y1="76" x2="95" y2="150" stroke="currentColor" stroke-width="1.6"/>
+      <line x1="175" y1="76" x2="255" y2="150" stroke="currentColor" stroke-width="1.6"/>
+      <rect x="20" y="150" width="150" height="64" rx="10" class="bxo"/>
+      <text x="95" y="177" text-anchor="middle" font-size="15" font-weight="700" class="tx">Observed</text>
+      <text x="95" y="199" text-anchor="middle" font-size="13" class="mu">Emergence: stronger</text>
+      <rect x="180" y="150" width="150" height="64" rx="10" class="bxw"/>
+      <text x="255" y="177" text-anchor="middle" font-size="15" font-weight="700" class="tx">Never detected</text>
+      <text x="255" y="199" text-anchor="middle" font-size="13" class="mu">Emergence: weaker</text>
+
+      <rect x="390" y="16" width="270" height="60" rx="10" class="bxa"/>
+      <text x="525" y="42" text-anchor="middle" font-size="16" font-weight="700" class="tx">Linearity of QM test</text>
+      <text x="525" y="63" text-anchor="middle" font-size="13" class="mu">Searching for collapse evidence</text>
+      <line x1="525" y1="76" x2="445" y2="150" stroke="currentColor" stroke-width="1.6"/>
+      <line x1="525" y1="76" x2="605" y2="150" stroke="currentColor" stroke-width="1.6"/>
+      <rect x="370" y="150" width="150" height="64" rx="10" class="bxo"/>
+      <text x="445" y="177" text-anchor="middle" font-size="15" font-weight="700" class="tx">Linearity holds</text>
+      <text x="445" y="199" text-anchor="middle" font-size="13" class="mu">State-space view holds</text>
+      <rect x="530" y="150" width="150" height="64" rx="10" class="bxw"/>
+      <text x="605" y="177" text-anchor="middle" font-size="15" font-weight="700" class="tx">Collapse found</text>
+      <text x="605" y="199" text-anchor="middle" font-size="13" class="mu">Picture itself shaken</text>
+      <text x="350" y="240" text-anchor="middle" font-size="13" class="mu">Having a falsifiable point is what makes this a hypothesis rather than philosophy</text>
+    </svg>
+    <figcaption>Green marks results that support the position; orange marks results that weaken it.</figcaption>
+  </figure>
+</section>
+
+<section id="s6">
+  <h2><span class="n">6</span>Relation to the "Everything Is a Wave" Intuition</h2>
+  <p>From the intuition that "deformations of a wave create matter, velocity, and light," what is worth keeping is <b>the view that phenomena are dynamical expressions of a fundamental structure</b>. To raise it to a hypothesis, three things must be filled in.</p>
+  <ol>
+    <li>Specify the entity that waves (a field or a state space) and its equation of motion.</li>
+    <li>Explain how discreteness and conserved quantities (mass, charge, spin) arise.</li>
+    <li>Offer at least one observable prediction that distinguishes it from existing theories.</li>
+  </ol>
+  <p class="muted">If item 3 is empty it is an interpretation; once filled, it is a hypothesis.</p>
+  <figure class="diagram">
+    <svg viewBox="0 0 700 230" role="img" aria-label="Steps from interpretation to hypothesis to theory">
+      <rect x="40" y="140" width="200" height="70" rx="8" class="bx"/>
+      <text x="140" y="168" text-anchor="middle" font-size="17" font-weight="700" class="tx">Interpretation</text>
+      <text x="140" y="192" text-anchor="middle" font-size="13" class="mu">Name the field / state space</text>
+      <rect x="250" y="90" width="200" height="120" rx="8" class="bxa"/>
+      <text x="350" y="118" text-anchor="middle" font-size="17" font-weight="700" class="tx">Hypothesis</text>
+      <text x="350" y="142" text-anchor="middle" font-size="13" class="mu">+ discreteness, conservation</text>
+      <rect x="460" y="40" width="200" height="170" rx="8" class="bxo"/>
+      <text x="560" y="68" text-anchor="middle" font-size="17" font-weight="700" class="tx">Theory</text>
+      <text x="560" y="92" text-anchor="middle" font-size="13" class="mu">+ new, falsifiable prediction</text>
+      <text x="350" y="28" text-anchor="middle" font-size="13" class="mu">Value comes not from the name but from the new constraints it imposes</text>
+    </svg>
+    <figcaption>The "everything is a wave" intuition is at the first step now; the higher you climb, the more rigor is required.</figcaption>
+  </figure>
+</section>
+
+<section id="s7">
+  <h2><span class="n">7</span>Originality Assessment and Prior Work</h2>
+  <div class="verdict"><b>Assessment:</b> As a physics theory, there is no originality yet. It is a synthesis of positions already developed in modern theoretical physics and philosophy of science. That also means the intuition pointed in the right direction.</div>
+
+  <table>
+    <tr><th>Element</th><th>Prior work</th></tr>
+    <tr><td>Structure-first ontology</td><td>Ontic structural realism (Ladyman, French); Mathematical Universe Hypothesis (Tegmark)</td></tr>
+    <tr><td>Particle = representation of symmetry</td><td>Wigner (1939) classification of Poincaré representations; gauge theory</td></tr>
+    <tr><td>Wavefunction realism, emergent spacetime</td><td>Everettian line: Sean Carroll ("Hilbert space fundamentalism"), David Wallace</td></tr>
+    <tr><td>Spacetime emerging from entanglement</td><td>Van Raamsdonk (2010), Maldacena–Susskind ER=EPR (2013), Ryu–Takayanagi</td></tr>
+    <tr><td>Information as fundamental</td><td>Wheeler "It from Bit"; holographic principle ('t Hooft, Susskind)</td></tr>
+    <tr><td>Fields fundamental, particles as excitations</td><td>Weinberg, Wilczek, and the standard QFT view</td></tr>
+  </table>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 700 370" role="img" aria-label="Relation between this position and six lines of prior work">
+      <g stroke="var(--muted)" stroke-width="1.5" opacity=".6">
+        <line x1="350" y1="185" x2="350" y2="50"/><line x1="350" y1="185" x2="590" y2="105"/><line x1="350" y1="185" x2="590" y2="265"/>
+        <line x1="350" y1="185" x2="350" y2="325"/><line x1="350" y1="185" x2="110" y2="265"/><line x1="350" y1="185" x2="110" y2="105"/>
+      </g>
+      <ellipse cx="350" cy="185" rx="82" ry="38" class="bxa" style="stroke-width:2"/>
+      <text x="350" y="182" text-anchor="middle" font-size="16" font-weight="700" class="tx">This position</text>
+      <text x="350" y="202" text-anchor="middle" font-size="13" class="mu">synthesis</text>
+
+      <rect x="255" y="25" width="190" height="50" rx="9" class="bx"/>
+      <text x="350" y="46" text-anchor="middle" font-size="15" font-weight="700" class="tx">Structural realism</text>
+      <text x="350" y="64" text-anchor="middle" font-size="12" class="mu">Ladyman · French · Tegmark</text>
+
+      <rect x="495" y="80" width="190" height="50" rx="9" class="bx"/>
+      <text x="590" y="101" text-anchor="middle" font-size="15" font-weight="700" class="tx">Symmetry = particle</text>
+      <text x="590" y="119" text-anchor="middle" font-size="12" class="mu">Wigner 1939 · gauge theory</text>
+
+      <rect x="495" y="240" width="190" height="50" rx="9" class="bx"/>
+      <text x="590" y="261" text-anchor="middle" font-size="15" font-weight="700" class="tx">Wavefunction realism</text>
+      <text x="590" y="279" text-anchor="middle" font-size="12" class="mu">Everett · Carroll · Wallace</text>
+
+      <rect x="255" y="300" width="190" height="50" rx="9" class="bx"/>
+      <text x="350" y="321" text-anchor="middle" font-size="15" font-weight="700" class="tx">Entangled spacetime</text>
+      <text x="350" y="339" text-anchor="middle" font-size="12" class="mu">Van Raamsdonk · ER=EPR · RT</text>
+
+      <rect x="15" y="240" width="190" height="50" rx="9" class="bx"/>
+      <text x="110" y="261" text-anchor="middle" font-size="15" font-weight="700" class="tx">Information-first</text>
+      <text x="110" y="279" text-anchor="middle" font-size="12" class="mu">Wheeler · 't Hooft · Susskind</text>
+
+      <rect x="15" y="80" width="190" height="50" rx="9" class="bx"/>
+      <text x="110" y="101" text-anchor="middle" font-size="15" font-weight="700" class="tx">Fields-first</text>
+      <text x="110" y="119" text-anchor="middle" font-size="12" class="mu">Weinberg · Wilczek</text>
+    </svg>
+    <figcaption>It sits where six existing lines of thought meet. What is new is the combination, not the lines.</figcaption>
+  </figure>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 700 240" role="img" aria-label="Timeline of prior work by year">
+      <line x1="30" y1="140" x2="680" y2="140" stroke="var(--muted)" stroke-width="2"/>
+      <g stroke="var(--muted)" stroke-width="1.2">
+        <line x1="102" y1="140" x2="102" y2="102"/><line x1="226" y1="140" x2="226" y2="178"/><line x1="336" y1="140" x2="336" y2="102"/><line x1="453" y1="140" x2="453" y2="178"/>
+        <line x1="501" y1="140" x2="501" y2="102"/><line x1="563" y1="140" x2="563" y2="178"/><line x1="591" y1="140" x2="591" y2="102"/><line x1="611" y1="140" x2="611" y2="178"/>
+      </g>
+      <g fill="var(--accent)">
+        <circle cx="102" cy="140" r="6"/><circle cx="226" cy="140" r="6"/><circle cx="336" cy="140" r="6"/><circle cx="453" cy="140" r="6"/>
+        <circle cx="501" cy="140" r="6"/><circle cx="563" cy="140" r="6"/><circle cx="591" cy="140" r="6"/><circle cx="611" cy="140" r="6"/>
+      </g>
+      <g font-size="14" font-weight="700" text-anchor="middle" class="tx">
+        <text x="102" y="94">1939</text><text x="336" y="94">1973</text><text x="501" y="94">1997</text><text x="591" y="94">2010</text>
+        <text x="226" y="198">1957</text><text x="453" y="198">1990</text><text x="563" y="198">2006</text>
+      </g>
+      <text x="611" y="198" font-size="14" font-weight="700" text-anchor="start" class="tx">2013</text>
+      <g font-size="12.5" text-anchor="middle" class="mu">
+        <text x="102" y="78">Wigner symmetry classes</text><text x="336" y="78">Black-hole entropy</text><text x="501" y="78">AdS/CFT</text><text x="591" y="78">Emergence</text>
+        <text x="226" y="216">Everett many-worlds</text><text x="453" y="216">It from Bit</text><text x="563" y="216">RT formula</text>
+      </g>
+      <text x="611" y="216" font-size="12.5" text-anchor="start" class="mu">ER=EPR</text>
+    </svg>
+    <figcaption>A roughly 80-year arc running from structure through information to entanglement. This position is a synthesis at the end of that arc.</figcaption>
+  </figure>
+
+  <h3>Where originality could arise</h3>
+  <ul>
+    <li><b>A new prediction:</b> An observable result that distinguishes it from existing positions is what makes it truly original.</li>
+    <li><b>A new mechanism:</b> Give concrete mathematics for how deformations of a wave determine the values of mass and charge.</li>
+    <li><b>A new framing:</b> Not academic originality, but in essays and popular books the way of explaining is itself the value.</li>
+  </ul>
+</section>
+
+<footer>
+  <p>This is a personal working note, not a peer-reviewed paper. The underlying knowledge extends to mid-2026, so re-check prior work against the latest papers before citing or publishing.</p>
+</footer>
+
+</main>
+</body>
+</html>
