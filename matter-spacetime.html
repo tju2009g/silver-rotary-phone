@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>물질과 시공간의 근본 원리</title>
+<meta name="description" content="근본은 파동이나 입자가 아니라 양자 상태와 대칭 구조라는 가설의 정리와 독창성 평가">
+<style>
+:root{
+  --bg:#fafaf7; --surface:#ffffff; --text:#1c1d22; --muted:#5b5f6b; --line:#e3e2dc;
+  --accent:#3b4cca; --accent-soft:#e8ebff; --warn:#b4531a; --warn-soft:#fdeee2; --ok:#1d7a4f; --ok-soft:#e1f4ea;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#111217; --surface:#1a1c24; --text:#ecedf2; --muted:#9a9eab; --line:#2b2e39;
+    --accent:#8c9bff; --accent-soft:#232844; --warn:#f0a068; --warn-soft:#3a2a1d; --ok:#6fd3a0; --ok-soft:#1b3328;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:"Pretendard","Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",system-ui,sans-serif;
+  line-height:1.75; font-size:17px; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:780px; margin:0 auto; padding:0 20px 80px}
+header{padding:64px 0 32px; border-bottom:1px solid var(--line)}
+.eyebrow{font-size:13px; letter-spacing:.08em; color:var(--accent); font-weight:700; text-transform:uppercase}
+h1{font-size:clamp(28px,5vw,40px); line-height:1.25; margin:10px 0 16px; letter-spacing:-.02em}
+.lede{font-size:19px; color:var(--muted); margin:0}
+nav{position:sticky; top:0; background:var(--bg); z-index:5; border-bottom:1px solid var(--line); overflow-x:auto; white-space:nowrap}
+nav .wrap{padding:0 20px 0; display:flex; gap:20px}
+nav a{display:inline-block; padding:12px 0; font-size:14px; color:var(--muted); text-decoration:none; border-bottom:2px solid transparent}
+nav a:hover{color:var(--accent); border-color:var(--accent)}
+section{padding:44px 0 8px}
+h2{font-size:24px; margin:0 0 6px; letter-spacing:-.01em}
+h2 .n{color:var(--accent); margin-right:8px}
+h3{font-size:18px; margin:28px 0 6px}
+p{margin:10px 0}
+.callout{background:var(--accent-soft); border-left:4px solid var(--accent); padding:18px 20px; border-radius:0 10px 10px 0; font-size:19px; font-weight:600; line-height:1.6}
+.card{background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:18px 20px; margin:14px 0}
+.card h3{margin-top:0}
+.tag{display:inline-block; font-size:12px; font-weight:700; padding:2px 9px; border-radius:99px; margin-right:6px; vertical-align:middle}
+.t-high{background:var(--ok-soft); color:var(--ok)}
+.t-mid{background:var(--accent-soft); color:var(--accent)}
+.t-low{background:var(--warn-soft); color:var(--warn)}
+table{width:100%; border-collapse:collapse; margin:14px 0; font-size:15px; background:var(--surface); border:1px solid var(--line); border-radius:10px; overflow:hidden}
+th,td{text-align:left; padding:11px 14px; border-bottom:1px solid var(--line); vertical-align:top}
+th{background:var(--accent-soft); font-size:13px; letter-spacing:.03em}
+tr:last-child td{border-bottom:none}
+ul{padding-left:20px} li{margin:6px 0}
+.muted{color:var(--muted); font-size:15px}
+.diagram{margin:20px 0; background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:12px}
+.diagram svg{width:100%; height:auto; display:block}
+.diagram text{font-family:inherit}
+.verdict{background:var(--warn-soft); border-left:4px solid var(--warn); padding:16px 20px; border-radius:0 10px 10px 0}
+.verdict b{color:var(--warn)}
+footer{margin-top:60px; padding-top:20px; border-top:1px solid var(--line); font-size:14px; color:var(--muted)}
+.diagram{overflow-x:auto}
+.diagram figcaption{font-size:14px;color:var(--muted);padding:8px 10px 4px;line-height:1.6}
+.tx{fill:var(--text)} .mu{fill:var(--muted)} .ac{fill:var(--accent)}
+.bx{fill:var(--surface);stroke:var(--line);stroke-width:1.2}
+.bxa{fill:var(--accent-soft);stroke:var(--accent);stroke-width:1.2}
+.bxo{fill:var(--ok-soft);stroke:var(--ok);stroke-width:1.2}
+.bxw{fill:var(--warn-soft);stroke:var(--warn);stroke-width:1.2}
+@media (max-width:560px){ body{font-size:16px} table{font-size:14px} th,td{padding:9px 10px} .diagram svg{min-width:560px} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Working Note · Foundations of Physics</div>
+    <h1>물질과 시공간의 근본 원리<br>"실체가 아니라 구조가 먼저다"</h1>
+    <p class="lede">모든 것은 파동이라는 직관에서 출발해, 현대 물리가 이 직관을 어디까지 받아들이는지 따져본 정리. 확립된 사실, 유력한 가설, 내 베팅을 구분해서 적었다.</p>
+  </div>
+</header>
+
+<nav>
+  <div class="wrap">
+    <a href="#s1">결론</a>
+    <a href="#s2">확신도</a>
+    <a href="#s3">네 가지 논거</a>
+    <a href="#s4">후보 이론</a>
+    <a href="#s5">반증 조건</a>
+    <a href="#s6">파동 직관</a>
+    <a href="#s7">독창성</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section id="s1">
+  <h2><span class="n">1</span>한 줄 결론</h2>
+  <div class="callout">근본은 파동도 입자도 아니다. <br>양자 상태와 대칭 구조가 근본이고, 파동·입자·시공간은 그 위에서 드러나는 표현이다.</div>
+  <p class="muted">단, 시공간이 창발한다는 부분은 확립된 사실이 아니라 현재 유력한 방향 중 하나이고, 이 글에서는 내 베팅으로 표시한다.</p>
+
+  <div class="diagram">
+    <svg viewBox="0 0 700 330" role="img" aria-label="근본 구조에서 현상까지의 층위 다이어그램">
+      <defs>
+        <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M1 1L9 5L1 9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </marker>
+      </defs>
+      <g style="color:var(--muted)">
+        <rect x="150" y="14" width="400" height="64" rx="12" fill="var(--accent-soft)" stroke="var(--accent)"/>
+        <text x="350" y="42" text-anchor="middle" font-size="17" font-weight="700" fill="var(--text)">근본 층: 상태공간 + 대칭 + 동역학</text>
+        <text x="350" y="64" text-anchor="middle" font-size="13" fill="var(--muted)">(내 베팅: 힐베르트 공간, 얽힘 구조)</text>
+
+        <line x1="350" y1="78" x2="350" y2="108" stroke="currentColor" stroke-width="1.6" marker-end="url(#ar)"/>
+
+        <rect x="60" y="110" width="250" height="64" rx="12" fill="var(--surface)" stroke="var(--line)"/>
+        <text x="185" y="138" text-anchor="middle" font-size="16" font-weight="600" fill="var(--text)">양자장 / 들뜸</text>
+        <text x="185" y="159" text-anchor="middle" font-size="13" fill="var(--muted)">파동·입자는 같은 상태의 두 얼굴</text>
+
+        <rect x="390" y="110" width="250" height="64" rx="12" fill="var(--surface)" stroke="var(--line)"/>
+        <text x="515" y="138" text-anchor="middle" font-size="16" font-weight="600" fill="var(--text)">시공간 기하</text>
+        <text x="515" y="159" text-anchor="middle" font-size="13" fill="var(--muted)">얽힘 구조에서 창발 (가설)</text>
+
+        <line x1="185" y1="174" x2="300" y2="212" stroke="currentColor" stroke-width="1.6" marker-end="url(#ar)"/>
+        <line x1="515" y1="174" x2="400" y2="212" stroke="currentColor" stroke-width="1.6" marker-end="url(#ar)"/>
+
+        <rect x="150" y="214" width="400" height="64" rx="12" fill="var(--surface)" stroke="var(--line)"/>
+        <text x="350" y="242" text-anchor="middle" font-size="16" font-weight="600" fill="var(--text)">우리가 관측하는 현상</text>
+        <text x="350" y="263" text-anchor="middle" font-size="13" fill="var(--muted)">물질, 속도, 빛, 중력</text>
+      </g>
+      <text x="350" y="312" text-anchor="middle" font-size="12" fill="var(--muted)">위에서 아래로 갈수록 검증이 쉽고, 위로 갈수록 가설의 비중이 커진다</text>
+    </svg>
+  </div>
+</section>
+
+<section id="s2">
+  <h2><span class="n">2</span>층위별 확신도</h2>
+  <table>
+    <tr><th>층위</th><th>주장</th><th>확신도</th></tr>
+    <tr><td>검증됨</td><td>물질은 양자장의 들뜸으로, 중력은 시공간 기하로 기술된다</td><td><span class="tag t-high">매우 높음</span></td></tr>
+    <tr><td>유력</td><td>두 이론은 더 근본적인 이론의 유효 극한이다</td><td><span class="tag t-high">높음</span></td></tr>
+    <tr><td>내 베팅</td><td>시공간은 양자 정보와 얽힘 구조에서 창발한다</td><td><span class="tag t-mid">중간</span></td></tr>
+    <tr><td>미정</td><td>근본 이론의 구체적 형태 (끈, 루프, 기타)</td><td><span class="tag t-low">낮음</span></td></tr>
+  </table>
+  <figure class="diagram">
+    <svg viewBox="0 0 700 210" role="img" aria-label="층위별 확신도 막대그래프">
+      <g font-size="15">
+        <text x="135" y="43" text-anchor="end" class="tx">검증됨</text>
+        <rect x="150" y="26" width="500" height="22" rx="11" fill="var(--line)"/>
+        <rect x="150" y="26" width="475" height="22" rx="11" fill="var(--ok)"/>
+        <text x="135" y="89" text-anchor="end" class="tx">유력</text>
+        <rect x="150" y="72" width="500" height="22" rx="11" fill="var(--line)"/>
+        <rect x="150" y="72" width="400" height="22" rx="11" fill="var(--ok)"/>
+        <text x="135" y="135" text-anchor="end" class="tx">내 베팅</text>
+        <rect x="150" y="118" width="500" height="22" rx="11" fill="var(--line)"/>
+        <rect x="150" y="118" width="250" height="22" rx="11" fill="var(--accent)"/>
+        <text x="135" y="181" text-anchor="end" class="tx">미정</text>
+        <rect x="150" y="164" width="500" height="22" rx="11" fill="var(--line)"/>
+        <rect x="150" y="164" width="100" height="22" rx="11" fill="var(--warn)"/>
+      </g>
+    </svg>
+    <figcaption>막대 길이는 내 주관적 확신도다. 위로 갈수록 실험으로 검증된 영역이고, 아래로 갈수록 가설의 비중이 커진다.</figcaption>
+  </figure>
+</section>
+
+<section id="s3">
+  <h2><span class="n">3</span>핵심 논거 네 가지</h2>
+
+  <div class="card">
+    <h3>① 파동은 "무엇"이 아니라 "어떻게"다</h3>
+    <p>소리는 공기, 물결은 물이 매질이다. 근본 층에서 "무엇의 파동인가"를 물으면 답은 장(field)에서 멈춘다. 장은 어떤 매질 위의 파동이 아니라 그 자체가 기본 존재라서, 매질을 요구하는 질문은 고전적 직관의 잔재다.</p>
+    <figure class="diagram">
+      <svg viewBox="0 0 700 250" role="img" aria-label="매질이 필요한 소리와 매질이 없는 장의 비교">
+        <text x="170" y="28" text-anchor="middle" font-size="16" font-weight="700" class="tx">소리: 매질이 필요하다</text>
+        <path d="M20 90 q18.75 -50 37.5 0 t37.5 0 t37.5 0 t37.5 0 t37.5 0 t37.5 0 t37.5 0 t37.5 0" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+        <g fill="var(--muted)">
+          <circle cx="28" cy="170" r="5"/><circle cx="52" cy="170" r="5"/><circle cx="70" cy="170" r="5"/><circle cx="82" cy="170" r="5"/><circle cx="92" cy="170" r="5"/>
+          <circle cx="118" cy="170" r="5"/><circle cx="146" cy="170" r="5"/><circle cx="164" cy="170" r="5"/><circle cx="176" cy="170" r="5"/><circle cx="186" cy="170" r="5"/>
+          <circle cx="212" cy="170" r="5"/><circle cx="238" cy="170" r="5"/><circle cx="262" cy="170" r="5"/><circle cx="284" cy="170" r="5"/><circle cx="306" cy="170" r="5"/>
+        </g>
+        <text x="170" y="215" text-anchor="middle" font-size="14" class="mu">공기 분자의 밀도 변화가 곧 파동</text>
+        <line x1="350" y1="20" x2="350" y2="230" stroke="var(--line)"/>
+        <text x="525" y="28" text-anchor="middle" font-size="16" font-weight="700" class="tx">전자기장: 매질이 없다</text>
+        <path d="M380 120 q18.75 -50 37.5 0 t37.5 0 t37.5 0 t37.5 0 t37.5 0 t37.5 0 t37.5 0 t37.5 0" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+        <text x="525" y="215" text-anchor="middle" font-size="14" class="mu">장 자체가 출렁이며 빈 공간에서도 전파</text>
+      </svg>
+      <figcaption>소리는 공기가 있어야 하지만, 장은 "무엇 위의 파동"이 아니라 그 자체가 기본 존재다.</figcaption>
+    </figure>
+  </div>
+
+  <div class="card">
+    <h3>② 파동만으로는 이산성을 설명하지 못한다</h3>
+    <p>검출기에는 항상 점으로 찍히고 에너지는 양자화되어 있다(광전효과). 순수 파동이라면 에너지가 연속적으로 퍼져야 한다. 슈뢰딩거의 "입자는 파동다발"이라는 시도가 접힌 이유다. 그래서 파동과 입자는 <b>양자 상태가 측정과 상호작용에서 드러나는 두 얼굴</b>로 보는 편이 일관된다.</p>
+    <figure class="diagram">
+      <svg viewBox="0 0 700 275" role="img" aria-label="이중 슬릿 실험: 파동처럼 퍼지고 점으로 검출된다">
+        <defs><clipPath id="cs"><rect x="256" y="0" width="364" height="260"/></clipPath></defs>
+        <g stroke="var(--accent)" stroke-width="2" opacity=".45">
+          <line x1="110" y1="50" x2="110" y2="210"/><line x1="160" y1="50" x2="160" y2="210"/><line x1="210" y1="50" x2="210" y2="210"/>
+        </g>
+        <text x="110" y="35" text-anchor="middle" font-size="14" class="mu">입사 파동</text>
+        <g clip-path="url(#cs)" fill="none" stroke="var(--accent)" stroke-width="1.5" opacity=".4">
+          <circle cx="250" cy="100" r="45"/><circle cx="250" cy="100" r="95"/><circle cx="250" cy="100" r="145"/><circle cx="250" cy="100" r="195"/><circle cx="250" cy="100" r="245"/><circle cx="250" cy="100" r="295"/><circle cx="250" cy="100" r="345"/>
+          <circle cx="250" cy="160" r="45"/><circle cx="250" cy="160" r="95"/><circle cx="250" cy="160" r="145"/><circle cx="250" cy="160" r="195"/><circle cx="250" cy="160" r="245"/><circle cx="250" cy="160" r="295"/><circle cx="250" cy="160" r="345"/>
+        </g>
+        <g fill="var(--muted)">
+          <rect x="245" y="20" width="10" height="72"/><rect x="245" y="108" width="10" height="44"/><rect x="245" y="168" width="10" height="72"/>
+        </g>
+        <line x1="620" y1="10" x2="620" y2="250" stroke="var(--text)" stroke-width="2"/>
+        <g fill="var(--accent)">
+          <circle cx="650" cy="124" r="3.5"/><circle cx="660" cy="130" r="3.5"/><circle cx="645" cy="134" r="3.5"/><circle cx="668" cy="127" r="3.5"/><circle cx="655" cy="137" r="3.5"/><circle cx="662" cy="121" r="3.5"/><circle cx="648" cy="129" r="3.5"/><circle cx="672" cy="133" r="3.5"/><circle cx="657" cy="131" r="3.5"/>
+          <circle cx="655" cy="82" r="3.5"/><circle cx="648" cy="88" r="3.5"/><circle cx="663" cy="85" r="3.5"/><circle cx="652" cy="92" r="3.5"/><circle cx="660" cy="79" r="3.5"/>
+          <circle cx="657" cy="172" r="3.5"/><circle cx="650" cy="178" r="3.5"/><circle cx="664" cy="175" r="3.5"/><circle cx="654" cy="168" r="3.5"/><circle cx="661" cy="181" r="3.5"/>
+          <circle cx="655" cy="40" r="3.5"/><circle cx="662" cy="44" r="3.5"/><circle cx="656" cy="218" r="3.5"/><circle cx="650" cy="222" r="3.5"/>
+        </g>
+        <text x="250" y="262" text-anchor="middle" font-size="14" class="mu">이중 슬릿</text>
+        <text x="650" y="268" text-anchor="middle" font-size="14" class="mu">검출 스크린</text>
+      </svg>
+      <figcaption>이동하는 동안은 파동처럼 퍼져 간섭하고, 검출될 때는 점 하나로 찍힌다. 점이 쌓이면 간섭무늬가 나타난다.</figcaption>
+    </figure>
+  </div>
+
+  <div class="card">
+    <h3>③ 입자의 정체는 대칭의 표현이다</h3>
+    <p>위그너의 분류에 따르면 기본 입자는 푸앵카레 대칭군의 기약 표현이고, 질량과 스핀은 "무언가의 성질"이 아니라 <b>대칭 구조의 라벨</b>이다. 전하와 색 같은 내부 성질도 게이지 대칭에서 나온다. "무엇으로 되어 있나"보다 "어떤 변환에 대해 불변인가"가 존재를 규정한다.</p>
+    <figure class="diagram">
+      <svg viewBox="0 0 700 250" role="img" aria-label="대칭 구조와 입자 성질 라벨의 대응" style="color:var(--muted)">
+        <defs><marker id="ar2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L9 5L1 9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></marker></defs>
+        <text x="180" y="22" text-anchor="middle" font-size="14" class="mu">대칭 (어떤 변환에 불변인가)</text>
+        <text x="535" y="22" text-anchor="middle" font-size="14" class="mu">입자의 성질 (라벨)</text>
+
+        <rect x="30" y="36" width="300" height="56" rx="10" class="bxa"/>
+        <text x="180" y="62" text-anchor="middle" font-size="16" font-weight="600" class="tx">시공간 대칭</text>
+        <text x="180" y="82" text-anchor="middle" font-size="13" class="mu">푸앵카레군 (이동, 회전, 부스트)</text>
+        <line x1="334" y1="64" x2="396" y2="64" stroke="currentColor" stroke-width="1.6" marker-end="url(#ar2)"/>
+        <rect x="400" y="36" width="270" height="56" rx="10" class="bx"/>
+        <text x="535" y="62" text-anchor="middle" font-size="16" font-weight="600" class="tx">질량 · 스핀</text>
+        <text x="535" y="82" text-anchor="middle" font-size="13" class="mu">위그너의 기약 표현 분류</text>
+
+        <rect x="30" y="102" width="300" height="56" rx="10" class="bxa"/>
+        <text x="180" y="128" text-anchor="middle" font-size="16" font-weight="600" class="tx">U(1) 게이지 대칭</text>
+        <text x="180" y="148" text-anchor="middle" font-size="13" class="mu">위상 변환에 대한 불변성</text>
+        <line x1="334" y1="130" x2="396" y2="130" stroke="currentColor" stroke-width="1.6" marker-end="url(#ar2)"/>
+        <rect x="400" y="102" width="270" height="56" rx="10" class="bx"/>
+        <text x="535" y="128" text-anchor="middle" font-size="16" font-weight="600" class="tx">전하</text>
+        <text x="535" y="148" text-anchor="middle" font-size="13" class="mu">전자기 상호작용</text>
+
+        <rect x="30" y="168" width="300" height="56" rx="10" class="bxa"/>
+        <text x="180" y="194" text-anchor="middle" font-size="16" font-weight="600" class="tx">SU(3) 게이지 대칭</text>
+        <text x="180" y="214" text-anchor="middle" font-size="13" class="mu">색 변환에 대한 불변성</text>
+        <line x1="334" y1="196" x2="396" y2="196" stroke="currentColor" stroke-width="1.6" marker-end="url(#ar2)"/>
+        <rect x="400" y="168" width="270" height="56" rx="10" class="bx"/>
+        <text x="535" y="194" text-anchor="middle" font-size="16" font-weight="600" class="tx">색전하</text>
+        <text x="535" y="214" text-anchor="middle" font-size="13" class="mu">강한 상호작용</text>
+      </svg>
+      <figcaption>입자의 성질은 "물체에 붙은 속성"이 아니라 대칭 구조가 부여하는 라벨로 읽을 수 있다.</figcaption>
+    </figure>
+  </div>
+
+  <div class="card">
+    <h3>④ 시공간은 배경이 아니라 창발물일 가능성이 크다</h3>
+    <ul>
+      <li>일반 상대성과 양자역학은 특이점에서 충돌한다. 시공간이 근본이라면 이 충돌은 풀리지 않는다.</li>
+      <li>블랙홀 엔트로피가 부피가 아니라 면적에 비례한다(베켄슈타인-호킹). 정보가 경계에 인코딩된다는 힌트다.</li>
+      <li>AdS/CFT에서는 얽힘 구조가 시공간 기하를 결정한다. 다만 이는 우리 우주와 다른 모델 우주에서 증명된 결과다.</li>
+    </ul>
+    <figure class="diagram">
+      <svg viewBox="0 0 700 300" role="img" aria-label="경계의 얽힘이 내부 시공간을 만드는 홀로그래피 그림과 블랙홀 엔트로피의 면적 비례">
+        <text x="180" y="24" text-anchor="middle" font-size="15" font-weight="700" class="tx">경계에서 내부로</text>
+        <text x="520" y="24" text-anchor="middle" font-size="15" font-weight="700" class="tx">정보는 면적에 담긴다</text>
+        <circle cx="180" cy="150" r="110" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+        <g fill="none" stroke="var(--accent)" stroke-width="1.8" opacity=".8">
+          <path d="M290 150 Q185 166 91 215"/><path d="M269 215 Q180 150 91 85"/><path d="M214 255 Q211 160 269 85"/>
+          <path d="M146 255 Q163 150 146 45"/><path d="M70 150 Q175 134 269 85"/><path d="M290 150 Q216 124 214 45"/>
+        </g>
+        <g fill="var(--accent)">
+          <circle cx="290" cy="150" r="5"/><circle cx="269" cy="215" r="5"/><circle cx="214" cy="255" r="5"/><circle cx="146" cy="255" r="5"/><circle cx="91" cy="215" r="5"/>
+          <circle cx="70" cy="150" r="5"/><circle cx="91" cy="85" r="5"/><circle cx="146" cy="45" r="5"/><circle cx="214" cy="45" r="5"/><circle cx="269" cy="85" r="5"/>
+        </g>
+        <text x="180" y="290" text-anchor="middle" font-size="14" class="mu">경계의 얽힘 선 = 내부 시공간의 연결</text>
+        <line x1="350" y1="20" x2="350" y2="285" stroke="var(--line)"/>
+        <circle cx="520" cy="135" r="80" fill="var(--surface)" stroke="var(--text)" stroke-width="2"/>
+        <g fill="none" stroke="var(--muted)" stroke-width="1.2">
+          <ellipse cx="520" cy="135" rx="80" ry="22"/><ellipse cx="520" cy="90" rx="66" ry="18"/><ellipse cx="520" cy="180" rx="66" ry="18"/>
+          <ellipse cx="520" cy="135" rx="30" ry="80"/><ellipse cx="520" cy="135" rx="60" ry="80"/>
+        </g>
+        <polygon points="545,98 580,100 582,128 548,126" fill="var(--accent)" opacity=".55"/>
+        <text x="520" y="248" text-anchor="middle" font-size="14" class="tx">블랙홀 엔트로피는 부피가 아니라 면적에 비례</text>
+        <text x="520" y="274" text-anchor="middle" font-size="16" font-weight="700" class="ac">S = A / 4ℓₚ²</text>
+      </svg>
+      <figcaption>왼쪽은 AdS/CFT의 개념도(모델 우주), 오른쪽은 베켄슈타인-호킹 공식이다. 둘 다 "정보는 경계에 있다"는 방향을 가리킨다.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="s4">
+  <h2><span class="n">4</span>후보 이론과 평가</h2>
+  <table>
+    <tr><th>후보</th><th>평가</th></tr>
+    <tr><td>에테르 (실체적 매질)</td><td>로런츠 대칭과 충돌해 폐기</td></tr>
+    <tr><td>양자장론</td><td>가장 검증된 틀이지만 시공간 배경을 전제한다</td></tr>
+    <tr><td>끈 이론</td><td>"만물은 진동"에 가장 가까운 문자 그대로의 버전. 배경 시공간이 필요하고 실험 검증이 없다</td></tr>
+    <tr><td>다세계 / 파동함수 실재론</td><td>근본은 힐베르트 공간의 상태, 3차원 공간은 창발. <b>내 입장과 가장 가까움</b></td></tr>
+    <tr><td>얽힘 기반 시공간 (ER=EPR 등)</td><td>시공간 창발의 가장 구체적인 후보. 아직 미완성</td></tr>
+  </table>
+  <figure class="diagram">
+    <svg viewBox="0 0 700 330" role="img" aria-label="후보 이론의 검증 수준과 시공간 창발 정도를 나타낸 지도">
+      <line x1="70" y1="290" x2="665" y2="290" stroke="var(--muted)" stroke-width="1.5"/>
+      <line x1="70" y1="15" x2="70" y2="290" stroke="var(--muted)" stroke-width="1.5"/>
+      <text x="665" y="312" text-anchor="end" font-size="13" class="mu">실험 검증 수준 높음 →</text>
+      <text x="70" y="312" font-size="13" class="mu">낮음</text>
+      <text x="62" y="30" text-anchor="end" font-size="13" class="mu">창발</text>
+      <text x="62" y="288" text-anchor="end" font-size="13" class="mu">배경</text>
+      <text x="80" y="14" font-size="13" class="mu">↑ 시공간을 창발로 보는 정도</text>
+      <ellipse cx="290" cy="88" rx="125" ry="58" fill="var(--accent-soft)" stroke="var(--accent)" stroke-dasharray="6 5" opacity=".8"/>
+      <text x="415" y="48" font-size="13" font-weight="700" class="ac">← 내 베팅 영역</text>
+      <circle cx="240" cy="62" r="9" fill="var(--accent)"/>
+      <text x="256" y="67" font-size="14" class="tx">얽힘 기반 시공간</text>
+      <circle cx="330" cy="118" r="9" fill="var(--accent)"/>
+      <text x="346" y="123" font-size="14" class="tx">다세계 / 파동함수 실재론</text>
+      <circle cx="190" cy="195" r="9" fill="var(--warn)"/>
+      <text x="206" y="200" font-size="14" class="tx">끈 이론</text>
+      <circle cx="600" cy="262" r="9" fill="var(--ok)"/>
+      <text x="586" y="267" text-anchor="end" font-size="14" class="tx">양자장론</text>
+      <circle cx="105" cy="262" r="9" fill="var(--muted)" opacity=".5"/>
+      <text x="121" y="267" font-size="14" class="mu">에테르 (폐기)</text>
+    </svg>
+    <figcaption>위치는 정성적 평가다. 창발 쪽으로 갈수록 가설의 비중이 커지고, 실험 검증은 아직 오른쪽에 도달하지 못했다.</figcaption>
+  </figure>
+</section>
+
+<section id="s5">
+  <h2><span class="n">5</span>이 입장이 틀릴 조건</h2>
+  <ul>
+    <li><b>중력의 양자성이 관측되지 않는 경우.</b> 중력으로 매개되는 두 물체의 얽힘 실험 등에서 양자적 성질이 나오지 않으면 창발 시나리오는 후퇴한다.</li>
+    <li><b>양자역학의 선형성이 깨지는 경우.</b> 파동함수 붕괴의 물리적 증거가 나오면 상태공간 중심 그림이 흔들린다.</li>
+    <li><b>참고:</b> 시공간에 최소 길이나 이산 구조가 있어도 "근본은 상태공간"이라는 주장 자체는 유지된다.</li>
+  </ul>
+  <figure class="diagram">
+    <svg viewBox="0 0 700 250" role="img" aria-label="두 가지 검증 실험의 결과에 따른 가설의 강화와 후퇴" style="color:var(--muted)">
+      <rect x="40" y="16" width="270" height="60" rx="10" class="bxa"/>
+      <text x="175" y="42" text-anchor="middle" font-size="16" font-weight="700" class="tx">중력의 양자성 실험</text>
+      <text x="175" y="63" text-anchor="middle" font-size="13" class="mu">중력이 매개하는 얽힘 검출 등</text>
+      <line x1="175" y1="76" x2="95" y2="150" stroke="currentColor" stroke-width="1.6"/>
+      <line x1="175" y1="76" x2="255" y2="150" stroke="currentColor" stroke-width="1.6"/>
+      <rect x="20" y="150" width="150" height="64" rx="10" class="bxo"/>
+      <text x="95" y="177" text-anchor="middle" font-size="15" font-weight="700" class="tx">관측됨</text>
+      <text x="95" y="199" text-anchor="middle" font-size="13" class="mu">창발 시나리오 강화</text>
+      <rect x="180" y="150" width="150" height="64" rx="10" class="bxw"/>
+      <text x="255" y="177" text-anchor="middle" font-size="15" font-weight="700" class="tx">끝내 불검출</text>
+      <text x="255" y="199" text-anchor="middle" font-size="13" class="mu">창발 시나리오 후퇴</text>
+
+      <rect x="390" y="16" width="270" height="60" rx="10" class="bxa"/>
+      <text x="525" y="42" text-anchor="middle" font-size="16" font-weight="700" class="tx">양자역학 선형성 검증</text>
+      <text x="525" y="63" text-anchor="middle" font-size="13" class="mu">파동함수 붕괴의 물리적 증거 탐색</text>
+      <line x1="525" y1="76" x2="445" y2="150" stroke="currentColor" stroke-width="1.6"/>
+      <line x1="525" y1="76" x2="605" y2="150" stroke="currentColor" stroke-width="1.6"/>
+      <rect x="370" y="150" width="150" height="64" rx="10" class="bxo"/>
+      <text x="445" y="177" text-anchor="middle" font-size="15" font-weight="700" class="tx">선형성 유지</text>
+      <text x="445" y="199" text-anchor="middle" font-size="13" class="mu">상태공간 그림 유지</text>
+      <rect x="530" y="150" width="150" height="64" rx="10" class="bxw"/>
+      <text x="605" y="177" text-anchor="middle" font-size="15" font-weight="700" class="tx">붕괴 증거 발견</text>
+      <text x="605" y="199" text-anchor="middle" font-size="13" class="mu">그림 자체가 흔들림</text>
+      <text x="350" y="240" text-anchor="middle" font-size="13" class="mu">반증 가능한 지점이 있다는 것이 이 입장을 철학이 아닌 가설로 만든다</text>
+    </svg>
+    <figcaption>초록은 입장을 지지하는 결과, 주황은 약화시키는 결과다.</figcaption>
+  </figure>
+</section>
+
+<section id="s6">
+  <h2><span class="n">6</span>"모든 것은 파동"이라는 직관과의 관계</h2>
+  <p>"파동의 변형이 물질, 속도, 빛을 만든다"는 직관에서 살릴 것은 <b>현상이 근본 구조의 동역학적 표현이라는 관점</b>이다. 가설로 올리려면 세 가지를 채워야 한다.</p>
+  <ol>
+    <li>파동을 이루는 존재(장 또는 상태공간)와 그 운동방정식을 명시한다.</li>
+    <li>이산성과 보존량(질량, 전하, 스핀)이 어떻게 나오는지 설명한다.</li>
+    <li>기존 이론과 구별되는 관측 가능한 예측을 하나라도 제시한다.</li>
+  </ol>
+  <p class="muted">3번이 비어 있으면 해석이고, 채워지면 가설이다.</p>
+  <figure class="diagram">
+    <svg viewBox="0 0 700 230" role="img" aria-label="해석에서 가설, 이론으로 올라가는 계단">
+      <rect x="40" y="140" width="200" height="70" rx="8" class="bx"/>
+      <text x="140" y="168" text-anchor="middle" font-size="17" font-weight="700" class="tx">해석</text>
+      <text x="140" y="192" text-anchor="middle" font-size="13" class="mu">구조·장·상태공간 명시</text>
+      <rect x="250" y="90" width="200" height="120" rx="8" class="bxa"/>
+      <text x="350" y="118" text-anchor="middle" font-size="17" font-weight="700" class="tx">가설</text>
+      <text x="350" y="142" text-anchor="middle" font-size="13" class="mu">+ 이산성·보존량 설명</text>
+      <rect x="460" y="40" width="200" height="170" rx="8" class="bxo"/>
+      <text x="560" y="68" text-anchor="middle" font-size="17" font-weight="700" class="tx">이론</text>
+      <text x="560" y="92" text-anchor="middle" font-size="13" class="mu">+ 새로운 예측 (반증 가능)</text>
+      <text x="350" y="28" text-anchor="middle" font-size="13" class="mu">가치는 이름이 아니라 새로 걸리는 제약에서 나온다</text>
+    </svg>
+    <figcaption>"모든 것은 파동"이라는 직관은 지금 첫 단계에 있고, 올라갈수록 요구되는 엄밀성이 커진다.</figcaption>
+  </figure>
+</section>
+
+<section id="s7">
+  <h2><span class="n">7</span>독창성 평가와 선행 연구</h2>
+  <div class="verdict"><b>평가:</b> 물리 이론으로서의 독창성은 아직 없다. 현대 이론물리와 과학철학에서 이미 발전된 입장들의 종합이다. 그건 직관이 올바른 방향을 가리켰다는 뜻이기도 하다.</div>
+
+  <table>
+    <tr><th>요소</th><th>선행 연구</th></tr>
+    <tr><td>구조 우선 존재론</td><td>존재론적 구조 실재론 (Ladyman, French), 수학적 우주 가설 (Tegmark)</td></tr>
+    <tr><td>입자 = 대칭의 표현</td><td>Wigner (1939) 푸앵카레 군 분류, 게이지 이론</td></tr>
+    <tr><td>파동함수 실재론, 시공간 창발</td><td>Everett 해석 계열: Sean Carroll("힐베르트 공간 근본주의"), David Wallace</td></tr>
+    <tr><td>얽힘에서 창발하는 시공간</td><td>Van Raamsdonk (2010), Maldacena–Susskind ER=EPR (2013), Ryu–Takayanagi</td></tr>
+    <tr><td>정보가 근본</td><td>Wheeler "It from Bit", 홀로그래피 원리 ('t Hooft, Susskind)</td></tr>
+    <tr><td>장이 근본, 입자는 들뜸</td><td>Weinberg, Wilczek 등 QFT 표준 입장</td></tr>
+  </table>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 700 370" role="img" aria-label="이 글의 입장과 여섯 가지 선행 연구의 관계">
+      <g stroke="var(--muted)" stroke-width="1.5" opacity=".6">
+        <line x1="350" y1="185" x2="350" y2="50"/><line x1="350" y1="185" x2="590" y2="105"/><line x1="350" y1="185" x2="590" y2="265"/>
+        <line x1="350" y1="185" x2="350" y2="325"/><line x1="350" y1="185" x2="110" y2="265"/><line x1="350" y1="185" x2="110" y2="105"/>
+      </g>
+      <ellipse cx="350" cy="185" rx="82" ry="38" class="bxa" style="stroke-width:2"/>
+      <text x="350" y="182" text-anchor="middle" font-size="16" font-weight="700" class="tx">이 글의 입장</text>
+      <text x="350" y="202" text-anchor="middle" font-size="13" class="mu">종합</text>
+
+      <rect x="255" y="25" width="190" height="50" rx="9" class="bx"/>
+      <text x="350" y="46" text-anchor="middle" font-size="15" font-weight="700" class="tx">구조 실재론</text>
+      <text x="350" y="64" text-anchor="middle" font-size="12" class="mu">Ladyman · French · Tegmark</text>
+
+      <rect x="495" y="80" width="190" height="50" rx="9" class="bx"/>
+      <text x="590" y="101" text-anchor="middle" font-size="15" font-weight="700" class="tx">대칭 = 입자</text>
+      <text x="590" y="119" text-anchor="middle" font-size="12" class="mu">Wigner 1939 · 게이지 이론</text>
+
+      <rect x="495" y="240" width="190" height="50" rx="9" class="bx"/>
+      <text x="590" y="261" text-anchor="middle" font-size="15" font-weight="700" class="tx">파동함수 실재론</text>
+      <text x="590" y="279" text-anchor="middle" font-size="12" class="mu">Everett · Carroll · Wallace</text>
+
+      <rect x="255" y="300" width="190" height="50" rx="9" class="bx"/>
+      <text x="350" y="321" text-anchor="middle" font-size="15" font-weight="700" class="tx">얽힘 → 시공간</text>
+      <text x="350" y="339" text-anchor="middle" font-size="12" class="mu">Van Raamsdonk · ER=EPR · RT</text>
+
+      <rect x="15" y="240" width="190" height="50" rx="9" class="bx"/>
+      <text x="110" y="261" text-anchor="middle" font-size="15" font-weight="700" class="tx">정보가 근본</text>
+      <text x="110" y="279" text-anchor="middle" font-size="12" class="mu">Wheeler · 't Hooft · Susskind</text>
+
+      <rect x="15" y="80" width="190" height="50" rx="9" class="bx"/>
+      <text x="110" y="101" text-anchor="middle" font-size="15" font-weight="700" class="tx">장이 근본</text>
+      <text x="110" y="119" text-anchor="middle" font-size="12" class="mu">Weinberg · Wilczek</text>
+    </svg>
+    <figcaption>여섯 갈래의 기존 입장이 만나는 지점에 있다. 새로운 것은 갈래가 아니라 조합이다.</figcaption>
+  </figure>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 700 240" role="img" aria-label="선행 연구의 연도별 타임라인">
+      <line x1="30" y1="140" x2="680" y2="140" stroke="var(--muted)" stroke-width="2"/>
+      <g stroke="var(--muted)" stroke-width="1.2">
+        <line x1="102" y1="140" x2="102" y2="102"/><line x1="226" y1="140" x2="226" y2="178"/><line x1="336" y1="140" x2="336" y2="102"/><line x1="453" y1="140" x2="453" y2="178"/>
+        <line x1="501" y1="140" x2="501" y2="102"/><line x1="563" y1="140" x2="563" y2="178"/><line x1="591" y1="140" x2="591" y2="102"/><line x1="611" y1="140" x2="611" y2="178"/>
+      </g>
+      <g fill="var(--accent)">
+        <circle cx="102" cy="140" r="6"/><circle cx="226" cy="140" r="6"/><circle cx="336" cy="140" r="6"/><circle cx="453" cy="140" r="6"/>
+        <circle cx="501" cy="140" r="6"/><circle cx="563" cy="140" r="6"/><circle cx="591" cy="140" r="6"/><circle cx="611" cy="140" r="6"/>
+      </g>
+      <g font-size="14" font-weight="700" text-anchor="middle" class="tx">
+        <text x="102" y="94">1939</text><text x="336" y="94">1973</text><text x="501" y="94">1997</text><text x="591" y="94">2010</text>
+        <text x="226" y="198">1957</text><text x="453" y="198">1990</text><text x="563" y="198">2006</text>
+      </g>
+      <text x="611" y="198" font-size="14" font-weight="700" text-anchor="start" class="tx">2013</text>
+      <g font-size="12.5" text-anchor="middle" class="mu">
+        <text x="102" y="78">Wigner 대칭 분류</text><text x="336" y="78">블랙홀 엔트로피</text><text x="501" y="78">AdS/CFT</text><text x="591" y="78">얽힘→시공간</text>
+        <text x="226" y="216">Everett 다세계</text><text x="453" y="216">It from Bit</text><text x="563" y="216">RT 공식</text>
+      </g>
+      <text x="611" y="216" font-size="12.5" text-anchor="start" class="mu">ER=EPR</text>
+    </svg>
+    <figcaption>구조에서 정보, 얽힘으로 이어지는 약 80년의 흐름. 이 글의 입장은 이 흐름의 끝에 놓인 종합이다.</figcaption>
+  </figure>
+
+  <h3>독창성이 생길 수 있는 지점</h3>
+  <ul>
+    <li><b>새로운 예측:</b> 기존 입장과 구별되는 관측 결과를 내면 진짜 독창성이 된다.</li>
+    <li><b>새로운 메커니즘:</b> 파동의 변형이 질량과 전하의 값을 어떻게 결정하는지 구체적 수학으로 제시한다.</li>
+    <li><b>새로운 프레임:</b> 학술적 독창성은 아니지만, 에세이와 대중서에서는 설명 방식 자체가 가치다.</li>
+  </ul>
+</section>
+
+<footer>
+  <p>이 글은 개인 정리 노트이며 동료 검토를 거친 논문이 아니다. 작성 기준 지식은 2026년 중반까지이므로, 인용하거나 출판하기 전에 최신 논문으로 선행 연구를 다시 점검할 것.</p>
+</footer>
+
+</main>
+</body>
+</html>
