@@ -1,0 +1,699 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>쉬운 설명: 물질과 시공간의 근본 원리</title>
+<meta name="description" content="세상의 바닥에 있는 것은 파동도 알갱이도 아니라 상태와 규칙(대칭)일지도 모른다는 생각을, 비유와 그림으로 쉽게 풀어 쓴 노트">
+<link rel="alternate" hreflang="en" href="matter-spacetime-en.html">
+<style>
+:root{
+  --bg:#fafaf7; --surface:#ffffff; --text:#1c1d22; --muted:#5b5f6b; --line:#e3e2dc;
+  --accent:#3b4cca; --accent-soft:#e8ebff; --warn:#b4531a; --warn-soft:#fdeee2; --ok:#1d7a4f; --ok-soft:#e1f4ea;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#111217; --surface:#1a1c24; --text:#ecedf2; --muted:#9a9eab; --line:#2b2e39;
+    --accent:#8c9bff; --accent-soft:#232844; --warn:#f0a068; --warn-soft:#3a2a1d; --ok:#6fd3a0; --ok-soft:#1b3328;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:"Pretendard","Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",system-ui,sans-serif;
+  line-height:1.85; font-size:17px; -webkit-font-smoothing:antialiased; word-break:keep-all;
+}
+.wrap{max-width:780px; margin:0 auto; padding:0 20px 80px}
+header{padding:64px 0 32px; border-bottom:1px solid var(--line)}
+.eyebrow{font-size:13px; letter-spacing:.08em; color:var(--accent); font-weight:700}
+h1{font-size:clamp(28px,5vw,40px); line-height:1.3; margin:10px 0 16px; letter-spacing:-.02em}
+.lede{font-size:19px; color:var(--muted); margin:0}
+nav{position:sticky; top:0; background:var(--bg); z-index:5; border-bottom:1px solid var(--line); overflow-x:auto; white-space:nowrap}
+nav .wrap{padding:0 20px 0; display:flex; gap:20px}
+nav a{display:inline-block; padding:12px 0; font-size:14px; color:var(--muted); text-decoration:none; border-bottom:2px solid transparent}
+nav a:hover{color:var(--accent); border-color:var(--accent)}
+nav a.lang{margin-left:auto; font-weight:700; color:var(--accent)}
+section{padding:44px 0 8px}
+h2{font-size:25px; margin:0 0 8px; letter-spacing:-.01em}
+h2 .n{color:var(--accent); margin-right:8px}
+h3{font-size:19px; margin:28px 0 6px}
+p{margin:12px 0}
+.callout{background:var(--accent-soft); border-left:4px solid var(--accent); padding:18px 20px; border-radius:0 10px 10px 0; font-size:19px; font-weight:600; line-height:1.7}
+.card{background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:18px 20px; margin:14px 0}
+.card h3{margin-top:0}
+.tldr{background:var(--accent-soft); border-radius:8px; padding:10px 14px; font-size:15.5px; margin:14px 0 4px}
+.tldr b{color:var(--accent); margin-right:6px}
+.tag{display:inline-block; font-size:12px; font-weight:700; padding:2px 9px; border-radius:99px; margin-right:6px; vertical-align:middle; white-space:nowrap}
+.t-high{background:var(--ok-soft); color:var(--ok)}
+.t-mid{background:var(--accent-soft); color:var(--accent)}
+.t-low{background:var(--warn-soft); color:var(--warn)}
+table{width:100%; border-collapse:collapse; margin:14px 0; font-size:15px; background:var(--surface); border:1px solid var(--line); border-radius:10px; overflow:hidden}
+th,td{text-align:left; padding:11px 14px; border-bottom:1px solid var(--line); vertical-align:top}
+th{background:var(--accent-soft); font-size:13px; letter-spacing:.03em}
+tr:last-child td{border-bottom:none}
+ul,ol{padding-left:22px} li{margin:8px 0}
+.muted{color:var(--muted); font-size:15px}
+.diagram{margin:20px 0; background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:12px; overflow-x:auto}
+.diagram svg{width:100%; height:auto; display:block}
+.diagram text{font-family:inherit}
+.diagram figcaption{font-size:14px;color:var(--muted);padding:8px 10px 4px;line-height:1.7}
+.verdict{background:var(--warn-soft); border-left:4px solid var(--warn); padding:16px 20px; border-radius:0 10px 10px 0}
+.verdict b{color:var(--warn)}
+.legend{display:flex; flex-wrap:wrap; gap:10px 18px; align-items:center; margin:18px 0 0; font-size:14px; color:var(--muted)}
+.gl{display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin:14px 0}
+.gl div{background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:12px 14px; font-size:15px; line-height:1.7}
+.gl b{display:block; color:var(--accent); margin-bottom:2px}
+.think li{margin:12px 0}
+footer{margin-top:60px; padding-top:20px; border-top:1px solid var(--line); font-size:14px; color:var(--muted)}
+.tx{fill:var(--text)} .mu{fill:var(--muted)} .ac{fill:var(--accent)}
+.bx{fill:var(--surface);stroke:var(--line);stroke-width:1.2}
+.bxa{fill:var(--accent-soft);stroke:var(--accent);stroke-width:1.2}
+.bxo{fill:var(--ok-soft);stroke:var(--ok);stroke-width:1.2}
+.bxw{fill:var(--warn-soft);stroke:var(--warn);stroke-width:1.2}
+@media (max-width:560px){ body{font-size:16px} table{font-size:14px} th,td{padding:9px 10px} .diagram svg{min-width:560px} .gl{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">쉬운 버전 · 처음 읽는 사람을 위한 설명</div>
+    <h1>세상은 무엇으로 이루어져 있을까?<br>"재료보다 규칙이 먼저일지도 몰라요"</h1>
+    <p class="lede">'모든 건 파동이 아닐까?' 하는 생각에서 출발해, 현대 물리학이 그 생각을 어디까지 받아들이는지 따져본 노트예요. 이미 확인된 사실, 유력한 가설, 그리고 내 추측을 섞이지 않게 나눠서 적었어요.</p>
+    <div class="legend">
+      <span><span class="tag t-high">확실함</span>실험으로 확인됨</span>
+      <span><span class="tag t-mid">내 추측</span>유력하지만 증명은 아직</span>
+      <span><span class="tag t-low">아직 몰라</span>답이 없는 영역</span>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="wrap">
+    <a href="#s1">한 줄 결론</a>
+    <a href="#s2">얼마나 확실?</a>
+    <a href="#s3">이유 4가지</a>
+    <a href="#s4">경쟁 이론들</a>
+    <a href="#s5">틀릴 조건</a>
+    <a href="#s6">파동 생각</a>
+    <a href="#s7">독창성</a>
+    <a href="#s8">용어 사전</a>
+    <a class="lang" href="matter-spacetime.html">자세한 버전</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section id="s1">
+  <h2><span class="n">1</span>한 줄 결론</h2>
+  <div class="callout">세상의 바닥에 있는 건 '파동'도 '알갱이'도 아닐지 몰라요. 바닥에는 '상태'와 '규칙(대칭)'이 있고, 파동·알갱이·시공간은 그 위에서 우리 눈에 드러나는 모습일 수 있어요.</div>
+  <p class="muted">단, '시공간이 생겨난다'는 부분은 확정된 사실이 아니라 지금 유력한 방향 중 하나예요. 이 글에서는 내 추측(베팅)이라고 표시했어요.</p>
+
+  <h3>체스로 이해하는 핵심 아이디어</h3>
+  <p>체스의 나이트(말)를 떠올려 보세요. 나무로 깎았든 플라스틱이든 상관없어요. 나이트를 나이트로 만드는 건 재료가 아니라 <b>'L자로 움직인다'는 규칙</b>이에요. 이 글의 핵심은, 전자나 광자 같은 입자도 '무엇으로 만들어졌나'보다 '어떤 규칙을 따르나'로 정체가 정해질 수 있다는 생각이에요.</p>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 700 270" role="img" aria-label="재료가 달라도 이동 규칙이 같으면 같은 나이트라는 체스 비유">
+      <text x="140" y="22" text-anchor="middle" font-size="14" class="mu">나이트가 갈 수 있는 칸 (L자 이동)</text>
+      <rect x="40" y="30" width="40" height="40" fill="var(--accent-soft)" stroke="var(--line)"/>
+      <rect x="80" y="30" width="40" height="40" fill="var(--surface)" stroke="var(--line)"/>
+      <rect x="120" y="30" width="40" height="40" fill="var(--accent-soft)" stroke="var(--line)"/>
+      <rect x="160" y="30" width="40" height="40" fill="var(--surface)" stroke="var(--line)"/>
+      <rect x="200" y="30" width="40" height="40" fill="var(--accent-soft)" stroke="var(--line)"/>
+      <rect x="40" y="70" width="40" height="40" fill="var(--surface)" stroke="var(--line)"/>
+      <rect x="80" y="70" width="40" height="40" fill="var(--accent-soft)" stroke="var(--line)"/>
+      <rect x="120" y="70" width="40" height="40" fill="var(--surface)" stroke="var(--line)"/>
+      <rect x="160" y="70" width="40" height="40" fill="var(--accent-soft)" stroke="var(--line)"/>
+      <rect x="200" y="70" width="40" height="40" fill="var(--surface)" stroke="var(--line)"/>
+      <rect x="40" y="110" width="40" height="40" fill="var(--accent-soft)" stroke="var(--line)"/>
+      <rect x="80" y="110" width="40" height="40" fill="var(--surface)" stroke="var(--line)"/>
+      <rect x="120" y="110" width="40" height="40" fill="var(--accent-soft)" stroke="var(--line)"/>
+      <rect x="160" y="110" width="40" height="40" fill="var(--surface)" stroke="var(--line)"/>
+      <rect x="200" y="110" width="40" height="40" fill="var(--accent-soft)" stroke="var(--line)"/>
+      <rect x="40" y="150" width="40" height="40" fill="var(--surface)" stroke="var(--line)"/>
+      <rect x="80" y="150" width="40" height="40" fill="var(--accent-soft)" stroke="var(--line)"/>
+      <rect x="120" y="150" width="40" height="40" fill="var(--surface)" stroke="var(--line)"/>
+      <rect x="160" y="150" width="40" height="40" fill="var(--accent-soft)" stroke="var(--line)"/>
+      <rect x="200" y="150" width="40" height="40" fill="var(--surface)" stroke="var(--line)"/>
+      <rect x="40" y="190" width="40" height="40" fill="var(--accent-soft)" stroke="var(--line)"/>
+      <rect x="80" y="190" width="40" height="40" fill="var(--surface)" stroke="var(--line)"/>
+      <rect x="120" y="190" width="40" height="40" fill="var(--accent-soft)" stroke="var(--line)"/>
+      <rect x="160" y="190" width="40" height="40" fill="var(--surface)" stroke="var(--line)"/>
+      <rect x="200" y="190" width="40" height="40" fill="var(--accent-soft)" stroke="var(--line)"/>
+      <rect x="40" y="30" width="200" height="200" fill="none" stroke="var(--muted)" stroke-width="1.5"/>
+      <circle cx="100.0" cy="50.0" r="7" fill="var(--accent)"/>
+      <circle cx="180.0" cy="50.0" r="7" fill="var(--accent)"/>
+      <circle cx="60.0" cy="90.0" r="7" fill="var(--accent)"/>
+      <circle cx="220.0" cy="90.0" r="7" fill="var(--accent)"/>
+      <circle cx="60.0" cy="170.0" r="7" fill="var(--accent)"/>
+      <circle cx="220.0" cy="170.0" r="7" fill="var(--accent)"/>
+      <circle cx="100.0" cy="210.0" r="7" fill="var(--accent)"/>
+      <circle cx="180.0" cy="210.0" r="7" fill="var(--accent)"/>
+      <path d="M140.0 130.0 L140.0 50.0 L180.0 50.0" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="4 4" opacity=".7"/>
+      <circle cx="140.0" cy="130.0" r="15" fill="var(--text)"/>
+      <text x="140.0" y="136.0" text-anchor="middle" font-size="16" font-weight="700" fill="var(--bg)">N</text>
+      <text x="140" y="256" text-anchor="middle" font-size="13" class="mu">가운데 말에서 점이 찍힌 칸으로만 이동</text>
+
+      <text x="480" y="22" text-anchor="middle" font-size="14" class="mu">재료가 달라도…</text>
+      <circle cx="400" cy="90" r="30" fill="#b07a4a" stroke="#7a5230" stroke-width="2"/>
+      <text x="400" y="99" text-anchor="middle" font-size="26" font-weight="700" fill="#fff">N</text>
+      <text x="400" y="140" text-anchor="middle" font-size="13" class="tx">나무 나이트</text>
+      <text x="480" y="98" text-anchor="middle" font-size="28" font-weight="700" class="tx">=</text>
+      <circle cx="560" cy="90" r="30" fill="#9aa0b0" stroke="#6c7280" stroke-width="2"/>
+      <text x="560" y="99" text-anchor="middle" font-size="26" font-weight="700" fill="#fff">N</text>
+      <text x="560" y="140" text-anchor="middle" font-size="13" class="tx">플라스틱 나이트</text>
+      <rect x="360" y="170" width="240" height="64" rx="10" class="bxa"/>
+      <text x="480" y="197" text-anchor="middle" font-size="16" font-weight="700" class="tx">같은 규칙 = 같은 나이트</text>
+      <text x="480" y="219" text-anchor="middle" font-size="13" class="mu">정체를 정하는 건 '규칙'</text>
+    </svg>
+    <figcaption>입자의 정체도 "무엇으로 되어 있나"보다 "어떤 규칙을 따르나"로 정해진다는 것이 이 글의 출발점이에요.</figcaption>
+  </figure>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 700 330" role="img" aria-label="바탕 구조에서 우리가 보는 현상까지의 층 구조">
+      <defs>
+        <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M1 1L9 5L1 9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </marker>
+      </defs>
+      <g style="color:var(--muted)">
+        <rect x="150" y="14" width="400" height="64" rx="12" fill="var(--accent-soft)" stroke="var(--accent)"/>
+        <text x="350" y="42" text-anchor="middle" font-size="16" font-weight="700" fill="var(--text)">바탕: 상태 + 규칙(대칭) + 변화 법칙</text>
+        <text x="350" y="64" text-anchor="middle" font-size="13" fill="var(--muted)">(내 추측: 상태공간, 얽힘 구조)</text>
+
+        <line x1="350" y1="78" x2="350" y2="108" stroke="currentColor" stroke-width="1.6" marker-end="url(#ar)"/>
+
+        <rect x="60" y="110" width="250" height="64" rx="12" fill="var(--surface)" stroke="var(--line)"/>
+        <text x="185" y="138" text-anchor="middle" font-size="16" font-weight="600" fill="var(--text)">양자장 · 들뜸</text>
+        <text x="185" y="159" text-anchor="middle" font-size="13" fill="var(--muted)">파동·알갱이는 같은 것의 두 얼굴</text>
+
+        <rect x="390" y="110" width="250" height="64" rx="12" fill="var(--surface)" stroke="var(--line)"/>
+        <text x="515" y="138" text-anchor="middle" font-size="16" font-weight="600" fill="var(--text)">시공간</text>
+        <text x="515" y="159" text-anchor="middle" font-size="13" fill="var(--muted)">얽힘에서 생겨날지도 (가설)</text>
+
+        <line x1="185" y1="174" x2="300" y2="212" stroke="currentColor" stroke-width="1.6" marker-end="url(#ar)"/>
+        <line x1="515" y1="174" x2="400" y2="212" stroke="currentColor" stroke-width="1.6" marker-end="url(#ar)"/>
+
+        <rect x="150" y="214" width="400" height="64" rx="12" fill="var(--surface)" stroke="var(--line)"/>
+        <text x="350" y="242" text-anchor="middle" font-size="16" font-weight="600" fill="var(--text)">우리가 보는 세상</text>
+        <text x="350" y="263" text-anchor="middle" font-size="13" fill="var(--muted)">물질, 속도, 빛, 중력</text>
+      </g>
+      <text x="350" y="312" text-anchor="middle" font-size="12" fill="var(--muted)">아래로 갈수록 확인하기 쉽고, 위로 갈수록 가설이 많아져요</text>
+    </svg>
+    <figcaption>위쪽 '바탕'은 가설이 많이 섞인 영역이고, 아래쪽 '현상'은 실험으로 직접 확인되는 영역이에요.</figcaption>
+  </figure>
+</section>
+
+<section id="s2">
+  <h2><span class="n">2</span>얼마나 확실한 이야기일까?</h2>
+  <p>같은 글 안에서도 확실한 부분과 추측인 부분은 달라요. 아래 표로 먼저 구분해 둘게요.</p>
+  <table>
+    <tr><th>단계</th><th>내용</th><th>확실도</th></tr>
+    <tr><td>확실함</td><td>물질은 '양자장'이 출렁이는 것으로, 중력은 시공간이 휘어지는 것으로 잘 설명돼요</td><td><span class="tag t-high">매우 높음</span></td></tr>
+    <tr><td>유력</td><td>이 두 이론은 더 근본적인 이론의 '근사'일 가능성이 커요</td><td><span class="tag t-high">높음</span></td></tr>
+    <tr><td>내 추측</td><td>시공간은 양자 정보와 '얽힘'에서 생겨날 수 있어요</td><td><span class="tag t-mid">중간</span></td></tr>
+    <tr><td>아직 몰라</td><td>그 근본 이론이 어떤 모습인지 (끈? 고리? 다른 것?)</td><td><span class="tag t-low">낮음</span></td></tr>
+  </table>
+  <figure class="diagram">
+    <svg viewBox="0 0 700 210" role="img" aria-label="단계별 확실도 막대그래프">
+      <g font-size="15">
+        <text x="135" y="43" text-anchor="end" class="tx">확실함</text>
+        <rect x="150" y="26" width="500" height="22" rx="11" fill="var(--line)"/>
+        <rect x="150" y="26" width="475" height="22" rx="11" fill="var(--ok)"/>
+        <text x="135" y="89" text-anchor="end" class="tx">유력</text>
+        <rect x="150" y="72" width="500" height="22" rx="11" fill="var(--line)"/>
+        <rect x="150" y="72" width="400" height="22" rx="11" fill="var(--ok)"/>
+        <text x="135" y="135" text-anchor="end" class="tx">내 추측</text>
+        <rect x="150" y="118" width="500" height="22" rx="11" fill="var(--line)"/>
+        <rect x="150" y="118" width="250" height="22" rx="11" fill="var(--accent)"/>
+        <text x="135" y="181" text-anchor="end" class="tx">아직 몰라</text>
+        <rect x="150" y="164" width="500" height="22" rx="11" fill="var(--line)"/>
+        <rect x="150" y="164" width="100" height="22" rx="11" fill="var(--warn)"/>
+      </g>
+    </svg>
+    <figcaption>막대 길이는 내 주관적인 확신의 정도예요. 위쪽일수록 실험으로 확인된 영역이고, 아래쪽일수록 가설이 많아요.</figcaption>
+  </figure>
+</section>
+
+<section id="s3">
+  <h2><span class="n">3</span>그렇게 생각하는 이유 4가지</h2>
+
+  <div class="card">
+    <h3>① 파동은 '무엇'이 아니라 '어떻게'예요</h3>
+    <p>물결은 물이, 소리는 공기가 출렁이는 거예요. 그래서 파동에는 늘 '출렁이는 무언가(매질)'가 있다고 생각하기 쉬워요. 그런데 빛은 공기도 없는 우주를 건너 지구까지 와요. 빛은 대체 무엇이 출렁이는 걸까요?</p>
+    <p>현대 물리학의 답은 <b>'장(field)'</b>이에요. 일기예보 지도를 떠올려 보세요. 지도의 모든 칸에 온도 숫자가 적혀 있죠? 장도 공간의 모든 지점에 값이 하나씩 있는 거예요. 그 값이 출렁이면 파동이 돼요. 장은 '어떤 물질 위의 파동'이 아니라, 그 자체가 세상을 이루는 기본 재료예요. 그래서 "무엇의 파동이냐"를 계속 파고드는 건, 장 아래에 또 다른 층이 있어야 한다고 가정하는 건데, 지금까지 알려진 이론에서는 그런 층이 필요하지 않아요.</p>
+
+    <figure class="diagram">
+      <svg viewBox="0 0 700 250" role="img" aria-label="매질이 필요한 소리와 매질이 필요 없는 장의 비교">
+        <text x="170" y="28" text-anchor="middle" font-size="16" font-weight="700" class="tx">소리: 공기가 필요해요</text>
+        <path d="M20 90 q18.75 -50 37.5 0 t37.5 0 t37.5 0 t37.5 0 t37.5 0 t37.5 0 t37.5 0 t37.5 0" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+        <g fill="var(--muted)">
+          <circle cx="28" cy="170" r="5"/><circle cx="52" cy="170" r="5"/><circle cx="70" cy="170" r="5"/><circle cx="82" cy="170" r="5"/><circle cx="92" cy="170" r="5"/>
+          <circle cx="118" cy="170" r="5"/><circle cx="146" cy="170" r="5"/><circle cx="164" cy="170" r="5"/><circle cx="176" cy="170" r="5"/><circle cx="186" cy="170" r="5"/>
+          <circle cx="212" cy="170" r="5"/><circle cx="238" cy="170" r="5"/><circle cx="262" cy="170" r="5"/><circle cx="284" cy="170" r="5"/><circle cx="306" cy="170" r="5"/>
+        </g>
+        <text x="170" y="215" text-anchor="middle" font-size="14" class="mu">공기 분자가 빽빽했다 성기길 반복해요</text>
+        <line x1="350" y1="20" x2="350" y2="230" stroke="var(--line)"/>
+        <text x="525" y="28" text-anchor="middle" font-size="16" font-weight="700" class="tx">빛: 아무것도 필요 없어요</text>
+        <path d="M380 120 q18.75 -50 37.5 0 t37.5 0 t37.5 0 t37.5 0 t37.5 0 t37.5 0 t37.5 0 t37.5 0" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+        <text x="525" y="215" text-anchor="middle" font-size="14" class="mu">장 자체가 출렁여서 빈 공간도 건너요</text>
+      </svg>
+      <figcaption>소리는 공기가 있어야 퍼지지만, 빛(전자기장)은 장 자체가 출렁이는 거라서 빈 우주에서도 전해져요.</figcaption>
+    </figure>
+
+    <figure class="diagram">
+      <svg viewBox="0 0 700 230" role="img" aria-label="온도 지도로 보는 장과 파동: 높은 값이 옆으로 이동한다">
+        <text x="170" y="48" text-anchor="middle" font-size="15" font-weight="700" class="tx">지금</text>
+        <rect x="30" y="62" width="56" height="36" fill="var(--accent)" fill-opacity="0.13" stroke="var(--line)"/>
+        <text x="58.0" y="85.0" text-anchor="middle" font-size="14" class="tx">16°</text>
+        <rect x="86" y="62" width="56" height="36" fill="var(--accent)" fill-opacity="0.19" stroke="var(--line)"/>
+        <text x="114.0" y="85.0" text-anchor="middle" font-size="14" class="tx">17°</text>
+        <rect x="142" y="62" width="56" height="36" fill="var(--accent)" fill-opacity="0.26" stroke="var(--line)"/>
+        <text x="170.0" y="85.0" text-anchor="middle" font-size="14" class="tx">18°</text>
+        <rect x="198" y="62" width="56" height="36" fill="var(--accent)" fill-opacity="0.19" stroke="var(--line)"/>
+        <text x="226.0" y="85.0" text-anchor="middle" font-size="14" class="tx">17°</text>
+        <rect x="254" y="62" width="56" height="36" fill="var(--accent)" fill-opacity="0.13" stroke="var(--line)"/>
+        <text x="282.0" y="85.0" text-anchor="middle" font-size="14" class="tx">16°</text>
+        <rect x="30" y="98" width="56" height="36" fill="var(--accent)" fill-opacity="0.26" stroke="var(--line)"/>
+        <text x="58.0" y="121.0" text-anchor="middle" font-size="14" class="tx">18°</text>
+        <rect x="86" y="98" width="56" height="36" fill="var(--accent)" fill-opacity="0.45" stroke="var(--line)"/>
+        <text x="114.0" y="121.0" text-anchor="middle" font-size="14" class="tx">21°</text>
+        <rect x="142" y="98" width="56" height="36" fill="var(--accent)" fill-opacity="0.55" stroke="var(--line)"/>
+        <text x="170.0" y="121.0" text-anchor="middle" font-size="14" class="tx">25°</text>
+        <rect x="198" y="98" width="56" height="36" fill="var(--accent)" fill-opacity="0.45" stroke="var(--line)"/>
+        <text x="226.0" y="121.0" text-anchor="middle" font-size="14" class="tx">21°</text>
+        <rect x="254" y="98" width="56" height="36" fill="var(--accent)" fill-opacity="0.26" stroke="var(--line)"/>
+        <text x="282.0" y="121.0" text-anchor="middle" font-size="14" class="tx">18°</text>
+        <rect x="30" y="134" width="56" height="36" fill="var(--accent)" fill-opacity="0.13" stroke="var(--line)"/>
+        <text x="58.0" y="157.0" text-anchor="middle" font-size="14" class="tx">16°</text>
+        <rect x="86" y="134" width="56" height="36" fill="var(--accent)" fill-opacity="0.19" stroke="var(--line)"/>
+        <text x="114.0" y="157.0" text-anchor="middle" font-size="14" class="tx">17°</text>
+        <rect x="142" y="134" width="56" height="36" fill="var(--accent)" fill-opacity="0.26" stroke="var(--line)"/>
+        <text x="170.0" y="157.0" text-anchor="middle" font-size="14" class="tx">18°</text>
+        <rect x="198" y="134" width="56" height="36" fill="var(--accent)" fill-opacity="0.19" stroke="var(--line)"/>
+        <text x="226.0" y="157.0" text-anchor="middle" font-size="14" class="tx">17°</text>
+        <rect x="254" y="134" width="56" height="36" fill="var(--accent)" fill-opacity="0.13" stroke="var(--line)"/>
+        <text x="282.0" y="157.0" text-anchor="middle" font-size="14" class="tx">16°</text>
+        <line x1="322" y1="116" x2="372" y2="116" stroke="var(--muted)" stroke-width="1.6"/>
+        <path d="M366 110 L374 116 L366 122" fill="none" stroke="var(--muted)" stroke-width="1.6" stroke-linecap="round"/>
+        <text x="347" y="104" text-anchor="middle" font-size="12" class="mu">1초 뒤</text>
+        <text x="530" y="48" text-anchor="middle" font-size="15" font-weight="700" class="tx">1초 뒤</text>
+        <rect x="390" y="62" width="56" height="36" fill="var(--accent)" fill-opacity="0.13" stroke="var(--line)"/>
+        <text x="418.0" y="85.0" text-anchor="middle" font-size="14" class="tx">16°</text>
+        <rect x="446" y="62" width="56" height="36" fill="var(--accent)" fill-opacity="0.13" stroke="var(--line)"/>
+        <text x="474.0" y="85.0" text-anchor="middle" font-size="14" class="tx">16°</text>
+        <rect x="502" y="62" width="56" height="36" fill="var(--accent)" fill-opacity="0.19" stroke="var(--line)"/>
+        <text x="530.0" y="85.0" text-anchor="middle" font-size="14" class="tx">17°</text>
+        <rect x="558" y="62" width="56" height="36" fill="var(--accent)" fill-opacity="0.26" stroke="var(--line)"/>
+        <text x="586.0" y="85.0" text-anchor="middle" font-size="14" class="tx">18°</text>
+        <rect x="614" y="62" width="56" height="36" fill="var(--accent)" fill-opacity="0.19" stroke="var(--line)"/>
+        <text x="642.0" y="85.0" text-anchor="middle" font-size="14" class="tx">17°</text>
+        <rect x="390" y="98" width="56" height="36" fill="var(--accent)" fill-opacity="0.26" stroke="var(--line)"/>
+        <text x="418.0" y="121.0" text-anchor="middle" font-size="14" class="tx">18°</text>
+        <rect x="446" y="98" width="56" height="36" fill="var(--accent)" fill-opacity="0.26" stroke="var(--line)"/>
+        <text x="474.0" y="121.0" text-anchor="middle" font-size="14" class="tx">18°</text>
+        <rect x="502" y="98" width="56" height="36" fill="var(--accent)" fill-opacity="0.45" stroke="var(--line)"/>
+        <text x="530.0" y="121.0" text-anchor="middle" font-size="14" class="tx">21°</text>
+        <rect x="558" y="98" width="56" height="36" fill="var(--accent)" fill-opacity="0.55" stroke="var(--line)"/>
+        <text x="586.0" y="121.0" text-anchor="middle" font-size="14" class="tx">25°</text>
+        <rect x="614" y="98" width="56" height="36" fill="var(--accent)" fill-opacity="0.45" stroke="var(--line)"/>
+        <text x="642.0" y="121.0" text-anchor="middle" font-size="14" class="tx">21°</text>
+        <rect x="390" y="134" width="56" height="36" fill="var(--accent)" fill-opacity="0.13" stroke="var(--line)"/>
+        <text x="418.0" y="157.0" text-anchor="middle" font-size="14" class="tx">16°</text>
+        <rect x="446" y="134" width="56" height="36" fill="var(--accent)" fill-opacity="0.13" stroke="var(--line)"/>
+        <text x="474.0" y="157.0" text-anchor="middle" font-size="14" class="tx">16°</text>
+        <rect x="502" y="134" width="56" height="36" fill="var(--accent)" fill-opacity="0.19" stroke="var(--line)"/>
+        <text x="530.0" y="157.0" text-anchor="middle" font-size="14" class="tx">17°</text>
+        <rect x="558" y="134" width="56" height="36" fill="var(--accent)" fill-opacity="0.26" stroke="var(--line)"/>
+        <text x="586.0" y="157.0" text-anchor="middle" font-size="14" class="tx">18°</text>
+        <rect x="614" y="134" width="56" height="36" fill="var(--accent)" fill-opacity="0.19" stroke="var(--line)"/>
+        <text x="642.0" y="157.0" text-anchor="middle" font-size="14" class="tx">17°</text>
+        <text x="350" y="212" text-anchor="middle" font-size="14" class="mu">숫자(값)가 높은 곳이 옆으로 움직여요 = 파동이 지나가는 것</text>
+      </svg>
+      <figcaption>장은 "모든 칸에 숫자가 있는 지도"예요. 칸마다 적힌 값이 시간에 따라 출렁이며 옮겨 가는 것이 파동이에요.</figcaption>
+    </figure>
+    <p class="tldr"><b>한 줄 요약</b>파동은 '재료'가 아니라 장(보이지 않는 숫자 지도)이 움직이는 '방식'이에요.</p>
+  </div>
+
+  <div class="card">
+    <h3>② 파동만으로는 설명이 안 되는 것이 있어요</h3>
+    <p>전자를 한 개씩 아주 천천히 두 개의 가는 틈(이중 슬릿)으로 쏘면, 스크린에는 매번 '점 하나'가 찍혀요. 알갱이처럼요. 그런데 점이 수천 개 쌓이면 파동처럼 '줄무늬(간섭무늬)'가 나타나요. 퍼져서 지나갈 때는 파동처럼, 도착해서 찍힐 때는 알갱이처럼 행동하는 거예요.</p>
+    <p>또 빛의 에너지는 물처럼 연속적으로 흐르는 게 아니라 '덩어리(광자)' 단위로만 전달돼요(광전효과). 모든 게 순수한 파동이라면 에너지가 넓게 퍼져야 해서 이런 현상이 설명되지 않아요. 슈뢰딩거도 "알갱이는 파동 덩어리일 뿐"이라고 해 봤지만 이 문제 때문에 접었어요.</p>
+    <p>그래서 파동과 알갱이를 따로 보기보다, <b>하나의 양자 상태가 측정될 때 드러나는 두 가지 얼굴</b>로 보는 게 가장 자연스러워요.</p>
+
+    <figure class="diagram">
+      <svg viewBox="0 0 700 275" role="img" aria-label="이중 슬릿 실험: 파동처럼 퍼지고 점으로 찍힌다">
+        <defs><clipPath id="cs"><rect x="256" y="0" width="364" height="260"/></clipPath></defs>
+        <g stroke="var(--accent)" stroke-width="2" opacity=".45">
+          <line x1="110" y1="50" x2="110" y2="210"/><line x1="160" y1="50" x2="160" y2="210"/><line x1="210" y1="50" x2="210" y2="210"/>
+        </g>
+        <text x="110" y="35" text-anchor="middle" font-size="14" class="mu">들어오는 파동</text>
+        <g clip-path="url(#cs)" fill="none" stroke="var(--accent)" stroke-width="1.5" opacity=".4">
+          <circle cx="250" cy="100" r="45"/><circle cx="250" cy="100" r="95"/><circle cx="250" cy="100" r="145"/><circle cx="250" cy="100" r="195"/><circle cx="250" cy="100" r="245"/><circle cx="250" cy="100" r="295"/><circle cx="250" cy="100" r="345"/>
+          <circle cx="250" cy="160" r="45"/><circle cx="250" cy="160" r="95"/><circle cx="250" cy="160" r="145"/><circle cx="250" cy="160" r="195"/><circle cx="250" cy="160" r="245"/><circle cx="250" cy="160" r="295"/><circle cx="250" cy="160" r="345"/>
+        </g>
+        <g fill="var(--muted)">
+          <rect x="245" y="20" width="10" height="72"/><rect x="245" y="108" width="10" height="44"/><rect x="245" y="168" width="10" height="72"/>
+        </g>
+        <line x1="620" y1="10" x2="620" y2="250" stroke="var(--text)" stroke-width="2"/>
+        <g fill="var(--accent)">
+          <circle cx="650" cy="124" r="3.5"/><circle cx="660" cy="130" r="3.5"/><circle cx="645" cy="134" r="3.5"/><circle cx="668" cy="127" r="3.5"/><circle cx="655" cy="137" r="3.5"/><circle cx="662" cy="121" r="3.5"/><circle cx="648" cy="129" r="3.5"/><circle cx="672" cy="133" r="3.5"/><circle cx="657" cy="131" r="3.5"/>
+          <circle cx="655" cy="82" r="3.5"/><circle cx="648" cy="88" r="3.5"/><circle cx="663" cy="85" r="3.5"/><circle cx="652" cy="92" r="3.5"/><circle cx="660" cy="79" r="3.5"/>
+          <circle cx="657" cy="172" r="3.5"/><circle cx="650" cy="178" r="3.5"/><circle cx="664" cy="175" r="3.5"/><circle cx="654" cy="168" r="3.5"/><circle cx="661" cy="181" r="3.5"/>
+          <circle cx="655" cy="40" r="3.5"/><circle cx="662" cy="44" r="3.5"/><circle cx="656" cy="218" r="3.5"/><circle cx="650" cy="222" r="3.5"/>
+        </g>
+        <text x="250" y="262" text-anchor="middle" font-size="14" class="mu">이중 슬릿</text>
+        <text x="650" y="268" text-anchor="middle" font-size="14" class="mu">스크린</text>
+      </svg>
+      <figcaption>날아가는 동안은 파동처럼 퍼져서 서로 겹치고(간섭), 스크린에 닿을 때는 점 하나로 찍혀요. 점이 쌓이면 줄무늬가 나타나요.</figcaption>
+    </figure>
+    <p class="tldr"><b>한 줄 요약</b>파동과 알갱이는 따로 있는 게 아니라, 같은 대상이 상황에 따라 보여주는 두 얼굴이에요.</p>
+  </div>
+
+  <div class="card">
+    <h3>③ 입자의 정체는 '대칭(규칙)'이에요</h3>
+    <p><b>대칭</b>이란 '무언가를 바꿔도 달라지지 않는 성질'이에요. 정사각형은 90°씩 돌려도 똑같아 보이고, 원은 얼마를 돌려도 똑같아요. 하지만 글자 F는 돌리면 달라 보이죠. F는 '돌리기'에 대해 대칭이 아니에요.</p>
+    <p>물리학자 위그너는 1939년에, 우주의 법칙이 "위치를 옮겨도, 방향을 돌려도, 일정한 속도로 움직여도 똑같다"는 대칭을 가질 때 그 대칭을 만족하는 입자는 <b>질량과 스핀</b>이라는 '이름표'로 분류된다는 것을 보였어요. 스핀은 입자가 가진 회전 비슷한 고유한 성질이에요(실제로 팽이처럼 도는 건 아니에요).</p>
+    <p>즉 질량이나 스핀은 입자에 붙은 '속성'이라기보다 <b>대칭이 정해 주는 라벨</b>에 가까워요. 전하나 색전하도 다른 종류의 대칭에서 나와요. 체스의 나이트처럼 '무엇으로 만들었나'가 아니라 '어떤 규칙을 따르나'가 정체를 정해요.</p>
+
+    <figure class="diagram">
+      <svg viewBox="0 0 700 230" role="img" aria-label="대칭의 예: 정사각형과 원은 돌려도 같고 글자 F는 달라진다">
+        <text x="120" y="28" text-anchor="middle" font-size="14" class="mu">정사각형</text>
+        <rect x="85" y="50" width="70" height="70" rx="3" class="bxa"/>
+        <circle cx="85" cy="50" r="5" fill="var(--accent)"/>
+        <text x="120" y="146" text-anchor="middle" font-size="14" class="tx">↻ 90° 돌리면</text>
+        <text x="120" y="170" text-anchor="middle" font-size="14" font-weight="700" fill="var(--ok)">똑같아요 ✓</text>
+
+        <text x="350" y="28" text-anchor="middle" font-size="14" class="mu">원</text>
+        <circle cx="350" cy="85" r="36" class="bxa"/>
+        <text x="350" y="146" text-anchor="middle" font-size="14" class="tx">↻ 아무 각도로 돌려도</text>
+        <text x="350" y="170" text-anchor="middle" font-size="14" font-weight="700" fill="var(--ok)">똑같아요 ✓</text>
+
+        <text x="580" y="28" text-anchor="middle" font-size="14" class="mu">글자 F</text>
+        <text x="548" y="112" text-anchor="middle" font-size="64" font-weight="700" class="tx">F</text>
+        <text transform="translate(612,92) rotate(90)" text-anchor="middle" font-size="64" font-weight="700" fill="var(--muted)">F</text>
+        <text x="580" y="146" text-anchor="middle" font-size="14" class="tx">↻ 90° 돌리면</text>
+        <text x="580" y="170" text-anchor="middle" font-size="14" font-weight="700" fill="var(--warn)">달라 보여요 ✗</text>
+
+        <text x="350" y="212" text-anchor="middle" font-size="14" class="mu">대칭 = 뭔가를 바꿔도 그대로인 성질</text>
+      </svg>
+      <figcaption>정사각형과 원은 돌리기에 대해 대칭이고, 글자 F는 아니에요. 물리학에서는 위치·방향·속도 같은 것을 바꿔도 법칙이 그대로인 대칭이 중요해요.</figcaption>
+    </figure>
+
+    <figure class="diagram">
+      <svg viewBox="0 0 700 250" role="img" aria-label="대칭의 종류와 입자의 성질(라벨) 대응" style="color:var(--muted)">
+        <defs><marker id="ar2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L9 5L1 9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></marker></defs>
+        <text x="180" y="22" text-anchor="middle" font-size="14" class="mu">규칙 (이걸 바꿔도 법칙은 그대로)</text>
+        <text x="535" y="22" text-anchor="middle" font-size="14" class="mu">입자가 갖는 성질 (라벨)</text>
+
+        <rect x="30" y="36" width="300" height="56" rx="10" class="bxa"/>
+        <text x="180" y="62" text-anchor="middle" font-size="16" font-weight="600" class="tx">시공간 대칭</text>
+        <text x="180" y="82" text-anchor="middle" font-size="13" class="mu">위치·방향·속도를 바꿔도 같음</text>
+        <line x1="334" y1="64" x2="396" y2="64" stroke="currentColor" stroke-width="1.6" marker-end="url(#ar2)"/>
+        <rect x="400" y="36" width="270" height="56" rx="10" class="bx"/>
+        <text x="535" y="62" text-anchor="middle" font-size="16" font-weight="600" class="tx">질량 · 스핀</text>
+        <text x="535" y="82" text-anchor="middle" font-size="13" class="mu">입자의 기본 성질</text>
+
+        <rect x="30" y="102" width="300" height="56" rx="10" class="bxa"/>
+        <text x="180" y="128" text-anchor="middle" font-size="16" font-weight="600" class="tx">전자기 대칭</text>
+        <text x="180" y="148" text-anchor="middle" font-size="13" class="mu">전기의 '위상'을 바꿔도 같음</text>
+        <line x1="334" y1="130" x2="396" y2="130" stroke="currentColor" stroke-width="1.6" marker-end="url(#ar2)"/>
+        <rect x="400" y="102" width="270" height="56" rx="10" class="bx"/>
+        <text x="535" y="128" text-anchor="middle" font-size="16" font-weight="600" class="tx">전하 (+, −)</text>
+        <text x="535" y="148" text-anchor="middle" font-size="13" class="mu">전기력을 느끼는 정도</text>
+
+        <rect x="30" y="168" width="300" height="56" rx="10" class="bxa"/>
+        <text x="180" y="194" text-anchor="middle" font-size="16" font-weight="600" class="tx">색 대칭 (강한 힘)</text>
+        <text x="180" y="214" text-anchor="middle" font-size="13" class="mu">'색'을 서로 바꿔도 같음</text>
+        <line x1="334" y1="196" x2="396" y2="196" stroke="currentColor" stroke-width="1.6" marker-end="url(#ar2)"/>
+        <rect x="400" y="168" width="270" height="56" rx="10" class="bx"/>
+        <text x="535" y="194" text-anchor="middle" font-size="16" font-weight="600" class="tx">색전하</text>
+        <text x="535" y="214" text-anchor="middle" font-size="13" class="mu">쿼크를 묶는 힘과 관련</text>
+      </svg>
+      <figcaption>대칭의 종류마다 입자의 '라벨'이 하나씩 대응해요. 색전하의 '색'은 진짜 색깔이 아니라 이름일 뿐이에요. (설명을 쉽게 하려고 단순화한 그림이에요.)</figcaption>
+    </figure>
+    <p class="tldr"><b>한 줄 요약</b>입자의 성질(질량, 스핀, 전하)은 '붙어 있는 속성'이 아니라 대칭이라는 규칙이 정해 주는 라벨이에요.</p>
+  </div>
+
+  <div class="card">
+    <h3>④ 시공간도 '바탕'이 아니라 '결과물'일 수 있어요</h3>
+    <ul>
+      <li>상대성이론(중력)과 양자역학(아주 작은 세계)은 블랙홀 중심 같은 곳에서 서로 부딪혀요. 시공간이 진짜 바탕이라면 이 충돌을 풀기 어려워요.</li>
+      <li>블랙홀이 품을 수 있는 정보량(엔트로피)은 부피가 아니라 <b>겉넓이</b>에 비례해요(베켄슈타인-호킹). 신용카드의 홀로그램처럼, 3차원 정보가 2차원 표면에 담긴 것처럼 보여요.</li>
+      <li>AdS/CFT라는 모형 우주에서는 <b>'얽힘'</b>(두 입자를 따로 설명할 수 없고 하나의 상태로만 설명되는 관계)의 구조가 시공간의 모양을 결정해요. 다만 이건 우리 우주가 아닌 수학적 모형 우주에서 증명된 결과예요.</li>
+    </ul>
+    <p class="muted">참고: 얽힘은 일상의 비유로 완벽히 설명되지 않아요. 지금은 "멀리 떨어져 있어도 하나의 시스템처럼 묶인 관계" 정도로만 기억해도 충분해요.</p>
+
+    <figure class="diagram">
+      <svg viewBox="0 0 700 310" role="img" aria-label="경계의 얽힘이 안쪽 시공간을 만드는 그림과 블랙홀 정보량이 겉넓이에 비례한다는 그림">
+        <text x="180" y="24" text-anchor="middle" font-size="15" font-weight="700" class="tx">경계에서 안쪽으로</text>
+        <text x="520" y="24" text-anchor="middle" font-size="15" font-weight="700" class="tx">정보는 '겉넓이'에 담겨요</text>
+        <circle cx="180" cy="150" r="110" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+        <g fill="none" stroke="var(--accent)" stroke-width="1.8" opacity=".8">
+          <path d="M290 150 Q185 166 91 215"/><path d="M269 215 Q180 150 91 85"/><path d="M214 255 Q211 160 269 85"/>
+          <path d="M146 255 Q163 150 146 45"/><path d="M70 150 Q175 134 269 85"/><path d="M290 150 Q216 124 214 45"/>
+        </g>
+        <g fill="var(--accent)">
+          <circle cx="290" cy="150" r="5"/><circle cx="269" cy="215" r="5"/><circle cx="214" cy="255" r="5"/><circle cx="146" cy="255" r="5"/><circle cx="91" cy="215" r="5"/>
+          <circle cx="70" cy="150" r="5"/><circle cx="91" cy="85" r="5"/><circle cx="146" cy="45" r="5"/><circle cx="214" cy="45" r="5"/><circle cx="269" cy="85" r="5"/>
+        </g>
+        <text x="180" y="292" text-anchor="middle" font-size="14" class="mu">얽힘의 선 = 안쪽 공간의 연결</text>
+        <line x1="350" y1="20" x2="350" y2="290" stroke="var(--line)"/>
+        <circle cx="520" cy="135" r="80" fill="var(--surface)" stroke="var(--text)" stroke-width="2"/>
+        <g fill="none" stroke="var(--muted)" stroke-width="1.2">
+          <ellipse cx="520" cy="135" rx="80" ry="22"/><ellipse cx="520" cy="90" rx="66" ry="18"/><ellipse cx="520" cy="180" rx="66" ry="18"/>
+          <ellipse cx="520" cy="135" rx="30" ry="80"/><ellipse cx="520" cy="135" rx="60" ry="80"/>
+        </g>
+        <polygon points="545,98 580,100 582,128 548,126" fill="var(--accent)" opacity=".55"/>
+        <text x="520" y="240" text-anchor="middle" font-size="14" class="tx">블랙홀의 정보량은</text>
+        <text x="520" y="260" text-anchor="middle" font-size="14" class="tx">부피 말고 겉넓이에 비례해요</text>
+        <text x="520" y="288" text-anchor="middle" font-size="16" font-weight="700" class="ac">S = A / 4ℓₚ²</text>
+      </svg>
+      <figcaption>왼쪽은 AdS/CFT의 개념도(모형 우주), 오른쪽은 베켄슈타인-호킹 공식(A는 겉넓이)이에요. 둘 다 "정보는 경계에 있다"는 방향을 가리켜요.</figcaption>
+    </figure>
+    <p class="tldr"><b>한 줄 요약</b>시공간은 처음부터 있는 무대가 아니라, 더 깊은 구조(얽힘)에서 생겨나는 결과물일 수 있어요. 아직 가설이에요.</p>
+  </div>
+</section>
+
+<section id="s4">
+  <h2><span class="n">4</span>경쟁하는 이론들</h2>
+  <p>"세상의 바탕이 뭐냐"는 질문에는 여러 후보 이론이 있어요. 하나씩 내 평가를 적어 봤어요.</p>
+  <table>
+    <tr><th>후보</th><th>내 평가</th></tr>
+    <tr><td>에테르 (눈에 보이지 않는 매질)</td><td>옛날에는 빛이 지나가는 '바다'가 있다고 생각했어요. 하지만 실험에서 흔적이 안 나왔고 상대성이론과도 맞지 않아서 폐기됐어요</td></tr>
+    <tr><td>양자장론</td><td>가장 많이 검증된 이론이에요. 다만 '시공간이라는 무대'가 이미 있다고 전제해요</td></tr>
+    <tr><td>끈 이론</td><td>"모든 입자는 아주 작은 끈의 진동"이라는 이론이에요. 기타 줄을 튕기는 방식에 따라 음이 달라지듯 입자 종류가 달라진다고 보죠. 하지만 아직 실험으로 확인된 건 없어요</td></tr>
+    <tr><td>다세계 / 파동함수 실재론</td><td>가장 바탕은 '상태공간'이고 우리가 보는 3차원 공간은 거기서 생겨난다고 봐요. <b>내 생각과 가장 가까워요</b></td></tr>
+    <tr><td>얽힘에서 생기는 시공간 (ER=EPR 등)</td><td>시공간이 얽힘에서 생겨난다는 아이디어 중 가장 구체적이에요. 아직 완성되지는 않았어요</td></tr>
+  </table>
+  <figure class="diagram">
+    <svg viewBox="0 0 700 330" role="img" aria-label="후보 이론을 실험 확인 정도와 시공간 창발 정도로 나눈 지도">
+      <line x1="70" y1="290" x2="665" y2="290" stroke="var(--muted)" stroke-width="1.5"/>
+      <line x1="70" y1="15" x2="70" y2="290" stroke="var(--muted)" stroke-width="1.5"/>
+      <text x="665" y="312" text-anchor="end" font-size="13" class="mu">실험으로 확인된 정도: 높음 →</text>
+      <text x="70" y="312" font-size="13" class="mu">낮음</text>
+      <text x="62" y="30" text-anchor="end" font-size="13" class="mu">생겨남</text>
+      <text x="62" y="288" text-anchor="end" font-size="13" class="mu">바탕</text>
+      <text x="80" y="14" font-size="13" class="mu">↑ 시공간을 '생겨난 것'으로 보는 정도</text>
+      <ellipse cx="290" cy="88" rx="125" ry="58" fill="var(--accent-soft)" stroke="var(--accent)" stroke-dasharray="6 5" opacity=".8"/>
+      <text x="415" y="48" font-size="13" font-weight="700" class="ac">← 내 추측이 있는 곳</text>
+      <circle cx="240" cy="62" r="9" fill="var(--accent)"/>
+      <text x="256" y="67" font-size="14" class="tx">얽힘 기반 시공간</text>
+      <circle cx="330" cy="118" r="9" fill="var(--accent)"/>
+      <text x="346" y="123" font-size="14" class="tx">다세계 / 파동함수 실재론</text>
+      <circle cx="190" cy="195" r="9" fill="var(--warn)"/>
+      <text x="206" y="200" font-size="14" class="tx">끈 이론</text>
+      <circle cx="600" cy="262" r="9" fill="var(--ok)"/>
+      <text x="586" y="267" text-anchor="end" font-size="14" class="tx">양자장론</text>
+      <circle cx="105" cy="262" r="9" fill="var(--muted)" opacity=".5"/>
+      <text x="121" y="267" font-size="14" class="mu">에테르 (폐기)</text>
+    </svg>
+    <figcaption>위치는 느낌으로 정한 평가예요. 위쪽(시공간이 생겨난다고 보는 쪽)일수록 아직 실험 확인이 부족해요.</figcaption>
+  </figure>
+</section>
+
+<section id="s5">
+  <h2><span class="n">5</span>이 생각이 틀렸다고 밝혀지려면?</h2>
+  <p>좋은 과학 가설은 <b>'틀릴 수 있는 방법'</b>이 있어야 해요. 어떤 결과가 나와도 맞다고 할 수 있는 이야기는 설명력이 없는 이야기예요. 이 생각이 틀릴 수 있는 경우는 이래요.</p>
+  <ul>
+    <li><b>중력이 '양자' 규칙을 따르지 않는 것으로 밝혀질 때.</b> 아주 작은 두 물체가 중력만으로 서로 얽히는지 확인하는 실험이 제안돼 있어요. 끝내 그런 현상이 안 나타나면 '시공간이 얽힘에서 생겨난다'는 추측은 힘을 잃어요.</li>
+    <li><b>양자역학의 기본 규칙이 깨질 때.</b> 큰 물체에서도 '동시에 여러 상태'가 가능한지 계속 시험 중이에요. 어느 크기부터 이 규칙이 깨지는 증거가 나오면 지금의 그림이 흔들려요.</li>
+    <li><b>참고:</b> 시공간에 가장 작은 길이나 '알갱이 구조'가 있다고 밝혀져도, "바탕은 상태공간이다"라는 주장은 살아남아요.</li>
+  </ul>
+  <figure class="diagram">
+    <svg viewBox="0 0 700 250" role="img" aria-label="두 가지 시험의 결과에 따라 가설이 강해지거나 약해지는 구조" style="color:var(--muted)">
+      <rect x="40" y="16" width="270" height="60" rx="10" class="bxa"/>
+      <text x="175" y="42" text-anchor="middle" font-size="16" font-weight="700" class="tx">중력의 양자성 실험</text>
+      <text x="175" y="63" text-anchor="middle" font-size="13" class="mu">중력으로 두 물체가 얽히는지</text>
+      <line x1="175" y1="76" x2="95" y2="150" stroke="currentColor" stroke-width="1.6"/>
+      <line x1="175" y1="76" x2="255" y2="150" stroke="currentColor" stroke-width="1.6"/>
+      <rect x="20" y="150" width="150" height="64" rx="10" class="bxo"/>
+      <text x="95" y="177" text-anchor="middle" font-size="15" font-weight="700" class="tx">관측됨</text>
+      <text x="95" y="199" text-anchor="middle" font-size="13" class="mu">가설이 힘을 얻어요</text>
+      <rect x="180" y="150" width="150" height="64" rx="10" class="bxw"/>
+      <text x="255" y="177" text-anchor="middle" font-size="15" font-weight="700" class="tx">끝내 못 찾음</text>
+      <text x="255" y="199" text-anchor="middle" font-size="13" class="mu">가설이 약해져요</text>
+
+      <rect x="390" y="16" width="270" height="60" rx="10" class="bxa"/>
+      <text x="525" y="42" text-anchor="middle" font-size="16" font-weight="700" class="tx">양자 규칙 시험</text>
+      <text x="525" y="63" text-anchor="middle" font-size="13" class="mu">큰 물체에서 규칙이 깨지나?</text>
+      <line x1="525" y1="76" x2="445" y2="150" stroke="currentColor" stroke-width="1.6"/>
+      <line x1="525" y1="76" x2="605" y2="150" stroke="currentColor" stroke-width="1.6"/>
+      <rect x="370" y="150" width="150" height="64" rx="10" class="bxo"/>
+      <text x="445" y="177" text-anchor="middle" font-size="15" font-weight="700" class="tx">규칙 유지</text>
+      <text x="445" y="199" text-anchor="middle" font-size="13" class="mu">지금 그림이 유지돼요</text>
+      <rect x="530" y="150" width="150" height="64" rx="10" class="bxw"/>
+      <text x="605" y="177" text-anchor="middle" font-size="15" font-weight="700" class="tx">규칙이 깨짐</text>
+      <text x="605" y="199" text-anchor="middle" font-size="13" class="mu">그림이 흔들려요</text>
+      <text x="350" y="240" text-anchor="middle" font-size="13" class="mu">틀릴 수 있다는 점이 철학이 아닌 '과학적 가설'로 만들어요</text>
+    </svg>
+    <figcaption>초록은 이 생각을 뒷받침하는 결과, 주황은 약하게 만드는 결과예요.</figcaption>
+  </figure>
+</section>
+
+<section id="s6">
+  <h2><span class="n">6</span>"모든 건 파동"이라는 생각은 어디까지 왔을까?</h2>
+  <p>"파동이 변형되어 물질, 속도, 빛이 된다"는 직관에서 살릴 점은 <b>눈에 보이는 현상은 더 깊은 구조가 움직이는 모습이라는 관점</b>이에요. 이 직관을 가설로 키우려면 세 가지를 채워야 해요.</p>
+  <ol>
+    <li>파동을 이루는 존재(장 또는 상태공간)가 무엇인지, 그리고 그것이 어떤 방정식으로 움직이는지 밝히기</li>
+    <li>알갱이처럼 셀 수 있는 성질과, 변하지 않는 양(질량, 전하, 스핀)이 어떻게 나오는지 설명하기</li>
+    <li>기존 이론과 <b>다른 결과를 예측</b>해서, 실험으로 확인할 수 있게 하기</li>
+  </ol>
+  <p class="muted">3번이 비어 있으면 '해석'이고, 채워지면 '가설'이에요.</p>
+  <figure class="diagram">
+    <svg viewBox="0 0 700 230" role="img" aria-label="해석에서 가설, 이론으로 올라가는 계단">
+      <rect x="40" y="140" width="200" height="70" rx="8" class="bx"/>
+      <text x="140" y="168" text-anchor="middle" font-size="17" font-weight="700" class="tx">생각(해석)</text>
+      <text x="140" y="192" text-anchor="middle" font-size="13" class="mu">바탕이 뭔지 이름 붙이기</text>
+      <rect x="250" y="90" width="200" height="120" rx="8" class="bxa"/>
+      <text x="350" y="118" text-anchor="middle" font-size="17" font-weight="700" class="tx">가설</text>
+      <text x="350" y="142" text-anchor="middle" font-size="13" class="mu">+ 알갱이·보존량 설명</text>
+      <rect x="460" y="40" width="200" height="170" rx="8" class="bxo"/>
+      <text x="560" y="68" text-anchor="middle" font-size="17" font-weight="700" class="tx">이론</text>
+      <text x="560" y="92" text-anchor="middle" font-size="13" class="mu">+ 틀릴 수 있는 새 예측</text>
+      <text x="350" y="28" text-anchor="middle" font-size="13" class="mu">가치는 이름이 아니라 '새로 생기는 제약'에서 나와요</text>
+    </svg>
+    <figcaption>"모든 건 파동"이라는 생각은 지금 첫 계단에 있어요. 올라갈수록 더 엄밀한 수학과 실험이 필요해요.</figcaption>
+  </figure>
+</section>
+
+<section id="s7">
+  <h2><span class="n">7</span>이 생각은 독창적일까?</h2>
+  <div class="verdict"><b>솔직한 평가:</b> 물리 이론으로서의 독창성은 아직 없어요. 현대 이론물리학과 과학철학에서 이미 발전시킨 여러 생각을 합친 것에 가까워요. 하지만 스스로 그 방향에 도달했다는 건, 직관이 제대로 된 방향을 가리켰다는 신호이기도 해요.</div>
+
+  <table>
+    <tr><th>생각의 조각</th><th>이미 연구한 사람들</th></tr>
+    <tr><td>재료보다 구조가 먼저다</td><td>구조 실재론 (Ladyman, French), 수학적 우주 가설 (Tegmark)</td></tr>
+    <tr><td>입자는 대칭의 표현이다</td><td>Wigner (1939)의 입자 분류, 게이지 이론</td></tr>
+    <tr><td>파동함수가 실재하고, 시공간은 생겨난다</td><td>다세계 해석 계열: Sean Carroll("힐베르트 공간 근본주의"), David Wallace</td></tr>
+    <tr><td>얽힘에서 시공간이 생긴다</td><td>Van Raamsdonk (2010), Maldacena–Susskind ER=EPR (2013), Ryu–Takayanagi</td></tr>
+    <tr><td>정보가 근본이다</td><td>Wheeler의 "It from Bit", 홀로그래피 원리 ('t Hooft, Susskind)</td></tr>
+    <tr><td>장이 근본이고 입자는 장의 들뜸</td><td>Weinberg, Wilczek 등 양자장론의 표준 관점</td></tr>
+  </table>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 700 370" role="img" aria-label="이 글의 생각과 여섯 갈래 선행 연구의 관계">
+      <g stroke="var(--muted)" stroke-width="1.5" opacity=".6">
+        <line x1="350" y1="185" x2="350" y2="50"/><line x1="350" y1="185" x2="590" y2="105"/><line x1="350" y1="185" x2="590" y2="265"/>
+        <line x1="350" y1="185" x2="350" y2="325"/><line x1="350" y1="185" x2="110" y2="265"/><line x1="350" y1="185" x2="110" y2="105"/>
+      </g>
+      <ellipse cx="350" cy="185" rx="82" ry="38" class="bxa" style="stroke-width:2"/>
+      <text x="350" y="182" text-anchor="middle" font-size="16" font-weight="700" class="tx">이 글의 생각</text>
+      <text x="350" y="202" text-anchor="middle" font-size="13" class="mu">종합</text>
+
+      <rect x="255" y="25" width="190" height="50" rx="9" class="bx"/>
+      <text x="350" y="46" text-anchor="middle" font-size="15" font-weight="700" class="tx">구조가 먼저</text>
+      <text x="350" y="64" text-anchor="middle" font-size="12" class="mu">Ladyman · French · Tegmark</text>
+
+      <rect x="495" y="80" width="190" height="50" rx="9" class="bx"/>
+      <text x="590" y="101" text-anchor="middle" font-size="15" font-weight="700" class="tx">대칭 = 입자</text>
+      <text x="590" y="119" text-anchor="middle" font-size="12" class="mu">Wigner 1939 · 게이지 이론</text>
+
+      <rect x="495" y="240" width="190" height="50" rx="9" class="bx"/>
+      <text x="590" y="261" text-anchor="middle" font-size="15" font-weight="700" class="tx">파동함수는 실재</text>
+      <text x="590" y="279" text-anchor="middle" font-size="12" class="mu">Everett · Carroll · Wallace</text>
+
+      <rect x="255" y="300" width="190" height="50" rx="9" class="bx"/>
+      <text x="350" y="321" text-anchor="middle" font-size="15" font-weight="700" class="tx">얽힘 → 시공간</text>
+      <text x="350" y="339" text-anchor="middle" font-size="12" class="mu">Van Raamsdonk · ER=EPR · RT</text>
+
+      <rect x="15" y="240" width="190" height="50" rx="9" class="bx"/>
+      <text x="110" y="261" text-anchor="middle" font-size="15" font-weight="700" class="tx">정보가 근본</text>
+      <text x="110" y="279" text-anchor="middle" font-size="12" class="mu">Wheeler · 't Hooft · Susskind</text>
+
+      <rect x="15" y="80" width="190" height="50" rx="9" class="bx"/>
+      <text x="110" y="101" text-anchor="middle" font-size="15" font-weight="700" class="tx">장이 근본</text>
+      <text x="110" y="119" text-anchor="middle" font-size="12" class="mu">Weinberg · Wilczek</text>
+    </svg>
+    <figcaption>이미 있는 여섯 갈래의 생각이 만나는 곳에 있어요. 새로운 건 갈래가 아니라 조합이에요.</figcaption>
+  </figure>
+
+  <figure class="diagram">
+    <svg viewBox="0 0 700 240" role="img" aria-label="선행 연구의 연도별 타임라인">
+      <line x1="30" y1="140" x2="680" y2="140" stroke="var(--muted)" stroke-width="2"/>
+      <g stroke="var(--muted)" stroke-width="1.2">
+        <line x1="102" y1="140" x2="102" y2="102"/><line x1="226" y1="140" x2="226" y2="178"/><line x1="336" y1="140" x2="336" y2="102"/><line x1="453" y1="140" x2="453" y2="178"/>
+        <line x1="501" y1="140" x2="501" y2="102"/><line x1="563" y1="140" x2="563" y2="178"/><line x1="591" y1="140" x2="591" y2="102"/><line x1="611" y1="140" x2="611" y2="178"/>
+      </g>
+      <g fill="var(--accent)">
+        <circle cx="102" cy="140" r="6"/><circle cx="226" cy="140" r="6"/><circle cx="336" cy="140" r="6"/><circle cx="453" cy="140" r="6"/>
+        <circle cx="501" cy="140" r="6"/><circle cx="563" cy="140" r="6"/><circle cx="591" cy="140" r="6"/><circle cx="611" cy="140" r="6"/>
+      </g>
+      <g font-size="14" font-weight="700" text-anchor="middle" class="tx">
+        <text x="102" y="94">1939</text><text x="336" y="94">1973</text><text x="501" y="94">1997</text><text x="591" y="94">2010</text>
+        <text x="226" y="198">1957</text><text x="453" y="198">1990</text><text x="563" y="198">2006</text>
+      </g>
+      <text x="611" y="198" font-size="14" font-weight="700" text-anchor="start" class="tx">2013</text>
+      <g font-size="12.5" text-anchor="middle" class="mu">
+        <text x="102" y="78">대칭으로 입자 분류</text><text x="336" y="78">블랙홀 엔트로피</text><text x="501" y="78">AdS/CFT</text><text x="591" y="78">얽힘→시공간</text>
+        <text x="226" y="216">다세계 해석</text><text x="453" y="216">It from Bit</text><text x="563" y="216">RT 공식</text>
+      </g>
+      <text x="611" y="216" font-size="12.5" text-anchor="start" class="mu">ER=EPR</text>
+    </svg>
+    <figcaption>'구조 → 정보 → 얽힘'으로 이어지는 약 80년의 흐름이에요. 이 글의 생각은 그 흐름의 끝에서 이것들을 합친 거예요.</figcaption>
+  </figure>
+
+  <h3>새로움이 생길 수 있는 곳</h3>
+  <ul>
+    <li><b>새로운 예측:</b> 기존 입장과 다른, 실험으로 확인 가능한 결과를 내놓으면 진짜 독창성이 돼요.</li>
+    <li><b>새로운 메커니즘:</b> 파동의 변형이 질량과 전하의 값을 어떻게 정하는지 구체적인 수학으로 보여 주기.</li>
+    <li><b>새로운 설명 방식:</b> 학문적 독창성은 아니지만, 에세이와 교양서에서는 '어떻게 설명하느냐' 자체가 가치예요.</li>
+  </ul>
+</section>
+
+<section id="s8">
+  <h2><span class="n">8</span>용어 사전</h2>
+  <p class="muted">글을 읽다가 막히면 여기로 돌아와서 확인해 보세요.</p>
+  <div class="gl">
+    <div><b>장 (field)</b>공간의 모든 지점에 값이 하나씩 있는 '보이지 않는 숫자 지도'예요. 값이 출렁이면 파동이 돼요.</div>
+    <div><b>매질</b>파동을 전해 주는 물질이에요. 물결에는 물, 소리에는 공기가 매질이에요.</div>
+    <div><b>양자</b>에너지 같은 양이 '덩어리' 단위로만 존재한다는 뜻이에요.</div>
+    <div><b>대칭</b>무언가를 바꿔도 달라지지 않는 성질이에요. 정사각형을 90° 돌려도 같은 모양인 것처럼요.</div>
+    <div><b>상태공간</b>어떤 시스템이 가질 수 있는 모든 상태를 담은 수학적 공간이에요. 힐베르트 공간이라고도 불러요.</div>
+    <div><b>얽힘</b>두 입자가 따로따로가 아니라 하나의 상태로만 설명되는 관계예요.</div>
+    <div><b>창발</b>작은 부분이 모여서 전체에서 새로운 성질이 '생겨나는' 거예요. 물 분자 하나는 축축하지 않지만 물은 축축한 것처럼요.</div>
+    <div><b>엔트로피</b>이 글에서는 '담을 수 있는 정보의 양'에 가까운 뜻으로 써요.</div>
+    <div><b>특이점</b>계산 값이 무한대가 되어 이론이 무너지는 지점이에요. 블랙홀 중심이 대표적이에요.</div>
+    <div><b>홀로그래피 원리</b>3차원의 정보를 그 경계의 2차원 정보로 담을 수 있다는 아이디어예요.</div>
+    <div><b>가설</b>검증해 볼 수 있는 잠정적인 설명이에요. 틀릴 수 있어야 가설이에요.</div>
+    <div><b>이론</b>새로운 예측을 내놓고 여러 시험을 통과한 체계적인 설명이에요.</div>
+  </div>
+</section>
+
+<section id="s9">
+  <h2><span class="n">9</span>스스로 생각해 보기</h2>
+  <ol class="think">
+    <li>체스의 나이트는 나무로 만들든 플라스틱으로 만들든 같은 말이에요. 그렇다면 '전자'를 전자로 만드는 건 무엇일까요?</li>
+    <li>빛은 아무 물질이 없는 우주 공간에서도 전해져요. "파동에는 반드시 매질이 있어야 한다"는 생각은 어디가 틀린 걸까요?</li>
+    <li>어떤 주장이 '과학적 가설'이 되려면 왜 "틀릴 수 있어야" 할까요? 내가 믿는 생각 중에 어떤 결과가 나오면 틀렸다고 인정할 수 있는 건 무엇인가요?</li>
+  </ol>
+</section>
+
+<footer>
+  <p>이 글은 개인 정리 노트이고, 동료 검토를 거친 논문이 아니에요. 내용은 2026년 중반까지의 지식을 바탕으로 하므로, 인용하거나 출판하기 전에 최신 논문으로 다시 확인해야 해요. 쉽게 설명하려고 일부 비유(대칭, 얽힘 등)는 단순화했어요. 더 정확한 내용은 <a href="matter-spacetime.html" style="color:var(--accent)">자세한 버전</a>에서 볼 수 있어요.</p>
+</footer>
+
+</main>
+</body>
+</html>
