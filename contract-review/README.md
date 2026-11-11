@@ -1,4 +1,4 @@
-# Contract Review Pilot — Trade Edition
+# Contract Review Wise — Trade Edition
 
 Browser app that reviews English **export / import sale-of-goods contracts** against a company playbook and returns issue-by-issue findings, escalation routing and English redlines.
 
