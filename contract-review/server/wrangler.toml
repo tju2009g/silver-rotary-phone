@@ -1,0 +1,17 @@
+name = "contract-review-wise"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+# Comma-separated list of web origins allowed to call the API (the page that hosts the app).
+ALLOWED_ORIGINS = "https://tju2009g.github.io"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "crw-usage"
+database_id = "REPLACE_WITH_DATABASE_ID"
+
+# Secrets (set with `npx wrangler secret put <NAME>`, never commit them):
+#   ANTHROPIC_API_KEY  - your Anthropic API key
+#   ADMIN_TOKEN        - long random string for the admin console

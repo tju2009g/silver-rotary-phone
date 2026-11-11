@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Contract Review Wise Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F4F5F7;--panel:#FFF;--panel-2:#F8F9FB;--ink:#18202B;--muted:#5B6472;--hair:#DDE2E9;--navy:#1F3864;--accent:#2D5BD3;--ok:#1E7A46;--ok-bg:#E6F4EC;--dev:#B42318;--dev-bg:#FDE8E7;--fb:#946200;--fb-bg:#FFF4D6;
+  --font:'Inter',system-ui,Arial,sans-serif;--serif:'Newsreader',Georgia,serif;--mono:'IBM Plex Mono',ui-monospace,monospace}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0F141B;--panel:#161D27;--panel-2:#1B2330;--ink:#E6EAF0;--muted:#9AA4B2;--hair:#2A3442;--navy:#1A2B4C;--accent:#7EA2FF;--ok:#5CC98A;--ok-bg:#12301F;--dev:#FF7B72;--dev-bg:#3A1514;--fb:#E9B949;--fb-bg:#33280C}}
+:root[data-theme="dark"]{--bg:#0F141B;--panel:#161D27;--panel-2:#1B2330;--ink:#E6EAF0;--muted:#9AA4B2;--hair:#2A3442;--navy:#1A2B4C;--accent:#7EA2FF;--ok:#5CC98A;--ok-bg:#12301F;--dev:#FF7B72;--dev-bg:#3A1514;--fb:#E9B949;--fb-bg:#33280C}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);font-size:14.5px;line-height:1.5}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.top{background:var(--navy);color:#fff}
+.top-in{max-width:1180px;margin:0 auto;padding:14px 16px;display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
+.brand{font-family:var(--serif);font-size:20px;font-weight:600}
+.top a{color:#d6def0;font-size:13px;margin-left:auto}
+.wrap{max-width:1180px;margin:0 auto;padding:20px 16px 60px;display:grid;gap:16px}
+.wrap>*{min-width:0}
+.card{background:var(--panel);border:1px solid var(--hair);border-radius:10px}
+.card-h{padding:12px 16px;border-bottom:1px solid var(--hair);display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.card-h h2{font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.card-b{padding:16px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.row>div{flex:1 1 200px}
+label{display:block;font-size:12px;font-weight:600;color:var(--muted);margin-bottom:5px}
+.in{width:100%;border:1px solid var(--hair);background:var(--panel);border-radius:8px;padding:8px 10px}
+.btn{border:1px solid var(--hair);background:var(--panel);border-radius:8px;padding:8px 12px;cursor:pointer;font-weight:500;white-space:nowrap}
+.btn:hover{border-color:var(--muted)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.sm{padding:4px 8px;font-size:12.5px}
+.hint{font-size:12.5px;color:var(--muted)}
+.msg{font-size:13px;margin-top:10px;min-height:1em}
+.msg.err{color:var(--dev)}
+.tbl-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--hair);white-space:nowrap;vertical-align:middle}
+th{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;background:var(--panel-2)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.mono{font-family:var(--mono)}
+.pill{display:inline-block;font-size:12px;font-weight:600;padding:2px 8px;border-radius:999px}
+.pill.on{background:var(--ok-bg);color:var(--ok)}.pill.off{background:var(--dev-bg);color:var(--dev)}.pill.err{background:var(--dev-bg);color:var(--dev)}
+.code-box{margin-top:12px;padding:12px;border-radius:8px;background:var(--fb-bg);border:1px solid var(--fb);display:none}
+.code-box.on{display:block}
+.code-box .mono{font-size:15px;word-break:break-all;display:block;margin:6px 0}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:12px}
+.kpi{border:1px solid var(--hair);border-radius:8px;padding:10px 12px}
+.kpi b{display:block;font-size:20px}
+.kpi span{font-size:12px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header class="top"><div class="top-in"><div class="brand">Contract Review Wise · Admin</div><a href="./">← Back to review app</a></div></header>
+<main class="wrap">
+  <section class="card">
+    <div class="card-h"><h2>Connect</h2><span class="hint">The admin token is kept only for this browser tab.</span></div>
+    <div class="card-b">
+      <div class="row">
+        <div><label for="base">Server URL</label><input class="in mono" id="base" placeholder="https://contract-review-wise.<subdomain>.workers.dev"></div>
+        <div><label for="token">Admin token</label><input class="in mono" id="token" type="password" autocomplete="off"></div>
+        <button class="btn primary" id="connect" type="button">Load</button>
+      </div>
+      <div class="msg" id="connMsg" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-h"><h2>New client access code</h2></div>
+    <div class="card-b">
+      <div class="row">
+        <div><label for="cName">Client name</label><input class="in" id="cName" placeholder="e.g. Acme Trading Co."></div>
+        <div style="flex:0 1 200px"><label for="cLimit">Monthly review limit</label><input class="in" id="cLimit" type="number" min="0" placeholder="blank = unlimited"></div>
+        <button class="btn primary" id="create" type="button">Create code</button>
+      </div>
+      <div class="code-box" id="codeBox" role="status">
+        <b id="codeTitle">Access code</b>
+        <span class="mono" id="codeVal"></span>
+        <button class="btn sm" id="copyCode" type="button">Copy</button>
+        <p class="hint" style="margin-top:6px">Give this to the client now. Only its hash is stored — it cannot be shown again.</p>
+      </div>
+      <div class="msg" id="createMsg" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-h"><h2>Clients · <span id="month">this month</span></h2><button class="btn sm" id="reload" type="button">Refresh</button></div>
+    <div class="card-b" style="padding-bottom:0"><div class="kpis" id="kpis"></div></div>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Client</th><th>Code</th><th>Status</th><th class="num">Reviews</th><th class="num">Limit</th><th class="num">Errors</th><th class="num">Est. cost (USD)</th><th></th></tr></thead>
+      <tbody id="clients"><tr><td colspan="8" class="hint">Connect to load clients.</td></tr></tbody>
+    </table></div>
+  </section>
+
+  <section class="card">
+    <div class="card-h"><h2>Usage log</h2>
+      <div class="row" style="align-items:center"><input class="in" id="uMonth" type="month" style="width:auto"><button class="btn sm" id="uLoad" type="button">Show</button><button class="btn sm" id="uCsv" type="button">Download CSV</button></div>
+    </div>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Time (UTC)</th><th>Client</th><th>Model</th><th>Side</th><th>Document</th><th class="num">In tokens</th><th class="num">Out tokens</th><th class="num">Est. cost</th><th>Status</th></tr></thead>
+      <tbody id="usage"><tr><td colspan="9" class="hint">Choose a month and press Show.</td></tr></tbody>
+    </table></div>
+    <p class="hint" style="padding:10px 16px">Costs are estimates from list prices; reconcile with the Anthropic invoice.</p>
+  </section>
+</main>
+<script src="config.js"></script>
+<script>
+(function () {
+  "use strict";
+  const $ = (s) => document.querySelector(s);
+  const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+  const ss = { get(k) { try { return sessionStorage.getItem(k); } catch (e) { return null; } }, set(k, v) { try { sessionStorage.setItem(k, v); } catch (e) { /* unavailable */ } } };
+  const usd = (n) => (n == null ? "—" : "$" + Number(n).toFixed(2));
+  $("#base").value = ss.get("crw.base") || ((window.CRW_CONFIG || {}).apiBase || "");
+  $("#token").value = ss.get("crw.admin") || "";
+  $("#uMonth").value = new Date().toISOString().slice(0, 7);
+
+  const base = () => $("#base").value.trim().replace(/\/+$/, "");
+  async function api(path, opts = {}) {
+    if (!base()) throw new Error("Enter the server URL.");
+    const r = await fetch(base() + path, { ...opts, headers: { Authorization: "Bearer " + $("#token").value.trim(), "Content-Type": "application/json", ...(opts.headers || {}) } });
+    if (!r.ok) { let m = ""; try { m = (await r.json()).error; } catch (e) { /* non-JSON */ } throw new Error(m || `HTTP ${r.status}`); }
+    return r;
+  }
+  function msg(id, text, err) { const el = $(id); el.textContent = text; el.className = "msg" + (err ? " err" : ""); }
+
+  async function loadClients() {
+    try {
+      const d = await (await api("/api/admin/clients")).json();
+      ss.set("crw.base", base()); ss.set("crw.admin", $("#token").value.trim());
+      $("#month").textContent = d.month;
+      const tot = d.clients.reduce((a, c) => ({ r: a.r + c.month_reviews, c: a.c + c.month_cost_usd, e: a.e + c.month_errors }), { r: 0, c: 0, e: 0 });
+      $("#kpis").innerHTML = `<div class="kpi"><b>${d.clients.filter((c) => c.active).length}</b><span>Active clients</span></div><div class="kpi"><b>${tot.r}</b><span>Reviews this month</span></div><div class="kpi"><b>${usd(tot.c)}</b><span>Est. model cost</span></div><div class="kpi"><b>${tot.r ? usd(tot.c / tot.r) : "—"}</b><span>Avg cost / review</span></div><div class="kpi"><b>${tot.e}</b><span>Failed reviews</span></div>`;
+      $("#clients").innerHTML = d.clients.length ? d.clients.map((c) => `<tr>
+        <td>${esc(c.name)}</td><td class="mono">…${esc(c.code_hint)}</td>
+        <td><span class="pill ${c.active ? "on" : "off"}">${c.active ? "Active" : "Disabled"}</span></td>
+        <td class="num">${c.month_reviews}</td><td class="num">${c.monthly_reviews == null ? "∞" : c.monthly_reviews}</td>
+        <td class="num">${c.month_errors}</td><td class="num">${usd(c.month_cost_usd)}</td>
+        <td><button class="btn sm" data-act="limit" data-id="${c.id}" data-cur="${c.monthly_reviews == null ? "" : c.monthly_reviews}">Limit</button>
+            <button class="btn sm" data-act="toggle" data-id="${c.id}" data-active="${c.active}">${c.active ? "Disable" : "Enable"}</button>
+            <button class="btn sm" data-act="rotate" data-id="${c.id}" data-name="${esc(c.name)}">New code</button></td></tr>`).join("") : `<tr><td colspan="8" class="hint">No clients yet — create an access code above.</td></tr>`;
+      msg("#connMsg", `Connected · ${d.clients.length} client${d.clients.length === 1 ? "" : "s"}`);
+    } catch (e) { msg("#connMsg", "⚠ " + e.message, true); }
+  }
+  $("#connect").addEventListener("click", loadClients);
+  $("#reload").addEventListener("click", loadClients);
+
+  function showCode(title, code) { $("#codeTitle").textContent = title; $("#codeVal").textContent = code; $("#codeBox").classList.add("on"); }
+  $("#copyCode").addEventListener("click", () => navigator.clipboard && navigator.clipboard.writeText($("#codeVal").textContent));
+  $("#create").addEventListener("click", async () => {
+    try {
+      const name = $("#cName").value.trim();
+      if (!name) throw new Error("Enter a client name.");
+      const d = await (await api("/api/admin/clients", { method: "POST", body: JSON.stringify({ name, monthly_reviews: $("#cLimit").value === "" ? null : Number($("#cLimit").value) }) })).json();
+      showCode(`Access code for ${d.name}`, d.code);
+      $("#cName").value = ""; $("#cLimit").value = "";
+      msg("#createMsg", "");
+      loadClients();
+    } catch (e) { msg("#createMsg", "⚠ " + e.message, true); }
+  });
+
+  $("#clients").addEventListener("click", async (e) => {
+    const b = e.target.closest("button[data-act]");
+    if (!b) return;
+    try {
+      if (b.dataset.act === "toggle") await api(`/api/admin/clients/${b.dataset.id}`, { method: "POST", body: JSON.stringify({ active: b.dataset.active !== "1" }) });
+      if (b.dataset.act === "limit") {
+        const v = prompt("Monthly review limit (blank = unlimited):", b.dataset.cur);
+        if (v === null) return;
+        await api(`/api/admin/clients/${b.dataset.id}`, { method: "POST", body: JSON.stringify({ monthly_reviews: v.trim() === "" ? null : Number(v) }) });
+      }
+      if (b.dataset.act === "rotate") {
+        if (!confirm(`Issue a new code for ${b.dataset.name}? The current code stops working immediately.`)) return;
+        const d = await (await api(`/api/admin/clients/${b.dataset.id}/rotate`, { method: "POST" })).json();
+        showCode(`New access code for ${b.dataset.name}`, d.code);
+      }
+      loadClients();
+    } catch (err) { msg("#connMsg", "⚠ " + err.message, true); }
+  });
+
+  $("#uLoad").addEventListener("click", async () => {
+    try {
+      const d = await (await api(`/api/admin/usage?month=${encodeURIComponent($("#uMonth").value)}`)).json();
+      $("#usage").innerHTML = d.rows.length ? d.rows.slice().reverse().map((r) => `<tr><td class="mono">${esc(r.ts.replace("T", " ").slice(0, 19))}</td><td>${esc(r.client)}</td><td class="mono">${esc(r.model)}</td><td>${esc(r.side)}</td><td>${esc(r.doc_name)}</td><td class="num">${Number(r.input_tokens + r.cache_read_tokens + r.cache_write_tokens).toLocaleString()}</td><td class="num">${Number(r.output_tokens).toLocaleString()}</td><td class="num">${usd(r.cost_usd)}</td><td>${r.status === "ok" ? '<span class="pill on">OK</span>' : `<span class="pill err" title="${esc(r.error)}">Error</span>`}</td></tr>`).join("") : `<tr><td colspan="9" class="hint">No reviews in ${esc(d.month)}.</td></tr>`;
+    } catch (e) { msg("#connMsg", "⚠ " + e.message, true); }
+  });
+  $("#uCsv").addEventListener("click", async () => {
+    try {
+      const m = $("#uMonth").value;
+      const blob = await (await api(`/api/admin/usage?month=${encodeURIComponent(m)}&format=csv`)).blob();
+      const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = `crw-usage-${m}.csv`; a.click();
+      setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+    } catch (e) { msg("#connMsg", "⚠ " + e.message, true); }
+  });
+  if ($("#token").value && base()) loadClients();
+})();
+</script>
+</body>
+</html>

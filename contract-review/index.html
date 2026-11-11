@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trade Contract Review</title>
+<title>Contract Review Wise</title>
 <meta name="description" content="Upload an English export or import sale-of-goods contract, analyse it issue by issue against the TRADE-1.0 playbook, and get escalation routing and English redlines.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -67,6 +67,7 @@ label.lbl{display:block;font-size:12px;font-weight:600;color:var(--muted);margin
 .seg button{border:0;background:var(--panel);padding:9px 8px;cursor:pointer;font-weight:500;line-height:1.25}
 .seg button small{display:block;font-size:11px;color:var(--muted);font-weight:400}
 .seg button[aria-pressed="true"]{background:var(--navy);color:#fff}
+.seg button:disabled{opacity:.45;cursor:not-allowed}
 .seg button[aria-pressed="true"] small{color:#d6def0}
 .seg button+button{border-left:1px solid var(--hair)}
 .in{width:100%;border:1px solid var(--hair);background:var(--panel);border-radius:8px;padding:9px 10px}
@@ -214,7 +215,7 @@ details.more summary{cursor:pointer;font-size:12.5px;font-weight:600;color:var(-
 <body>
 <header class="top">
   <div class="top-in">
-    <div class="brand">Contract Review Pilot <small>Trade Edition · <span id="pbBadge">TRADE-1.0</span></small></div>
+    <div class="brand">Contract Review Wise <small>Trade Edition · <span id="pbBadge">TRADE-1.0</span></small></div>
     <nav class="tabs" role="tablist" aria-label="Sections">
       <button class="tab" role="tab" aria-selected="true" data-view="review">Review</button>
       <button class="tab" role="tab" aria-selected="false" data-view="contract">Contract</button>
@@ -268,8 +269,18 @@ details.more summary{cursor:pointer;font-size:12.5px;font-weight:600;color:var(-
         <div class="card">
           <div class="card-h"><h2>3 · Claude deep review</h2><span class="hint">optional</span></div>
           <div class="card-b stack">
-            <p class="hint">Second-opinion review by Claude against the same playbook — reads cross-references and nuance the rules miss. Requires your Anthropic API key; the contract is sent to the Anthropic API.</p>
-            <div>
+            <p class="hint">Second-opinion review by Claude against the same playbook — reads cross-references and nuance the rules miss. The contract text is sent to Claude for processing.</p>
+            <div class="seg" role="group" aria-label="Connection">
+              <button type="button" data-aimode="service" aria-pressed="true">Service<small>Access code</small></button>
+              <button type="button" data-aimode="key" aria-pressed="false">Own API key<small>Direct to Anthropic</small></button>
+            </div>
+            <div id="aiService">
+              <label class="lbl" for="accessCode">Access code</label>
+              <input class="in mono" id="accessCode" type="password" placeholder="crw_…" autocomplete="off" spellcheck="false">
+              <label class="hint" style="display:flex;gap:6px;align-items:center;margin-top:6px"><input type="checkbox" id="rememberCode"> Remember on this device</label>
+              <div class="hint" id="quota" aria-live="polite" style="margin-top:4px"></div>
+            </div>
+            <div id="aiKey" hidden>
               <label class="lbl" for="apiKey">Anthropic API key</label>
               <input class="in mono" id="apiKey" type="password" placeholder="sk-ant-…" autocomplete="off" spellcheck="false">
               <label class="hint" style="display:flex;gap:6px;align-items:center;margin-top:6px"><input type="checkbox" id="rememberKey"> Remember on this device</label>
@@ -379,6 +390,8 @@ details.more summary{cursor:pointer;font-size:12.5px;font-weight:600;color:var(-
 <script src="playbook.js"></script>
 <script src="samples.js"></script>
 <script src="engine.js"></script>
+<script src="ai-spec.js"></script>
+<script src="config.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
