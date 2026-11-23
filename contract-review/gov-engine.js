@@ -134,7 +134,7 @@
     });
     const dev = list.filter((d) => d.deviation).length || /class deviation|\bRFO\b|FAR Overhaul/i.test(ctx.flat);
     const notes = [];
-    if (stale.length) notes.push("Date differs from the verified current date: " + stale.map((d) => `${d.id} cited ${d.dates.join("/")} vs ${d.db.currentDate}`).join("; ") + ".");
+    if (stale.length) notes.push("Cited date differs from the verified current date: " + stale.map((d) => `${d.id} cited ${d.dates.join("/")} vs ${d.db.currentDate}`).join("; ") + ". An older date can be correct if it matches the prime contract in force at award — compare against the prime contract before accepting or changing it.");
     if (unknown.length) notes.push("Not in Clause DB v0 (manual check): " + unknown.map((d) => d.id).join(", ") + ".");
     if (undated.length) notes.push("Cited without a date: " + undated.map((d) => d.id).join(", ") + ".");
     if (unverified.length) notes.push(`${unverified.length} dated clause(s) could not be compared — the DB has no verified current date for them: ${unverified.map((d) => `${d.id} (${d.dates.join("/")})`).join(", ")}.`);
@@ -143,8 +143,7 @@
     const refs = [...new Set(list.flatMap((d) => d.clauses))].slice(0, 8);
     const quote = short(ctx.cites[0] ? (sentOf(ctx.cites[0].clause).find((s) => s.includes(ctx.cites[0].id)) || "") : "");
     let status;
-    if (stale.length) status = "Deviation";
-    else if (unknown.length || undated.length) status = "Review";
+    if (stale.length || unknown.length || undated.length) status = "Review";
     else if (unverified.length || !dev) status = "Fallback";
     else status = "Compliant";
     return { status, refs, quote, notes };
