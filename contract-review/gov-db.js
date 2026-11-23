@@ -31,7 +31,9 @@
     "52.212-4": "NOV 2023", "52.243-1": "AUG 1987", "52.233-1": "MAY 2014", "52.211-11": "SEP 2000",
     "52.246-2": "AUG 1996", "52.249-8": "APR 1984", "52.227-14": "MAY 2014", "52.227-11": "MAY 2014",
     "252.227-7018": "AUG 2025", "252.225-7048": "JUN 2013", "252.239-7010": "JAN 2023",
-    "252.203-7002": "DEC 2022", "252.244-7000": "NOV 2023"
+    "252.203-7002": "DEC 2022", "252.244-7000": "NOV 2023",
+    // Third pack, single directly-opened clause (owner's GPT register, 2026-11-23):
+    "252.203-7000": "SEP 2011"
   };
   const FAR_URL = (n) => "https://www.acquisition.gov/far/" + n;
   const DFARS_PART = "https://www.acquisition.gov/dfars/part-252-solicitation-provisions-and-contract-clauses";
@@ -92,6 +94,7 @@
     C("252.246-7007", "DFARS", "clause", "Contractor Counterfeit Electronic Part Detection and Avoidance System", "counterfeit", "conditional", ["dod", "electronic"], "Counterfeit electronic parts program; flow-down applies to covered contractors."),
     C("252.246-7008", "DFARS", "clause", "Sources of Electronic Parts", "counterfeit", "conditional", ["dod", "electronic"], "Approved sourcing for electronic parts; flows down."),
     C("252.239-7010", "DFARS", "clause", "Cloud Computing Services", "cyber", "conditional", ["dod", "cloud"], "Requirements when cloud services are used for DoD data; flows down where applicable."),
+    C("252.203-7000", "DFARS", "clause", "Requirements Relating to Compensation of Former DoD Officials", "ethics", "none", ["dod"], "Restricts hiring or compensating certain former DoD officials; no express subcontract flow-down in paragraphs (a)–(c).", "Low"),
     C("252.203-7002", "DFARS", "clause", "Requirement to Inform Employees of Whistleblower Rights", "ethics", "required", ["dod"], "Whistleblower-rights notice; flows down.", "Medium"),
     C("252.244-7000", "DFARS", "clause", "Subcontracts for Commercial Products or Commercial Services", "flowdown", "required", ["dod", "commercial"], "DoD list of flow-down clauses for commercial subcontracts.", "Medium")
   ];
@@ -103,10 +106,27 @@
       version: "v0.1",
       compiledOn: "2026-11-22",
       datesVerifiedOn: "2026-11-23",
-      verification: "Clause dates verified 2026-11-23 (FAC 2026-01 / DFARS Change 5/7/2026). Agency class deviations are not tracked yet — confirm them before client use.",
+      verification: "Clause dates verified 2026-11-23 (FAC 2026-01 / DFARS Change 5/7/2026). Class deviations: 13 DoD/GSA entries recorded from a partial register (affected clause numbers not yet mapped) — confirm before client use.",
       rfo: "Revolutionary FAR Overhaul in progress: agency class deviations apply now; formal notice-and-comment rulemaking is ongoing. Clause text and dates may differ by agency and may change."
     },
     clauses: CLAUSES,
+    // DoD / GSA class deviations from the owner's 2026-11-23 register. PARTIAL: issue/effective dates are as
+    // recorded there ("unknown" = not confirmed); the clause numbers each one changes are NOT yet mapped.
+    deviations: [
+      { no: "2026-O0038", agency: "DoD", issued: "2026-01-20", effective: "2026-02-01", scope: "Use RFO replacement text for FAR Part 52 clauses/provisions" },
+      { no: "2025-O0003", agency: "DoD", issued: "2025-03-04", effective: null, scope: "Restoring Merit-Based Opportunity in Federal Contracts" },
+      { no: "2026-O0037", agency: "DoD", issued: "2026-07-24 (Rev 1)", effective: null, scope: "RFO Part 19 / DFARS 219" },
+      { no: "2026-O0025", agency: "DoD", issued: "2026-09-03 (Rev 3)", effective: null, scope: "RFO Part 40 / DFARS 240" },
+      { no: "2026-O0034", agency: "DoD", issued: "2026-08-05 (Rev 1)", effective: null, scope: "RFO Part 43 / DFARS 243" },
+      { no: "2026-O0015", agency: "DoD", issued: "2026-07-29 (Rev 1)", effective: null, scope: "RFO Part 44 / DFARS 244" },
+      { no: "2026-O0046", agency: "DoD", issued: "2026-09-09 (Rev 1)", effective: null, scope: "RFO Part 45 / DFARS 245" },
+      { no: "2026-O0003", agency: "DoD", issued: "2026-08-24 (Rev 1)", effective: "immediate", scope: "RFO Part 5 / DFARS 205" },
+      { no: "2026-O0050", agency: "DoD", issued: "2026-03-06", effective: null, scope: "RFO Part 42 / DFARS 242" },
+      { no: "RFO-2025-38", agency: "GSA", issued: null, effective: "2025-11-03", scope: "FAR Part 38 removed; managed under GSAR 538" },
+      { no: "RFO-2025-46", agency: "GSA", issued: null, effective: null, scope: "RFO model text for FAR Part 46" },
+      { no: "RFO-2025-42", agency: "GSA", issued: null, effective: null, scope: "RFO model text for FAR Part 42" },
+      { no: "RFO-2025-34", agency: "GSA", issued: "2025-04-21", effective: null, scope: "RFO model text for FAR Part 34" }
+    ],
     byId,
     // Citation pattern: FAR 52.xxx-x and DFARS 252.xxx-xxxx
     ID_RE: /\b(?:(FAR|DFARS)\s*)?(252\.\d{3}-\d{4}|52\.\d{3}-\d{1,2})\b/g

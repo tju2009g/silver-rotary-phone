@@ -116,7 +116,7 @@
     if (exp.length) notes.push(`Clause DB expects ${exp.length} required flow-down clause(s) for the detected signals (${["federal", "dod", "cui", "civilian", "electronic", "tech-data"].filter((k) => sig[k]).join(", ")}).`);
     if (missing.length) notes.push("Not cited: " + missing.map((c) => c.id).join(", ") + ".");
     if (blanket) notes.push("Blanket incorporation language found.");
-    notes.push("Confirm each expected clause against the prime contract's Section I and its thresholds — Clause DB dates were verified 2026-11-23; agency class deviations are not tracked yet.");
+    notes.push("Confirm each expected clause against the prime contract's Section I and its thresholds — Clause DB dates were verified 2026-11-23; class deviations are only partly tracked.");
     const refs = refsOf([blanket].concat(ctx.cites.slice(0, 6).map((c) => ({ clause: c.clause }))));
     const quote = blanket ? short(blanket.sentence) : (ctx.cites[0] ? short(sentOf(ctx.cites[0].clause).find((s) => s.includes(ctx.cites[0].id)) || "") : "");
     let status;
@@ -144,6 +144,12 @@
     if (unknown.length) notes.push("Not in Clause DB v0 (manual check): " + unknown.map((d) => d.id).join(", ") + ".");
     if (undated.length) notes.push("Cited without a date: " + undated.map((d) => d.id).join(", ") + ".");
     if (unverified.length) notes.push(`${unverified.length} dated clause(s) could not be compared — the DB has no verified current date for them: ${unverified.map((d) => `${d.id} (${d.dates.join("/")})`).join(", ")}.`);
+    const devNos = [...new Set(ctx.cites.map((c) => c.deviation).filter(Boolean).map((t) => (t.match(/\b\d{4}-O\d{4}\b|RFO-\d{4}-\d+/) || [])[0]).filter(Boolean))];
+    if (devNos.length) {
+      const known = devNos.filter((n) => DB.deviations.some((x) => x.no === n)), unknownDev = devNos.filter((n) => !known.includes(n));
+      if (known.length) notes.push("Recognised deviation(s): " + known.map((n) => { const x = DB.deviations.find((y) => y.no === n); return `${n} (${x.agency}, ${x.effective ? "effective " + x.effective : "effective date unconfirmed"})`; }).join("; ") + ". Which clauses each one changes is not mapped yet — read the deviation text.");
+      if (unknownDev.length) notes.push("Deviation number(s) not in the register: " + unknownDev.join(", ") + " — verify them against the issuing agency.");
+    }
     notes.push(dev ? "A class deviation / overhaul reference appears in the document." : "No class deviation is named. The FAR is being overhauled through agency class deviations — confirm which text applies.");
     notes.push(DB.meta.rfo);
     const refs = [...new Set(list.flatMap((d) => d.clauses))].slice(0, 8);
