@@ -16,7 +16,13 @@
   "use strict";
 
   // Verified against official text supplied by the owner (acquisition.gov PDFs, 2026-11-23)
-  const VERIFIED = { "52.204-21": "NOV 2021", "252.204-7012": "MAY 2024" };
+  const VERIFIED = {
+    "52.204-21": "NOV 2021", "252.204-7012": "MAY 2024",            // official clause text (owner-supplied PDFs)
+    // Owner's reference pack (acquisition.gov check, FAC 2026-01 / DFARS Change 5/7/2026), 2026-11-23:
+    "252.227-7013": "AUG 2025", "252.227-7014": "AUG 2025", "252.227-7015": "JAN 2025",
+    "52.204-25": "NOV 2021", "52.204-23": "DEC 2023", "52.222-50": "OCT 2025", "52.244-6": "OCT 2025",
+    "252.204-7020": "NOV 2023", "252.204-7021": "NOV 2025"
+  };
   const FAR_URL = (n) => "https://www.acquisition.gov/far/" + n;
   const DFARS_PART = "https://www.acquisition.gov/dfars/part-252-solicitation-provisions-and-contract-clauses";
 
@@ -32,7 +38,7 @@
   const CLAUSES = [
     // ---- Safeguarding / supply-chain security ----
     C("52.204-21", "FAR", "clause", "Basic Safeguarding of Covered Contractor Information Systems", "cyber", "conditional", ["fci"], "Basic safeguarding for systems holding federal contract information; flows down where a subcontractor may hold such information."),
-    C("52.204-23", "FAR", "clause", "Prohibition on Contracting for Hardware, Software, and Services Developed or Provided by Kaspersky Lab", "supply-chain", "required", ["federal"], "Covered-vendor prohibition; flows down to subcontracts."),
+    C("52.204-23", "FAR", "clause", "Prohibition on Contracting for Hardware, Software, and Services Developed or Provided by Kaspersky Lab Covered Entities", "supply-chain", "required", ["federal"], "Covered-vendor prohibition; flows down to subcontracts."),
     C("52.204-25", "FAR", "clause", "Prohibition on Contracting for Certain Telecommunications and Video Surveillance Services or Equipment", "supply-chain", "required", ["federal"], "Section 889 covered-equipment prohibition; flows down to all subcontracts including commercial."),
     C("52.204-27", "FAR", "clause", "Prohibition on a ByteDance Covered Application", "supply-chain", "required", ["federal"], "Covered-application prohibition; flows down to subcontracts. Confirm applicability."),
     C("52.203-19", "FAR", "clause", "Prohibition on Requiring Certain Internal Confidentiality Agreements or Statements", "ethics", "required", ["federal"], "Bars confidentiality agreements that restrict reporting waste, fraud or abuse; flows down."),
@@ -61,7 +67,7 @@
     // ---- DFARS: cyber ----
     C("252.204-7012", "DFARS", "clause", "Safeguarding Covered Defense Information and Cyber Incident Reporting", "cyber", "required", ["dod", "cui"], "Controls for covered defense information and rapid cyber-incident reporting; flows down to subcontracts handling such information."),
     C("252.204-7020", "DFARS", "clause", "NIST SP 800-171 DoD Assessment Requirements", "cyber", "required", ["dod", "cui"], "Assessment and score-submission requirements; flows down."),
-    C("252.204-7021", "DFARS", "clause", "Contractor Compliance with the Cybersecurity Maturity Model Certification Level Requirement", "cyber", "required", ["dod", "cui"], "CMMC level requirement; flow-down and applicability depend on the phase-in and the solicitation. Confirm current status."),
+    C("252.204-7021", "DFARS", "clause", "Contractor Compliance with the Cybersecurity Maturity Model Certification Level Requirements", "cyber", "required", ["dod", "cui"], "CMMC level requirement; flow-down and applicability depend on the phase-in and the solicitation. Confirm current status."),
 
     // ---- DFARS: data rights ----
     C("252.227-7013", "DFARS", "clause", "Rights in Technical Data — Other Than Commercial Products and Commercial Services", "data-rights", "required", ["dod", "tech-data"], "Technical-data license rights by funding source; flows down. Central to protecting privately funded data."),
