@@ -113,14 +113,14 @@
     // DoD / GSA class deviations from the owner's 2026-11-23 register. PARTIAL: issue/effective dates are as
     // recorded there ("unknown" = not confirmed); the clause numbers each one changes are NOT yet mapped.
     deviations: [
-      { no: "2026-O0038", agency: "DoD", issued: "2026-01-20", effective: "2026-02-01", scope: "Use RFO replacement text for FAR Part 52 clauses/provisions" },
-      { no: "2025-O0003", agency: "DoD", issued: "2025-03-04", effective: null, scope: "Restoring Merit-Based Opportunity in Federal Contracts" },
+      { no: "2026-O0038", agency: "DoD", issued: "2026-01-20", effective: "2026-02-01", scope: "Use RFO replacement text for FAR Part 52 clauses/provisions", source: "https://www.acq.osd.mil/dpap/dars/classdev/DFARS_RFO/Part-52/2026-O0038_TAB_A_Deviation_Memo_Part_52.pdf" },
+      { no: "2025-O0003", agency: "DoD", issued: "2025-03-04", effective: null, scope: "Restoring Merit-Based Opportunity in Federal Contracts", source: "https://www.acq.osd.mil/dpap/policy/policyvault/USA000368-25-DPCAP.pdf" },
       { no: "2026-O0037", agency: "DoD", issued: "2026-07-24 (Rev 1)", effective: null, scope: "RFO Part 19 / DFARS 219" },
       { no: "2026-O0025", agency: "DoD", issued: "2026-09-03 (Rev 3)", effective: null, scope: "RFO Part 40 / DFARS 240" },
       { no: "2026-O0034", agency: "DoD", issued: "2026-08-05 (Rev 1)", effective: null, scope: "RFO Part 43 / DFARS 243" },
       { no: "2026-O0015", agency: "DoD", issued: "2026-07-29 (Rev 1)", effective: null, scope: "RFO Part 44 / DFARS 244" },
       { no: "2026-O0046", agency: "DoD", issued: "2026-09-09 (Rev 1)", effective: null, scope: "RFO Part 45 / DFARS 245" },
-      { no: "2026-O0003", agency: "DoD", issued: "2026-08-24 (Rev 1)", effective: "immediate", scope: "RFO Part 5 / DFARS 205" },
+      { no: "2026-O0003", agency: "DoD", issued: "2026-08-24 (Rev 1)", effective: "immediate", scope: "RFO Part 5 / DFARS 205", source: "https://www.acq.osd.mil/dpap/dars/classdev/DFARS_RFO/Part-205/2026-O0003_Rev_1_TAB_A_Deviation_Memo.pdf" },
       { no: "2026-O0050", agency: "DoD", issued: "2026-03-06", effective: null, scope: "RFO Part 42 / DFARS 242" },
       { no: "RFO-2025-38", agency: "GSA", issued: null, effective: "2025-11-03", scope: "FAR Part 38 removed; managed under GSAR 538" },
       { no: "RFO-2025-46", agency: "GSA", issued: null, effective: null, scope: "RFO model text for FAR Part 46" },
