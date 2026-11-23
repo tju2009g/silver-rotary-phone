@@ -31,8 +31,9 @@
         const win = text.slice(h.end, Math.min(h.end + 170, hits[i + 1] ? hits[i + 1].idx : text.length));
         const d = win.match(new RegExp(`\\(\\s*(${MONTHS})[A-Z]*\\.?\\s*(\\d{4})\\s*\\)`, "i"));
         const ym = d ? null : win.match(/(?:^|[\s.])((?:19|20)\d{2})-(0[1-9]|1[0-2])(?=\s|$)/);
+        const alt = text.slice(h.end, h.end + 14).match(/^\s*ALT\.?\s*([IVX]+)\b/i) || win.match(/\(\s*Alternate\s+([IVX]+)\s*\)/i);
         const dev = win.match(/\(\s*(?:class\s+)?deviation[^)]{0,70}\)/i) || win.match(/class deviation[^.;,)]{0,50}/i);
-        out.push({ id: h.id, auth: h.auth, clause: c, date: d ? `${d[1].slice(0, 3).toUpperCase()} ${d[2]}` : ym ? `${MONTHS.split("|")[parseInt(ym[2], 10) - 1]} ${ym[1]}` : null, deviation: dev ? norm(dev[0]) : null });
+        out.push({ id: h.id, auth: h.auth, clause: c, date: d ? `${d[1].slice(0, 3).toUpperCase()} ${d[2]}` : ym ? `${MONTHS.split("|")[parseInt(ym[2], 10) - 1]} ${ym[1]}` : null, deviation: dev ? norm(dev[0]) : null, alt: alt ? alt[1].toUpperCase() : null });
       });
     });
     return out;
@@ -42,9 +43,12 @@
     const map = new Map();
     cites.forEach((c) => {
       const cur = map.get(c.id);
-      if (!cur) map.set(c.id, { id: c.id, auth: c.auth, dates: c.date ? [c.date] : [], deviation: c.deviation, clauses: [c.clause] });
+      const base = !c.alt && !c.deviation;
+      if (!cur) map.set(c.id, { id: c.id, auth: c.auth, dates: c.date ? [c.date] : [], baseDates: c.date && base ? [c.date] : [], variants: base ? [] : [c.alt ? "ALT " + c.alt : "deviation"], deviation: c.deviation, clauses: [c.clause] });
       else {
         if (c.date && !cur.dates.includes(c.date)) cur.dates.push(c.date);
+        if (c.date && base && !cur.baseDates.includes(c.date)) cur.baseDates.push(c.date);
+        if (!base) { const v = c.alt ? "ALT " + c.alt : "deviation"; if (!cur.variants.includes(v)) cur.variants.push(v); }
         if (c.deviation && !cur.deviation) cur.deviation = c.deviation;
         if (!cur.clauses.includes(c.clause)) cur.clauses.push(c.clause);
       }
@@ -125,16 +129,18 @@
   E.G02 = (ctx) => {
     const list = ctx.distinct;
     if (!list.length) return { status: "Review", refs: [], quote: "", notes: ["No FAR/DFARS clause citations found — currency cannot be assessed."] };
-    const stale = [], unknown = [], undated = [], unverified = [];
+    const stale = [], unknown = [], undated = [], unverified = [], variant = [];
     list.forEach((d) => {
       if (!d.db) unknown.push(d);
       else if (!d.dates.length) undated.push(d);
-      else if (d.db.verified && d.db.currentDate && !d.dates.includes(d.db.currentDate)) stale.push(d);
+      else if (!d.baseDates.length) variant.push(d);
+      else if (d.db.verified && d.db.currentDate && !d.baseDates.includes(d.db.currentDate)) stale.push(d);
       else if (!d.db.verified) unverified.push(d);
     });
     const dev = list.filter((d) => d.deviation).length || /class deviation|\bRFO\b|FAR Overhaul/i.test(ctx.flat);
     const notes = [];
-    if (stale.length) notes.push("Cited date differs from the verified current date: " + stale.map((d) => `${d.id} cited ${d.dates.join("/")} vs ${d.db.currentDate}`).join("; ") + ". An older date can be correct if it matches the prime contract in force at award — compare against the prime contract before accepting or changing it.");
+    if (stale.length) notes.push("Cited date differs from the verified current date: " + stale.map((d) => `${d.id} cited ${d.baseDates.join("/")} vs ${d.db.currentDate}`).join("; ") + ". An older date can be correct if it matches the prime contract in force at award — compare against the prime contract before accepting or changing it.");
+    if (variant.length) notes.push(`${variant.length} clause(s) appear only as an Alternate or agency deviation, whose dates follow their own version track and are not compared to the base clause date: ${variant.map((d) => `${d.id} (${d.variants.join("/")})`).slice(0, 12).join(", ")}${variant.length > 12 ? ", …" : ""}.`);
     if (unknown.length) notes.push("Not in Clause DB v0 (manual check): " + unknown.map((d) => d.id).join(", ") + ".");
     if (undated.length) notes.push("Cited without a date: " + undated.map((d) => d.id).join(", ") + ".");
     if (unverified.length) notes.push(`${unverified.length} dated clause(s) could not be compared — the DB has no verified current date for them: ${unverified.map((d) => `${d.id} (${d.dates.join("/")})`).join(", ")}.`);
