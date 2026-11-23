@@ -21,7 +21,10 @@
     // Owner's reference pack (acquisition.gov check, FAC 2026-01 / DFARS Change 5/7/2026), 2026-11-23:
     "252.227-7013": "AUG 2025", "252.227-7014": "AUG 2025", "252.227-7015": "JAN 2025",
     "52.204-25": "NOV 2021", "52.204-23": "DEC 2023", "52.222-50": "OCT 2025", "52.244-6": "OCT 2025",
-    "252.204-7020": "NOV 2023", "252.204-7021": "NOV 2025"
+    "252.204-7020": "NOV 2023", "252.204-7021": "NOV 2025",
+    // Owner's second reference pack, 2026-11-23:
+    "52.244-2": "JUN 2020", "52.232-40": "MAR 2023", "52.249-2": "APR 2012",
+    "252.227-7017": "JAN 2025", "252.227-7037": "JAN 2025", "252.246-7007": "JAN 2023", "252.246-7008": "JAN 2023"
   };
   const FAR_URL = (n) => "https://www.acquisition.gov/far/" + n;
   const DFARS_PART = "https://www.acquisition.gov/dfars/part-252-solicitation-provisions-and-contract-clauses";
@@ -74,13 +77,13 @@
     C("252.227-7014", "DFARS", "clause", "Rights in Other Than Commercial Computer Software and Other Than Commercial Computer Software Documentation", "data-rights", "required", ["dod", "tech-data"], "Software license rights by funding source; flows down."),
     C("252.227-7015", "DFARS", "clause", "Technical Data — Commercial Products and Commercial Services", "data-rights", "conditional", ["dod", "tech-data", "commercial"], "Technical data for commercial items."),
     C("252.227-7017", "DFARS", "provision", "Identification and Assertion of Use, Release, or Disclosure Restrictions", "data-rights", "none", ["dod", "tech-data"], "Pre-award assertions table for restricted data; missing assertions can forfeit restrictions."),
-    C("252.227-7037", "DFARS", "clause", "Validation of Restrictive Markings on Technical Data", "data-rights", "required", ["dod", "tech-data"], "Marking-validation process; unmarked or wrongly marked data can lose protection."),
+    C("252.227-7037", "DFARS", "clause", "Validation of Asserted Restrictions—Technical Data", "data-rights", "required", ["dod", "tech-data"], "Marking-validation process; unmarked or wrongly marked data can lose protection."),
     C("252.227-7018", "DFARS", "clause", "Rights in Other Than Commercial Technical Data and Computer Software — SBIR/STTR Program", "data-rights", "conditional", ["dod", "tech-data", "sbir"], "Special data-rights regime for SBIR/STTR awards."),
 
     // ---- DFARS: supply chain / export / other ----
     C("252.225-7048", "DFARS", "clause", "Export-Controlled Items", "export", "required", ["dod"], "Export-control compliance; flows down to all subcontracts."),
     C("252.246-7007", "DFARS", "clause", "Contractor Counterfeit Electronic Part Detection and Avoidance System", "counterfeit", "conditional", ["dod", "electronic"], "Counterfeit electronic parts program; flow-down applies to covered contractors."),
-    C("252.246-7008", "DFARS", "clause", "Sources of Electronic Parts", "counterfeit", "required", ["dod", "electronic"], "Approved sourcing for electronic parts; flows down."),
+    C("252.246-7008", "DFARS", "clause", "Sources of Electronic Parts", "counterfeit", "conditional", ["dod", "electronic"], "Approved sourcing for electronic parts; flows down."),
     C("252.239-7010", "DFARS", "clause", "Cloud Computing Services", "cyber", "conditional", ["dod", "cloud"], "Requirements when cloud services are used for DoD data; flows down where applicable."),
     C("252.203-7002", "DFARS", "clause", "Requirement to Inform Employees of Whistleblower Rights", "ethics", "required", ["dod"], "Whistleblower-rights notice; flows down.", "Medium"),
     C("252.244-7000", "DFARS", "clause", "Subcontracts for Commercial Products or Commercial Services", "flowdown", "none", ["dod", "commercial"], "DoD list of flow-down clauses for commercial subcontracts.", "Medium")
