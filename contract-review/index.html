@@ -214,7 +214,7 @@ details.more summary{cursor:pointer;font-size:12.5px;font-weight:600;color:var(-
 <body>
 <header class="top">
   <div class="top-in">
-    <div class="brand">Contract Review Pilot <small>Trade Edition · <span id="pbBadge">TRADE-1.0</span></small></div>
+    <div class="brand">Contract Review Pilot <small><span id="edName">Trade Edition</span> · <span id="pbBadge">TRADE-1.0</span></small></div>
     <nav class="tabs" role="tablist" aria-label="Sections">
       <button class="tab" role="tab" aria-selected="true" data-view="review">Review</button>
       <button class="tab" role="tab" aria-selected="false" data-view="contract">Contract</button>
@@ -230,9 +230,13 @@ details.more summary{cursor:pointer;font-size:12.5px;font-weight:600;color:var(-
     <div class="grid">
       <aside class="side stack">
         <div class="card">
-          <div class="card-h"><h2>1 · Our position</h2></div>
+          <div class="card-h"><h2>1 · Mode &amp; position</h2></div>
           <div class="card-b stack">
-            <div class="seg" role="group" aria-label="Position">
+            <div class="seg" role="group" aria-label="Review mode" id="modeSeg">
+              <button type="button" data-mode="trade" aria-pressed="true">Trade<small>Cross-border sale of goods</small></button>
+              <button type="button" data-mode="gov" aria-pressed="false">US Federal<small>FAR / DFARS subcontracts</small></button>
+            </div>
+            <div class="seg" role="group" aria-label="Position" id="sideSeg">
               <button type="button" data-side="seller" aria-pressed="true">Export<small>We are the Seller</small></button>
               <button type="button" data-side="buyer" aria-pressed="false">Import<small>We are the Buyer</small></button>
             </div>
@@ -257,8 +261,9 @@ details.more summary{cursor:pointer;font-size:12.5px;font-weight:600;color:var(-
               <textarea class="in" id="contractText" placeholder="Paste the full English contract, including all schedules and annexes."></textarea>
             </div>
             <div class="row">
-              <button class="btn sm" type="button" data-sample="export">Load export sample</button>
-              <button class="btn sm" type="button" data-sample="import">Load import sample</button>
+              <button class="btn sm" type="button" data-sample="export" data-for="trade">Load export sample</button>
+              <button class="btn sm" type="button" data-sample="import" data-for="trade">Load import sample</button>
+              <button class="btn sm" type="button" data-sample="gov" data-for="gov" hidden>Load federal subcontract sample</button>
             </div>
             <button class="btn primary block" id="runBtn" type="button">Run playbook review</button>
             <p class="hint">Rule engine runs instantly and offline. Nothing is uploaded.</p>
@@ -356,6 +361,8 @@ details.more summary{cursor:pointer;font-size:12.5px;font-weight:600;color:var(-
       </ol>
       <h3>2 · Claude deep review (optional)</h3>
       <p>Sends the clause-labelled contract and the active playbook to Claude with structured output, so the result renders in the same format. Use it as a second opinion on drafting nuance; the deterministic rules stay the audit trail. Server-side refusal fallback is enabled on the request.</p>
+      <h3>US Federal mode (prototype)</h3>
+      <p>Reads FAR / DFARS citations and their dates, detects defense, CUI and technical-data signals, and checks ten GOV-1.0 rules for the Subcontractor or the Prime. The <b>Clause DB is a draft and unverified</b>: dates it has not verified are reported as "not compared", never assumed. The FAR is being overhauled through agency class deviations, so confirm clause text at acquisition.gov before relying on a result. Claude deep review is not yet available in this mode.</p>
       <h3>Status legend</h3>
       <div class="legend">
         <span class="st Compliant">Compliant</span><span>Meets the preferred position.</span>
@@ -379,6 +386,9 @@ details.more summary{cursor:pointer;font-size:12.5px;font-weight:600;color:var(-
 <script src="playbook.js"></script>
 <script src="samples.js"></script>
 <script src="engine.js"></script>
+<script src="gov-db.js"></script>
+<script src="gov-playbook.js"></script>
+<script src="gov-engine.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

@@ -11,13 +11,20 @@
   };
 
   const STATUSES = ["Deviation", "Missing", "Review", "Fallback", "Compliant"];
-  const state = { side: "seller", pbSide: "seller", playbook: null, report: null, filter: null, fileName: "" };
+  const state = { mode: store.get("crp.mode") === "gov" ? "gov" : "trade", side: "seller", pbSide: "seller", playbook: null, report: null, filter: null, fileName: "" };
+  const MODES = {
+    trade: { edition: "Trade Edition", key: "crp.playbook", defaultPb: () => window.DEFAULT_PLAYBOOK, engine: () => window.ReviewEngine, placeholder: "e.g. Hanbit Global Trading",
+      sides: { seller: ["Export", "We are the Seller"], buyer: ["Import", "We are the Buyer"] } },
+    gov: { edition: "US Federal Edition", key: "crp.playbook.gov", defaultPb: () => window.GOV_PLAYBOOK, engine: () => window.GovEngine, placeholder: "e.g. Northgate Systems",
+      sides: { seller: ["Subcontractor", "We deliver to a prime"], buyer: ["Prime", "We issue the subcontract"] } }
+  };
+  const M = () => MODES[state.mode];
 
   /* ---------------- Playbook ---------------- */
   function loadPlaybook() {
-    const saved = store.get("crp.playbook");
+    const saved = store.get(M().key);
     if (saved) { try { const p = JSON.parse(saved); if (p && Array.isArray(p.rules)) return p; } catch (e) { /* ignore corrupt copy */ } }
-    return JSON.parse(JSON.stringify(window.DEFAULT_PLAYBOOK));
+    return JSON.parse(JSON.stringify(M().defaultPb()));
   }
   state.playbook = loadPlaybook();
 
@@ -40,6 +47,25 @@
     $$("[data-side]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.side === side)));
   }
   $$("[data-side]").forEach((b) => b.addEventListener("click", () => { setSide(b.dataset.side); if (state.report) run(); }));
+
+  /* ---------------- Mode ---------------- */
+  function setMode(mode, opts) {
+    state.mode = mode;
+    store.set("crp.mode", mode);
+    state.playbook = loadPlaybook();
+    state.report = null; state.filter = null;
+    $$("[data-mode]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.mode === mode)));
+    Object.entries(M().sides).forEach(([k, v]) => { const b = $(`#sideSeg [data-side="${k}"]`); if (b) b.innerHTML = `${esc(v[0])}<small>${esc(v[1])}</small>`; });
+    $$("[data-for]").forEach((b) => (b.hidden = b.dataset.for !== mode));
+    $("#edName").textContent = M().edition;
+    $("#ourName").placeholder = M().placeholder;
+    const rep = $("#report"); if (rep && !(opts && opts.keepReport)) rep.innerHTML = `<div class="empty"><p>No review yet.</p><ul><li>Upload a .docx / .pdf / .txt, or paste text — or load a sample.</li></ul></div>`;
+    const cl = $("#clauses"); if (cl) cl.innerHTML = `<div class="empty"><p>No contract loaded yet.</p></div>`;
+    if (typeof renderPlaybook === "function") renderPlaybook();
+    $("#aiBtn").disabled = mode === "gov";
+    $("#aiStatus").textContent = mode === "gov" ? "Claude deep review is not yet available in US Federal mode." : "";
+  }
+  $$("[data-mode]").forEach((b) => b.addEventListener("click", () => { if (b.dataset.mode !== state.mode) setMode(b.dataset.mode); }));
   $("#ourName").value = store.get("crp.ourName") || "";
   $("#ourName").addEventListener("change", (e) => store.set("crp.ourName", e.target.value));
 
@@ -110,6 +136,8 @@
 
   $$("[data-sample]").forEach((b) => b.addEventListener("click", () => {
     const s = window.SAMPLES[b.dataset.sample];
+    const want = b.dataset.sample === "gov" ? "gov" : "trade";
+    if (want !== state.mode) setMode(want);
     $("#contractText").value = s.text;
     $("#ourName").value = s.ourName;
     state.fileName = s.title;
@@ -122,7 +150,7 @@
   function run() {
     const text = $("#contractText").value;
     if (!text.trim()) { toast("Upload or paste a contract first"); return; }
-    state.report = window.ReviewEngine.review(text, state.playbook, state.side, $("#ourName").value);
+    state.report = M().engine().review(text, state.playbook, state.side, $("#ourName").value);
     state.report.docName = state.fileName || "Pasted contract";
     state.filter = null;
     renderReport();
@@ -132,6 +160,31 @@
 
   /* ---------------- Render: report ---------------- */
   const rulesById = () => Object.fromEntries(state.playbook.rules.map((r) => [r.id, r]));
+
+  function govSnap(R, us, them, pos) {
+    const g = R.gov || {};
+    const fd = g.flowdown || {};
+    const unver = (g.cites || []).filter((c) => !c.verified).length;
+    return `<dl class="snap">
+        <div><dt>We act for</dt><dd>${esc(us ? `${us.name} (${us.role})` : pos.short)}</dd></div>
+        <div><dt>Counterparty</dt><dd>${esc(them ? `${them.name} (${them.role})` : "Not identified")}</dd></div>
+        <div><dt>Signals</dt><dd>${esc((g.signals || []).join(", ") || "none")}</dd></div>
+        <div><dt>Clause citations</dt><dd>${(g.cites || []).length} distinct${unver ? ` · <span style="color:var(--rev)">${unver} not verified in DB</span>` : ""}</dd></div>
+        <div><dt>Flow-down</dt><dd>${fd.expected ? `${(fd.cited || []).length} of ${fd.expected.length} expected required clauses cited${(fd.missing || []).length ? ` · <span style="color:var(--mis)">missing ${esc(fd.missing.join(", "))}</span>` : ""}` : "n/a"}</dd></div>
+        <div><dt>Governing law</dt><dd>${esc(R.meta.law || "Not identified")}</dd></div>
+        <div><dt>Disputes</dt><dd>${esc(R.meta.forum || "Not identified")}</dd></div>
+        <div><dt>Document set</dt><dd>${R.clauses.length} sections${R.meta.missingAnnexes && R.meta.missingAnnexes.length ? ` · <span style="color:var(--mis)">missing ${esc(R.meta.missingAnnexes.join(", "))}</span>` : " · complete"}</dd></div>
+      </dl>
+      <p class="hint" style="padding:0 18px">Clause DB ${esc(g.dbVersion || "")} — ${esc(g.dbVerification || "")}</p>`;
+  }
+  function govCites(R) {
+    const cites = (R.gov && R.gov.cites) || [];
+    if (!cites.length) return "";
+    return `<div class="section"><h3>Cited clauses</h3><div class="hint" style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:13px">
+      <tr style="text-align:left"><th>Clause</th><th>Date cited</th><th>Flow-down</th><th>In DB</th><th>Verified</th></tr>
+      ${cites.map((c) => `<tr><td><b>${esc(c.auth)} ${esc(c.id)}</b></td><td>${esc(c.dates.join(", ") || "—")}${c.deviation ? ` · ${esc(c.deviation)}` : ""}</td><td>${esc(c.flowdown || "—")}</td><td>${c.inDb ? "yes" : "<b>no</b>"}</td><td>${c.verified ? "yes" : "no"}</td></tr>`).join("")}
+    </table></div></div>`;
+  }
 
   function renderReport() {
     const R = state.report;
@@ -159,7 +212,7 @@
         </div>
       </div>
       <p style="padding:0 18px" class="hint">${esc(outcome)}</p>
-      <dl class="snap">
+      ${R.mode === "gov" ? govSnap(R, us, them, pos) : `      <dl class="snap">
         <div><dt>We act for</dt><dd>${esc(us ? `${us.name} (${us.role})` : R.ai && R.ai.represented_party ? R.ai.represented_party : pos.short)}</dd></div>
         <div><dt>Counterparty</dt><dd>${esc(them ? `${them.name} (${them.role})` : R.ai && R.ai.counterparty ? R.ai.counterparty : "Not identified")}</dd></div>
         <div><dt>Contract price</dt><dd>${esc(price)}</dd></div>
@@ -167,7 +220,8 @@
         <div><dt>Governing law</dt><dd>${esc(R.meta.law || "Not identified")}</dd></div>
         <div><dt>Disputes</dt><dd>${esc(R.meta.forum || "Not identified")}</dd></div>
         <div><dt>Document set</dt><dd>${R.clauses.length} sections${R.meta.missingAnnexes && R.meta.missingAnnexes.length ? ` · <span style="color:var(--mis)">missing ${esc(R.meta.missingAnnexes.join(", "))}</span>` : " · complete"}</dd></div>
-      </dl>
+      </dl>`}
+      ${R.mode === "gov" ? govCites(R) : ""}
       ${R.alerts.length ? `<div class="section"><h3>Integrity alerts</h3>${R.alerts.map((a) => `<div class="alert ${a.severity === "high" ? "" : "medium"}"><b>${esc(a.type)}</b>${esc(a.text)}</div>`).join("")}</div>` : ""}
       <div class="section">
         <h3>Scoreboard</h3>
@@ -305,14 +359,14 @@
     if (!p || !Array.isArray(p.rules) || !p.id) throw new Error("Playbook must have an id and a rules array.");
     p.rules.forEach((r) => { if (!r.id || !r.seller || !r.buyer) throw new Error(`Rule ${r.id || "?"} needs id, seller and buyer sections.`); });
     state.playbook = p;
-    store.set("crp.playbook", JSON.stringify(p));
+    store.set(M().key, JSON.stringify(p));
     renderPlaybook();
     if (state.report && state.report.engine === "rules") run();
     $("#pbMsg").textContent = msg;
     toast(msg);
   }
   $("#pbApply").addEventListener("click", () => { try { applyPlaybook(JSON.parse($("#pbJson").value), `Applied playbook ${JSON.parse($("#pbJson").value).id}`); } catch (e) { $("#pbMsg").textContent = "⚠ " + e.message; } });
-  $("#pbReset").addEventListener("click", () => { store.del("crp.playbook"); applyPlaybook(JSON.parse(JSON.stringify(window.DEFAULT_PLAYBOOK)), "Reset to default TRADE-1.0"); });
+  $("#pbReset").addEventListener("click", () => { store.del(M().key); const d = M().defaultPb(); applyPlaybook(JSON.parse(JSON.stringify(d)), `Reset to default ${d.id}`); });
   $("#pbDownload").addEventListener("click", () => {
     const a = document.createElement("a");
     a.href = URL.createObjectURL(new Blob([JSON.stringify(state.playbook, null, 2)], { type: "application/json" }));
@@ -392,6 +446,7 @@ English only. analysis is a list of short, specific points (2–5). outcome is o
 
   async function runAI() {
     const btn = $("#aiBtn"), st = $("#aiStatus");
+    if (state.mode === "gov") { st.className = "ai-status err"; st.textContent = "Claude deep review is not yet available in US Federal mode."; return; }
     const key = $("#apiKey").value.trim();
     const text = $("#contractText").value;
     st.className = "ai-status";
@@ -484,4 +539,5 @@ English only. analysis is a list of short, specific points (2–5). outcome is o
   }
 
   renderPlaybook();
+  setMode(state.mode, { keepReport: true });
 })();
