@@ -112,7 +112,7 @@
     if (exp.length) notes.push(`Clause DB expects ${exp.length} required flow-down clause(s) for the detected signals (${["federal", "dod", "cui", "civilian", "electronic", "tech-data"].filter((k) => sig[k]).join(", ")}).`);
     if (missing.length) notes.push("Not cited: " + missing.map((c) => c.id).join(", ") + ".");
     if (blanket) notes.push("Blanket incorporation language found.");
-    notes.push("Confirm each expected clause against the prime contract's Section I and its thresholds — Clause DB v0 is unverified.");
+    notes.push("Confirm each expected clause against the prime contract's Section I and its thresholds — Clause DB dates were verified 2026-11-23; agency class deviations are not tracked yet.");
     const refs = refsOf([blanket].concat(ctx.cites.slice(0, 6).map((c) => ({ clause: c.clause }))));
     const quote = blanket ? short(blanket.sentence) : (ctx.cites[0] ? short(sentOf(ctx.cites[0].clause).find((s) => s.includes(ctx.cites[0].id)) || "") : "");
     let status;

@@ -3,10 +3,10 @@
    Metadata only (identity, flow-down class, topic, own-words note).
    No regulation text is reproduced; every entry links to the official source.
 
-   STATUS: UNVERIFIED. Entries were compiled from public regulations and must be
-   checked against acquisition.gov (and the agency's class deviation) before any
-   client use. `currentDate` is null until an entry has been verified; the engine
-   then reports "version not verified" instead of guessing.
+   STATUS: clause dates checked 2026-11-23 against owner-supplied acquisition.gov
+   reference packs (FAC 2026-01, DFARS Change 5/7/2026). Not yet checked: agency
+   class deviations and RFO changes. `currentDate` is null for any entry that is
+   not verified; the engine then reports "version not verified" instead of guessing.
 
    The FAR is in the middle of the Revolutionary FAR Overhaul (RFO): agencies apply
    class deviations now, formal rulemaking is ongoing. Clause text and dates can differ
@@ -24,7 +24,14 @@
     "252.204-7020": "NOV 2023", "252.204-7021": "NOV 2025",
     // Owner's second reference pack, 2026-11-23:
     "52.244-2": "JUN 2020", "52.232-40": "MAR 2023", "52.249-2": "APR 2012",
-    "252.227-7017": "JAN 2025", "252.227-7037": "JAN 2025", "252.246-7007": "JAN 2023", "252.246-7008": "JAN 2023"
+    "252.227-7017": "JAN 2025", "252.227-7037": "JAN 2025", "252.246-7007": "JAN 2023", "252.246-7008": "JAN 2023",
+    // Owner's third reference pack (17 clauses), 2026-11-23. 252.225-7048 was confirmed from secondary
+    // sources (the pack could not open its official page), so treat that one as lower confidence.
+    "52.204-27": "JUN 2023", "52.203-19": "JAN 2017", "52.203-13": "NOV 2021", "52.215-8": "OCT 1997",
+    "52.212-4": "NOV 2023", "52.243-1": "AUG 1987", "52.233-1": "MAY 2014", "52.211-11": "SEP 2000",
+    "52.246-2": "AUG 1996", "52.249-8": "APR 1984", "52.227-14": "MAY 2014", "52.227-11": "MAY 2014",
+    "252.227-7018": "AUG 2025", "252.225-7048": "JUN 2013", "252.239-7010": "JAN 2023",
+    "252.203-7002": "DEC 2022", "252.244-7000": "NOV 2023"
   };
   const FAR_URL = (n) => "https://www.acquisition.gov/far/" + n;
   const DFARS_PART = "https://www.acquisition.gov/dfars/part-252-solicitation-provisions-and-contract-clauses";
@@ -81,21 +88,22 @@
     C("252.227-7018", "DFARS", "clause", "Rights in Other Than Commercial Technical Data and Computer Software — SBIR/STTR Program", "data-rights", "conditional", ["dod", "tech-data", "sbir"], "Special data-rights regime for SBIR/STTR awards."),
 
     // ---- DFARS: supply chain / export / other ----
-    C("252.225-7048", "DFARS", "clause", "Export-Controlled Items", "export", "required", ["dod"], "Export-control compliance; flows down to all subcontracts."),
+    C("252.225-7048", "DFARS", "clause", "Export-Controlled Items", "export", "conditional", ["dod"], "Export-control compliance; flows down to all subcontracts."),
     C("252.246-7007", "DFARS", "clause", "Contractor Counterfeit Electronic Part Detection and Avoidance System", "counterfeit", "conditional", ["dod", "electronic"], "Counterfeit electronic parts program; flow-down applies to covered contractors."),
     C("252.246-7008", "DFARS", "clause", "Sources of Electronic Parts", "counterfeit", "conditional", ["dod", "electronic"], "Approved sourcing for electronic parts; flows down."),
     C("252.239-7010", "DFARS", "clause", "Cloud Computing Services", "cyber", "conditional", ["dod", "cloud"], "Requirements when cloud services are used for DoD data; flows down where applicable."),
     C("252.203-7002", "DFARS", "clause", "Requirement to Inform Employees of Whistleblower Rights", "ethics", "required", ["dod"], "Whistleblower-rights notice; flows down.", "Medium"),
-    C("252.244-7000", "DFARS", "clause", "Subcontracts for Commercial Products or Commercial Services", "flowdown", "none", ["dod", "commercial"], "DoD list of flow-down clauses for commercial subcontracts.", "Medium")
+    C("252.244-7000", "DFARS", "clause", "Subcontracts for Commercial Products or Commercial Services", "flowdown", "required", ["dod", "commercial"], "DoD list of flow-down clauses for commercial subcontracts.", "Medium")
   ];
 
   const byId = Object.fromEntries(CLAUSES.map((c) => [c.id, c]));
 
   const api = {
     meta: {
-      version: "v0-draft",
+      version: "v0.1",
       compiledOn: "2026-11-22",
-      verification: "UNVERIFIED — confirm every entry against acquisition.gov and the applicable agency class deviation before client use.",
+      datesVerifiedOn: "2026-11-23",
+      verification: "Clause dates verified 2026-11-23 (FAC 2026-01 / DFARS Change 5/7/2026). Agency class deviations are not tracked yet — confirm them before client use.",
       rfo: "Revolutionary FAR Overhaul in progress: agency class deviations apply now; formal notice-and-comment rulemaking is ongoing. Clause text and dates may differ by agency and may change."
     },
     clauses: CLAUSES,
