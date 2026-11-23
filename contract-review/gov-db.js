@@ -15,6 +15,8 @@
 (function (root) {
   "use strict";
 
+  // Verified against official text supplied by the owner (acquisition.gov PDFs, 2026-11-23)
+  const VERIFIED = { "52.204-21": "NOV 2021", "252.204-7012": "MAY 2024" };
   const FAR_URL = (n) => "https://www.acquisition.gov/far/" + n;
   const DFARS_PART = "https://www.acquisition.gov/dfars/part-252-solicitation-provisions-and-contract-clauses";
 
@@ -24,7 +26,7 @@
   const C = (id, auth, kind, title, topic, flowdown, when, note, severity) => ({
     id, auth, kind, title, topic, flowdown, when: when || [], note, severity: severity || "High",
     link: auth === "FAR" ? FAR_URL(id) : DFARS_PART,
-    currentDate: null, verified: false
+    currentDate: VERIFIED[id] || null, verified: !!VERIFIED[id]
   });
 
   const CLAUSES = [
