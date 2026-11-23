@@ -425,7 +425,11 @@
     const ids = new Set(dist.map((d) => d.id));
     const sig = signals(flat, ids);
     const ctx = { clauses, flat, side, ourName: (ourName || "").trim(), cites, distinct: dist, distinctMap: new Map(dist.map((d) => [d.id, d])), ids, sig, capFound: false };
-    const order = ["G09", "G01", "G02", "G03", "G04", "G05", "G06", "G07", "G08", "G10"]; // G09 first: it sets capFound for G05
+    // A clause list (e.g. a solicitation's "List of Provisions and Clauses") has many citations and almost no
+    // obligation language, so negotiated-term rules (precedence, payment, liability…) do not apply to it.
+    const obligations = (flat.match(/\b(?:shall|agrees?|must|will pay|may not)\b/gi) || []).length;
+    const docKind = cites.length >= 40 && obligations / cites.length < 1.2 ? "clause-list" : "contract";
+    const order = docKind === "clause-list" ? ["G01", "G02", "G10"] : ["G09", "G01", "G02", "G03", "G04", "G05", "G06", "G07", "G08", "G10"]; // G09 first: it sets capFound for G05
     const byId = Object.fromEntries(playbook.rules.map((r) => [r.id, r]));
     const results = {};
     order.forEach((id) => {
@@ -456,6 +460,7 @@
       });
     });
     const alerts = integrity(ctx);
+    if (docKind === "clause-list") alerts.unshift({ severity: "medium", type: "Clause list detected", text: "This document is a list of clauses, not negotiated terms. Only flow-down, clause-currency and document-integrity checks were run; precedence, payment, liability and similar rules were skipped." });
     const score = findings.reduce((s, f) => s + (f.status === "Deviation" ? 2 * IMPORTANCE_W[f.importance] : f.status === "Missing" ? 1.5 * IMPORTANCE_W[f.importance] : f.status === "Fallback" ? 0.5 : f.status === "Review" ? 0.5 : 0), 0) + alerts.filter((a) => a.severity === "high").length * 3;
     const critDev = findings.some((f) => (f.status === "Deviation" || f.status === "Missing") && f.importance === "Critical");
     const overall = critDev || score >= 18 ? "High" : score >= 7 ? "Medium" : "Low";
@@ -470,7 +475,7 @@
       side, ourName: ctx.ourName, clauses, findings, alerts, overall, score: Math.round(score * 10) / 10, decisions,
       meta: { parties: parties(flat), price: null, priceText: "n/a (see subcontract price)", incoterms: [], law: law ? `State of ${law}` : null, forum: forum ? norm(forum) : null, missingAnnexes: ctx.missingAnnexes || [] },
       gov: {
-        dbVersion: DB.meta.version, dbVerification: DB.meta.verification,
+        docKind, dbVersion: DB.meta.version, dbVerification: DB.meta.verification,
         signals: Object.keys(sig).filter((k) => sig[k]),
         cites: dist.map((d) => ({ id: d.id, auth: d.auth, dates: d.dates, deviation: d.deviation, inDb: !!d.db, verified: !!(d.db && d.db.verified), flowdown: d.db ? d.db.flowdown : null })),
         flowdown: g01 || null
