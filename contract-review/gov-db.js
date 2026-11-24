@@ -215,7 +215,7 @@
     ["52.242-1", "Notice of Intent to Disallow Costs", "APR 1984", null, null],
     ["52.242-13", "Bankruptcy", "JUL 1995", null, null],
     ["52.242-15", "Stop-Work Order", "AUG 1989", null, null],
-    // Batch 6 (FAR, GPT run 2026-11-24). 52.247-34: GPT date contradicted by newer D1/D2 citation, left unverified.
+    // Batch 6 (FAR, GPT run 2026-11-24). 52.247-34: codified FAR is NOV 1991 (D1/D2 and an Oct-2022 FAR snapshot agree; the GPT/RFO date JAN 1991 is the RFO Part 52 text).
     ["52.242-17", "Government Delay of Work", "APR 1984"],
     ["52.242-3", "Penalties for Unallowable Costs", "DEC 2022"],
     ["52.242-4", "Certification of Final Indirect Costs", "JAN 1997"],
@@ -229,7 +229,7 @@
     ["52.246-7", "Inspection of Research and Development-Fixed-Price", "AUG 1996"],
     ["52.246-8", "Inspection of Research and Development-Cost-Reimbursement", "MAY 2001"],
     ["52.247-1", "Commercial Bill of Lading Notations", "FEB 2006"],
-    ["52.247-34", "F.o.b. Destination", null, "JAN 1991 per GPT vs NOV 1991 cited in D1/D2 (newer); GPT date likely wrong"],
+    ["52.247-34", "F.o.b. Destination", "NOV 1991"],
     ["52.247-35", "F.o.b. Destination, Within Consignee's Premises", "APR 1984"],
     ["52.249-5", "Termination for Convenience of the Government (Educational and Other Nonprofit Institutions)", "AUG 2016"],
     ["52.252-2", "Clauses Incorporated by Reference", "FEB 1998"],
