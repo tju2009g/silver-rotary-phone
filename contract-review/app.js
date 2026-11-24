@@ -62,8 +62,8 @@
     const rep = $("#report"); if (rep && !(opts && opts.keepReport)) rep.innerHTML = `<div class="empty"><p>No review yet.</p><ul><li>Upload a .docx / .pdf / .txt, or paste text — or load a sample.</li></ul></div>`;
     const cl = $("#clauses"); if (cl) cl.innerHTML = `<div class="empty"><p>No contract loaded yet.</p></div>`;
     if (typeof renderPlaybook === "function") renderPlaybook();
-    $("#aiBtn").disabled = mode === "gov";
-    $("#aiStatus").textContent = mode === "gov" ? "Claude deep review is not yet available in US Federal mode." : "";
+    $("#aiBtn").disabled = false;
+    $("#aiStatus").textContent = mode === "gov" ? "US Federal mode: every Claude finding must quote the document verbatim; unverifiable ones are downgraded to Review." : "";
   }
   $$("[data-mode]").forEach((b) => b.addEventListener("click", () => { if (b.dataset.mode !== state.mode) setMode(b.dataset.mode); }));
   $("#ourName").value = store.get("crp.ourName") || "";
@@ -446,14 +446,14 @@ English only. analysis is a list of short, specific points (2–5). outcome is o
 
   async function runAI() {
     const btn = $("#aiBtn"), st = $("#aiStatus");
-    if (state.mode === "gov") { st.className = "ai-status err"; st.textContent = "Claude deep review is not yet available in US Federal mode."; return; }
+    const gov = state.mode === "gov";
     const key = $("#apiKey").value.trim();
     const text = $("#contractText").value;
     st.className = "ai-status";
     if (!text.trim()) { toast("Upload or paste a contract first"); return; }
     if (!key) { st.className = "ai-status err"; st.textContent = "Enter an Anthropic API key."; $("#apiKey").focus(); return; }
     if ($("#rememberKey").checked) store.set("crp.key", key); else store.del("crp.key");
-    const base = window.ReviewEngine.review(text, state.playbook, state.side, $("#ourName").value);
+    const base = M().engine().review(text, state.playbook, state.side, $("#ourName").value);
     const model = $("#model").value;
     btn.disabled = true;
     st.innerHTML = `<span class="spinner"></span> Loading SDK…`;
@@ -464,11 +464,11 @@ English only. analysis is a list of short, specific points (2–5). outcome is o
       const params = {
         model,
         max_tokens: 64000,
-        output_config: { effort: "high", format: { type: "json_schema", schema: AI_SCHEMA } },
-        system: aiSystem(state.playbook, state.side),
+        output_config: { effort: "high", format: { type: "json_schema", schema: gov ? window.GovAI.SCHEMA : AI_SCHEMA } },
+        system: gov ? window.GovAI.system(state.playbook, state.side) : aiSystem(state.playbook, state.side),
         messages: [{
           role: "user",
-          content: [
+          content: gov ? window.GovAI.userBlocks(base, state.playbook, state.side, $("#ourName").value, state.fileName, window.FAR_DB) : [
             { type: "text", text: `<playbook>\n${JSON.stringify(state.playbook)}\n</playbook>`, cache_control: { type: "ephemeral" } },
             { type: "text", text: `Represented party: ${state.playbook.positions[state.side].label}${$("#ourName").value ? ` — our company: ${$("#ourName").value}` : ""}.\nDocument name: ${state.fileName || "Pasted contract"}\n\n<contract>\n${contractBlock(base)}\n</contract>\n\nReview the contract against every rule in playbook ${state.playbook.id}.` }
           ]
@@ -485,7 +485,16 @@ English only. analysis is a list of short, specific points (2–5). outcome is o
       if (msg.stop_reason === "max_tokens") throw new Error("Response was cut off (max tokens). Try a shorter document.");
       const out = msg.content.filter((b) => b.type === "text").map((b) => b.text).join("");
       const data = JSON.parse(out);
+      let vres = null;
+      if (gov) vres = window.GovAI.validate(data, base, window.FAR_DB);
       state.report = fromAI(data, base, msg.model || model);
+      if (vres) {
+        state.report.gov = Object.assign({}, base.gov, { validation: vres.stats });
+        // Rules the model skipped keep their deterministic finding rather than silently disappearing.
+        (vres.stats.missingRules || []).forEach((id) => { const f = base.findings.find((x) => x.ruleId === id); if (f) state.report.findings.push(Object.assign({}, f, { source: "rules" })); });
+        state.report.findings.sort((x, y) => x.ruleId.localeCompare(y.ruleId));
+        if (vres.notes.length) state.report.alerts.unshift({ type: "Citation check", severity: vres.stats.downgraded ? "high" : "medium", text: `${vres.stats.quoteOk}/${vres.stats.findings} quotes verified verbatim; ${vres.stats.downgraded} finding(s) downgraded to Review. ` + vres.notes.slice(0, 4).join(" | ") });
+      }
       state.report.docName = state.fileName || "Pasted contract";
       state.filter = null;
       renderReport(); renderClauses();
