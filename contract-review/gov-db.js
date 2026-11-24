@@ -100,7 +100,7 @@
   ];
 
   // ---- Reference register (title + clause date only; no flow-down/when logic, so it never drives "missing clause" findings) ----
-  // Batches 1-3 (DFARS/FAR, owner's GPT run, 2026-11-24). Tier "corroborated": each date equals the version cited in the D1 and/or D2
+  // Batches 1-4 (DFARS/FAR, owner's GPT run, 2026-11-24). Tier "corroborated": each date equals the version cited in the D1 and/or D2
   // solicitation clause lists (a cited version cannot be newer than the current one, so no contradiction found), but the
   // acquisition.gov page itself was not opened by us. Entries with date null carry the unconfirmed claim in `claimedDate`.
   const REG = [
@@ -163,6 +163,29 @@
     ["52.209-9", "Updates of Publicly Available Information Regarding Responsibility Matters", "OCT 2018", null, null],
     ["52.211-5", "Material Requirements", "AUG 2000", null, null],
     ["52.213-1", "Fast Payment Procedure", "MAY 2006", null, "gpt-viewed"],
+    // Batch 4 (FAR, GPT run 2026-11-24). Most also have a 2026-O0038 RFO variant in D1; the base date was compared, not the variant.
+    // 52.219-9 D1 row '(Deviation) 2026-02' is the RFO track, not a base-date contradiction.
+    ["52.215-10", "Price Reduction for Defective Certified Cost or Pricing Data", "AUG 2011", null, null],
+    ["52.215-12", "Subcontractor Certified Cost or Pricing Data", "JUN 2020", null, null],
+    ["52.215-15", "Pension Adjustments and Asset Reversions", "OCT 2010", null, null],
+    ["52.215-18", "Reversion or Adjustment of Plans for Postretirement Benefits (PRB) Other Than Pensions", "JUL 2005", null, null],
+    ["52.215-19", "Notification of Ownership Changes", "OCT 1997", null, null],
+    ["52.215-2", "Audit and Records-Negotiation", "JUN 2020", null, null],
+    ["52.215-20", "Requirements for Certified Cost or Pricing Data and Data Other Than Certified Cost or Pricing Data", "NOV 2021", null, null],
+    ["52.215-21", "Requirements for Certified Cost or Pricing Data and Data Other Than Certified Cost or Pricing Data-Modifications", "NOV 2021", null, null],
+    ["52.215-23", "Limitations on Pass-Through Charges", "JUN 2020", null, null],
+    ["52.215-6", "Place of Performance", "OCT 1997", null, "gpt-viewed"],
+    ["52.216-1", "Type of Contract", "APR 1984", null, null],
+    ["52.216-11", "Cost Contract-No Fee", "APR 1984", null, null],
+    ["52.216-7", "Allowable Cost and Payment", "AUG 2018", null, null],
+    ["52.217-2", "Cancellation Under Multi-year Contracts", "OCT 1997", null, null],
+    ["52.217-8", "Option to Extend Services", "NOV 1999", null, "gpt-viewed"],
+    ["52.219-16", "Liquidated Damages-Subcontracting Plan", "SEP 2021", null, null],
+    ["52.219-28", "Postaward Small Business Program Rerepresentation", "JAN 2025", null, "gpt-viewed"],
+    ["52.219-8", "Utilization of Small Business Concerns", "JAN 2025", null, "gpt-viewed"],
+    ["52.219-9", "Small Business Subcontracting Plan", "JAN 2025", null, "gpt-viewed"],
+    ["52.222-19", "Child Labor-Cooperation with Authorities and Remedies", "MAR 2026", null, "gpt-viewed"],
+    ["52.222-2", "Payment for Overtime Premiums", "JUL 1990", null, null],
     // 252.204-7016 is a provision that D1/D2 only mention inside other clauses (no list row), so no corroboration; GPT
     // re-check on 2026-11-24 marked it directly viewed (DEC 2019) with the acquisition.gov page address.
     ["252.204-7016", "Covered Defense Telecommunications Equipment or Services-Representation", "DEC 2019"],
