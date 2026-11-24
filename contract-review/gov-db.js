@@ -100,7 +100,7 @@
   ];
 
   // ---- Reference register (title + clause date only; no flow-down/when logic, so it never drives "missing clause" findings) ----
-  // Batches 1-2 (DFARS, owner's GPT run, 2026-11-24). Tier "corroborated": each date equals the version cited in the D1 and/or D2
+  // Batches 1-3 (DFARS/FAR, owner's GPT run, 2026-11-24). Tier "corroborated": each date equals the version cited in the D1 and/or D2
   // solicitation clause lists (a cited version cannot be newer than the current one, so no contradiction found), but the
   // acquisition.gov page itself was not opened by us. Entries with date null carry the unconfirmed claim in `claimedDate`.
   const REG = [
@@ -140,15 +140,38 @@
     ["252.245-7003", "Contractor Property Management System Administration", "JAN 2025"],
     ["252.245-7005", "Management and Reporting of Government Property", "JAN 2024"],
     ["252.247-7023", "Transportation of Supplies by Sea", "OCT 2024"],
+    // Batch 3 (FAR, GPT run 2026-11-24, directly viewed). 'corroborated' = equals newest base version cited in D1/D2;
+    // 'gpt-viewed' = D1/D2 cite only older/no versions (no contradiction, no corroboration).
+    // 2026-O0038 (DoD RFO) lists replacement text for 52.204-10/-13, 52.209-7/-9/-10/-13, 52.211-5 (dated 2026-02 in D1/D2): confirm which version applies.
+    ["52.203-10", "Price or Fee Adjustment for Illegal or Improper Activity", "MAY 2014", null, null],
+    ["52.203-11", "Certification and Disclosure Regarding Payments to Influence Certain Federal Transactions", "SEP 2024", null, null],
+    ["52.203-18", "Prohibition on Contracting with Entities that Require Certain Internal Confidentiality Agreements or Statements-Representation", "JAN 2017", null, null],
+    ["52.203-2", "Certificate of Independent Price Determination", "APR 1985", null, null],
+    ["52.203-3", "Gratuities", "APR 1984", null, null],
+    ["52.203-5", "Covenant Against Contingent Fees", "MAY 2014", null, null],
+    ["52.203-6", "Restrictions on Subcontractor Sales to the Government", "JUN 2020", null, null],
+    ["52.203-8", "Cancellation, Rescission, and Recovery of Funds for Illegal or Improper Activity", "MAY 2014", null, null],
+    ["52.204-10", "Reporting Executive Compensation and First-Tier Subcontract Awards", "JUN 2020", null, null],
+    ["52.204-13", "System for Award Management Maintenance", "OCT 2018", null, null],
+    ["52.204-19", "Incorporation by Reference of Representations and Certifications", "DEC 2014", null, null],
+    ["52.204-7", "System for Award Management", "NOV 2024", null, "gpt-viewed"],
+    ["52.207-4", "Economic Purchase Quantity-Supplies", "AUG 1987", null, null],
+    ["52.209-10", "Prohibition on Contracting with Inverted Domestic Corporations", "NOV 2015", null, null],
+    ["52.209-13", "Violation of Arms Control Treaties or Agreements-Certification", "NOV 2021", null, null],
+    ["52.209-6", "Protecting the Government's Interest When Subcontracting With Contractors Debarred, Suspended, Proposed for Debarment, or Voluntarily Excluded", "JAN 2025", null, "gpt-viewed"],
+    ["52.209-7", "Information Regarding Responsibility Matters", "OCT 2018", null, null],
+    ["52.209-9", "Updates of Publicly Available Information Regarding Responsibility Matters", "OCT 2018", null, null],
+    ["52.211-5", "Material Requirements", "AUG 2000", null, null],
+    ["52.213-1", "Fast Payment Procedure", "MAY 2006", null, "gpt-viewed"],
     // 252.204-7016 is a provision that D1/D2 only mention inside other clauses (no list row), so no corroboration; GPT
     // re-check on 2026-11-24 marked it directly viewed (DEC 2019) with the acquisition.gov page address.
     ["252.204-7016", "Covered Defense Telecommunications Equipment or Services-Representation", "DEC 2019"],
     // CONFLICT: GPT says JUN 2023 twice, but D1 cites OCT 2024 (newer). Either D1 or the page GPT saw is off; open the page to resolve. Left unverified.
     ["252.205-7000", "Provision of Information to Cooperative Agreement Holders", null, "JUN 2023 per GPT (viewed twice) vs OCT 2024 cited in D1 (D2 cites JUN 2023); unresolved"]
-  ].filter(([id]) => !CLAUSES.some((c) => c.id === id)).map(([id, title, date, claimed]) => ({
-    id, auth: "DFARS", kind: "clause", title, topic: "reference", flowdown: "none", when: [],
+  ].filter(([id]) => !CLAUSES.some((c) => c.id === id)).map(([id, title, date, claimed, tier]) => ({
+    id, auth: id.startsWith("252.") ? "DFARS" : "FAR", kind: "clause", title, topic: "reference", flowdown: "none", when: [],
     note: "Reference entry: title and date only (flow-down not assessed).", severity: "Medium",
-    link: DFARS_PART, currentDate: date, verified: !!date, tier: date ? "corroborated" : "unconfirmed", claimedDate: claimed || null
+    link: id.startsWith("252.") ? DFARS_PART : FAR_URL(id), currentDate: date, verified: !!date, tier: date ? (tier || "corroborated") : "unconfirmed", claimedDate: claimed || null
   }));
   CLAUSES.push(...REG);
 
