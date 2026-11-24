@@ -100,7 +100,7 @@
   ];
 
   // ---- Reference register (title + clause date only; no flow-down/when logic, so it never drives "missing clause" findings) ----
-  // Batches 1-5 (DFARS/FAR, owner's GPT run, 2026-11-24). Tier "corroborated": each date equals the version cited in the D1 and/or D2
+  // Batches 1-6 (DFARS/FAR, owner's GPT run, 2026-11-24). Tier "corroborated": each date equals the version cited in the D1 and/or D2
   // solicitation clause lists (a cited version cannot be newer than the current one, so no contradiction found), but the
   // acquisition.gov page itself was not opened by us. Entries with date null carry the unconfirmed claim in `claimedDate`.
   const REG = [
@@ -209,6 +209,27 @@
     ["52.242-1", "Notice of Intent to Disallow Costs", "APR 1984", null, null],
     ["52.242-13", "Bankruptcy", "JUL 1995", null, null],
     ["52.242-15", "Stop-Work Order", "AUG 1989", null, null],
+    // Batch 6 (FAR, GPT run 2026-11-24). 52.247-34: GPT date contradicted by newer D1/D2 citation, left unverified.
+    ["52.242-17", "Government Delay of Work", "APR 1984"],
+    ["52.242-3", "Penalties for Unallowable Costs", "DEC 2022"],
+    ["52.242-4", "Certification of Final Indirect Costs", "JAN 1997"],
+    ["52.242-5", "Payments to Small Business Subcontractors", "JAN 2017"],
+    ["52.243-2", "Changes-Cost-Reimbursement", "AUG 1987"],
+    ["52.245-1", "Government Property", "SEP 2021"],
+    ["52.245-9", "Use and Charges", "APR 2012"],
+    ["52.246-16", "Responsibility for Supplies", "APR 1984"],
+    ["52.246-3", "Inspection of Supplies-Cost-Reimbursement", "MAY 2001"],
+    ["52.246-4", "Inspection of Services-Fixed-Price", "AUG 1996"],
+    ["52.246-7", "Inspection of Research and Development-Fixed-Price", "AUG 1996"],
+    ["52.246-8", "Inspection of Research and Development-Cost-Reimbursement", "MAY 2001"],
+    ["52.247-1", "Commercial Bill of Lading Notations", "FEB 2006"],
+    ["52.247-34", "F.o.b. Destination", null, "JAN 1991 per GPT vs NOV 1991 cited in D1/D2 (newer); GPT date likely wrong"],
+    ["52.247-35", "F.o.b. Destination, Within Consignee's Premises", "APR 1984"],
+    ["52.249-5", "Termination for Convenience of the Government (Educational and Other Nonprofit Institutions)", "AUG 2016"],
+    ["52.252-2", "Clauses Incorporated by Reference", "FEB 1998"],
+    ["52.252-3", "Alterations in Solicitation", "APR 1984"],
+    ["52.252-4", "Alterations in Contract", "APR 1984"],
+    ["52.252-6", "Authorized Deviations in Clauses", "NOV 2020"],
     // 252.204-7016 is a provision that D1/D2 only mention inside other clauses (no list row), so no corroboration; GPT
     // re-check on 2026-11-24 marked it directly viewed (DEC 2019) with the acquisition.gov page address.
     ["252.204-7016", "Covered Defense Telecommunications Equipment or Services-Representation", "DEC 2019"],
