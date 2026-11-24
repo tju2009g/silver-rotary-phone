@@ -151,6 +151,10 @@
       if (unknownDev.length) notes.push("Deviation number(s) not in the register: " + unknownDev.join(", ") + " — verify them against the issuing agency.");
     }
     notes.push(dev ? "A class deviation / overhaul reference appears in the document." : "No class deviation is named. The FAR is being overhauled through agency class deviations — confirm which text applies.");
+    const rfoRes = list.filter((d) => d.db && d.db.rfo === "reserved");
+    if (rfoRes.length) notes.push(`Under the DoD Revolutionary FAR Overhaul Part 52 (class deviation 2026-O0038, effective 2026-02-01) ${rfoRes.map((d) => d.id).join(", ")} ${rfoRes.length > 1 ? "are" : "is"} [Reserved] (removed or relocated). The codified clause may still be cited, so confirm which text the prime contract applies.`);
+    const rfoRev = list.filter((d) => d.db && d.db.rfo === "revised").length;
+    if (rfoRev) notes.push(`${rfoRev} cited clause(s) have revised RFO text dated by "Deviation Date" rather than a clause-version date, so a date difference against the codified clause is expected.`);
     notes.push(DB.meta.rfo);
     const refs = [...new Set(list.flatMap((d) => d.clauses))].slice(0, 8);
     const quote = short(ctx.cites[0] ? (sentOf(ctx.cites[0].clause).find((s) => s.includes(ctx.cites[0].id)) || "") : "");

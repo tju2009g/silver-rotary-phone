@@ -35,6 +35,12 @@
     // Third pack, single directly-opened clause (owner's GPT register, 2026-11-23):
     "252.203-7000": "SEP 2011"
   };
+  // Matched exactly against the owner-supplied official PDFs printed 2026-11-24: DFARS Part 252 (Change 5/7/2026) for
+  // 252.xxx ids; FAR Overhaul Part 52 text for 52.xxx ids (date text identical to the RFO page, and for most also to D1/D2).
+  const CHECKED = new Set(["252.203-7000", "252.203-7001", "252.203-7002", "252.203-7005", "252.204-7000", "252.204-7003", "252.204-7004", "252.204-7006", "252.204-7008", "252.204-7012", "252.204-7016", "252.204-7017", "252.204-7018", "252.204-7020", "252.204-7021", "252.204-7024", "252.209-7004", "252.215-7002", "252.215-7013", "252.222-7006", "252.223-7006", "252.223-7008", "252.225-7012", "252.225-7055", "252.225-7056", "252.225-7059", "252.226-7001", "252.227-7014", "252.227-7015", "252.227-7017", "252.227-7018", "252.227-7037", "252.227-7039", "252.232-7003", "252.232-7006", "252.232-7007", "252.232-7010", "252.235-7010", "252.235-7011", "252.239-7009", "252.239-7010", "252.243-7001", "252.243-7002", "252.245-7003", "252.245-7005", "252.246-7008", "252.247-7023", "52.203-10", "52.203-11", "52.203-13", "52.203-18", "52.203-2", "52.203-3", "52.203-5", "52.203-6", "52.203-8", "52.204-19", "52.207-4", "52.215-10", "52.216-11", "52.217-2", "52.217-8", "52.224-3", "52.227-11", "52.227-14", "52.228-7", "52.232-2", "52.232-25", "52.232-33", "52.232-39", "52.232-40", "52.232-8", "52.242-1", "52.242-15", "52.242-17", "52.242-4", "52.242-5", "52.244-2", "52.245-1", "52.245-9", "52.246-16", "52.246-2", "52.246-3", "52.246-4", "52.246-7", "52.246-8", "52.247-1", "52.247-35", "52.249-2", "52.249-8", "52.252-2", "52.252-3", "52.252-4", "52.252-6"]);
+  // RFO Part 52 status under DoD class deviation 2026-O0038 (effective 2026-02-01): "reserved" = clause is [Reserved] in RFO
+  // Part 52 (removed or relocated), "revised" = revised text dated "Deviation Date", "dated" = RFO text carries a normal date.
+  const RFO_STATUS = {"52.203-10": "dated", "52.203-11": "dated", "52.203-13": "dated", "52.203-18": "dated", "52.203-19": "dated", "52.203-2": "dated", "52.203-3": "dated", "52.203-5": "dated", "52.203-6": "dated", "52.203-8": "dated", "52.204-10": "revised", "52.204-13": "revised", "52.204-19": "dated", "52.204-21": "reserved", "52.204-23": "reserved", "52.204-25": "reserved", "52.204-27": "reserved", "52.204-7": "revised", "52.207-4": "dated", "52.209-10": "revised", "52.209-13": "revised", "52.209-6": "revised", "52.209-7": "dated", "52.209-9": "dated", "52.211-11": "dated", "52.211-5": "revised", "52.212-4": "revised", "52.213-1": "reserved", "52.215-10": "dated", "52.215-12": "revised", "52.215-15": "revised", "52.215-18": "dated", "52.215-19": "revised", "52.215-2": "revised", "52.215-20": "revised", "52.215-21": "revised", "52.215-23": "revised", "52.215-6": "revised", "52.215-8": "revised", "52.216-1": "revised", "52.216-11": "dated", "52.216-7": "revised", "52.217-2": "dated", "52.217-8": "dated", "52.219-16": "revised", "52.219-28": "revised", "52.219-8": "revised", "52.219-9": "revised", "52.222-19": "revised", "52.222-2": "revised", "52.222-35": "revised", "52.222-36": "revised", "52.222-37": "revised", "52.222-40": "revised", "52.222-50": "revised", "52.222-54": "revised", "52.224-3": "dated", "52.227-11": "dated", "52.227-14": "dated", "52.228-7": "dated", "52.229-3": "dated", "52.230-6": "revised", "52.232-2": "dated", "52.232-20": "revised", "52.232-22": "revised", "52.232-25": "dated", "52.232-33": "dated", "52.232-39": "dated", "52.232-40": "dated", "52.232-8": "dated", "52.233-1": "revised", "52.233-2": "revised", "52.233-3": "revised", "52.233-4": "revised", "52.242-1": "dated", "52.242-13": "dated", "52.242-15": "dated", "52.242-17": "dated", "52.242-3": "revised", "52.242-4": "dated", "52.242-5": "dated", "52.243-1": "revised", "52.243-2": "revised", "52.244-2": "dated", "52.244-6": "revised", "52.245-1": "dated", "52.245-9": "dated", "52.246-16": "dated", "52.246-2": "dated", "52.246-3": "dated", "52.246-4": "dated", "52.246-7": "dated", "52.246-8": "dated", "52.247-1": "dated", "52.247-34": "dated", "52.247-35": "dated", "52.249-2": "dated", "52.249-5": "dated", "52.249-8": "dated", "52.252-2": "dated", "52.252-3": "dated", "52.252-4": "dated", "52.252-6": "dated"};
   const FAR_URL = (n) => "https://www.acquisition.gov/far/" + n;
   const DFARS_PART = "https://www.acquisition.gov/dfars/part-252-solicitation-provisions-and-contract-clauses";
 
@@ -44,7 +50,7 @@
   const C = (id, auth, kind, title, topic, flowdown, when, note, severity) => ({
     id, auth, kind, title, topic, flowdown, when: when || [], note, severity: severity || "High",
     link: auth === "FAR" ? FAR_URL(id) : DFARS_PART,
-    currentDate: VERIFIED[id] || null, verified: !!VERIFIED[id]
+    currentDate: VERIFIED[id] || null, verified: !!VERIFIED[id], rfo: RFO_STATUS[id] || null
   });
 
   const CLAUSES = [
@@ -233,12 +239,12 @@
     // 252.204-7016 is a provision that D1/D2 only mention inside other clauses (no list row), so no corroboration; GPT
     // re-check on 2026-11-24 marked it directly viewed (DEC 2019) with the acquisition.gov page address.
     ["252.204-7016", "Covered Defense Telecommunications Equipment or Services-Representation", "DEC 2019"],
-    // CONFLICT: GPT says JUN 2023 twice, but D1 cites OCT 2024 (newer). Either D1 or the page GPT saw is off; open the page to resolve. Left unverified.
-    ["252.205-7000", "Provision of Information to Cooperative Agreement Holders", null, "JUN 2023 per GPT (viewed twice) vs OCT 2024 cited in D1 (D2 cites JUN 2023); unresolved"]
+    // RESOLVED 2026-11-24: official DFARS Part 252 PDF shows JUN 2023 (GPT was right). D1 cites OCT 2024, a date newer than the official one: a D1 inconsistency.
+    ["252.205-7000", "Provision of Information to Cooperative Agreement Holders", "JUN 2023"]
   ].filter(([id]) => !CLAUSES.some((c) => c.id === id)).map(([id, title, date, claimed, tier]) => ({
     id, auth: id.startsWith("252.") ? "DFARS" : "FAR", kind: "clause", title, topic: "reference", flowdown: "none", when: [],
     note: "Reference entry: title and date only (flow-down not assessed).", severity: "Medium",
-    link: id.startsWith("252.") ? DFARS_PART : FAR_URL(id), currentDate: date, verified: !!date, tier: date ? (tier || "corroborated") : "unconfirmed", claimedDate: claimed || null
+    link: id.startsWith("252.") ? DFARS_PART : FAR_URL(id), currentDate: date, verified: !!date, tier: date ? (CHECKED.has(id) ? "official" : (tier || "corroborated")) : "unconfirmed", claimedDate: claimed || null, rfo: RFO_STATUS[id] || null
   }));
   CLAUSES.push(...REG);
 
