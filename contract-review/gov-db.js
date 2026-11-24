@@ -140,10 +140,11 @@
     ["252.245-7003", "Contractor Property Management System Administration", "JAN 2025"],
     ["252.245-7005", "Management and Reporting of Government Property", "JAN 2024"],
     ["252.247-7023", "Transportation of Supplies by Sea", "OCT 2024"],
-    // Not corroborated: D1/D2 list no parseable date for 252.204-7016 (provision).
-    ["252.204-7016", "Covered Defense Telecommunications Equipment or Services-Representation", null, "DEC 2019"],
-    // CONFLICT: GPT says JUN 2023, but D1 cites OCT 2024 (newer), so the GPT date is stale/wrong. Left unverified.
-    ["252.205-7000", "Provision of Information to Cooperative Agreement Holders", null, "JUN 2023 (contradicted: D1 cites OCT 2024)"]
+    // 252.204-7016 is a provision that D1/D2 only mention inside other clauses (no list row), so no corroboration; GPT
+    // re-check on 2026-11-24 marked it directly viewed (DEC 2019) with the acquisition.gov page address.
+    ["252.204-7016", "Covered Defense Telecommunications Equipment or Services-Representation", "DEC 2019"],
+    // CONFLICT: GPT says JUN 2023 twice, but D1 cites OCT 2024 (newer). Either D1 or the page GPT saw is off; open the page to resolve. Left unverified.
+    ["252.205-7000", "Provision of Information to Cooperative Agreement Holders", null, "JUN 2023 per GPT (viewed twice) vs OCT 2024 cited in D1 (D2 cites JUN 2023); unresolved"]
   ].filter(([id]) => !CLAUSES.some((c) => c.id === id)).map(([id, title, date, claimed]) => ({
     id, auth: "DFARS", kind: "clause", title, topic: "reference", flowdown: "none", when: [],
     note: "Reference entry: title and date only (flow-down not assessed).", severity: "Medium",
