@@ -100,7 +100,7 @@
   ];
 
   // ---- Reference register (title + clause date only; no flow-down/when logic, so it never drives "missing clause" findings) ----
-  // Batch 1 (DFARS, owner's GPT run, 2026-11-24). Tier "corroborated": each date equals the version cited in the D1 and/or D2
+  // Batches 1-2 (DFARS, owner's GPT run, 2026-11-24). Tier "corroborated": each date equals the version cited in the D1 and/or D2
   // solicitation clause lists (a cited version cannot be newer than the current one, so no contradiction found), but the
   // acquisition.gov page itself was not opened by us. Entries with date null carry the unconfirmed claim in `claimedDate`.
   const REG = [
@@ -121,6 +121,25 @@
     ["252.223-7006", "Prohibition on Storage, Treatment, and Disposal of Toxic or Hazardous Materials", "SEP 2014"],
     ["252.223-7008", "Prohibition of Hexavalent Chromium", "JAN 2023"],
     ["252.225-7012", "Preference for Certain Domestic Commodities", "APR 2022"],
+    // Batch 2 (DFARS, GPT run 2026-11-24, all marked directly viewed); every date equals the newest base version cited in D1/D2.
+    ["252.225-7055", "Representation Regarding Business Operations with the Maduro Regime", "MAY 2022"],
+    ["252.225-7056", "Prohibition Regarding Business Operations with the Maduro Regime", "JAN 2023"],
+    ["252.225-7059", "Prohibition on Certain Procurements from the Xinjiang Uyghur Autonomous Region-Representation", "JUN 2023"],
+    ["252.225-7060", "Prohibition on Certain Procurements from the Xinjiang Uyghur Autonomous Region", "JUN 2023"],
+    ["252.226-7001", "Utilization of Indian Organizations, Indian-Owned Economic Enterprises, and Native Hawaiian Small Business Concerns", "JAN 2023"],
+    ["252.227-7039", "Patents-Reporting of Subject Inventions", "APR 1990"],
+    ["252.232-7003", "Electronic Submission of Payment Requests and Receiving Reports", "DEC 2018"],
+    ["252.232-7006", "Wide Area WorkFlow Payment Instructions", "JAN 2023"],
+    ["252.232-7007", "Limitation of Governments Obligation", "APR 2014"],
+    ["252.232-7010", "Levies on Contract Payments", "DEC 2006"],
+    ["252.235-7010", "Acknowledgment of Support and Disclaimer", "MAY 1995"],
+    ["252.235-7011", "Final Scientific or Technical Report", "DEC 2019"],
+    ["252.239-7009", "Representation of Use of Cloud Computing", "SEP 2015"],
+    ["252.243-7001", "Pricing of Contract Modifications", "DEC 1991"],
+    ["252.243-7002", "Requests for Equitable Adjustment", "DEC 2022"],
+    ["252.245-7003", "Contractor Property Management System Administration", "JAN 2025"],
+    ["252.245-7005", "Management and Reporting of Government Property", "JAN 2024"],
+    ["252.247-7023", "Transportation of Supplies by Sea", "OCT 2024"],
     // Not corroborated: D1/D2 list no parseable date for 252.204-7016 (provision).
     ["252.204-7016", "Covered Defense Telecommunications Equipment or Services-Representation", null, "DEC 2019"],
     // CONFLICT: GPT says JUN 2023, but D1 cites OCT 2024 (newer), so the GPT date is stale/wrong. Left unverified.
