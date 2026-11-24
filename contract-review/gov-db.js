@@ -170,7 +170,8 @@
     ["52.211-5", "Material Requirements", "AUG 2000", null, null],
     ["52.213-1", "Fast Payment Procedure", "MAY 2006", null, "gpt-viewed"],
     // Batch 4 (FAR, GPT run 2026-11-24). Most also have a 2026-O0038 RFO variant in D1; the base date was compared, not the variant.
-    // 52.219-9 D1 row '(Deviation) 2026-02' is the RFO track, not a base-date contradiction.
+    // 52.219-9 D1 row '(Deviation) 2026-02' is the RFO track, not a base-date contradiction. 52.219-9 JAN 2025 confirmed from the owner's
+    // acquisition.gov printout of 2026-11-24 (Alternates: I NOV 2016, II NOV 2016, III JAN 2025, IV JAN 2025). Same printout style confirmed 52.204-21 NOV 2021 and 52.204-27 JUN 2023.
     ["52.215-10", "Price Reduction for Defective Certified Cost or Pricing Data", "AUG 2011", null, null],
     ["52.215-12", "Subcontractor Certified Cost or Pricing Data", "JUN 2020", null, null],
     ["52.215-15", "Pension Adjustments and Asset Reversions", "OCT 2010", null, null],
@@ -189,7 +190,7 @@
     ["52.219-16", "Liquidated Damages-Subcontracting Plan", "SEP 2021", null, null],
     ["52.219-28", "Postaward Small Business Program Rerepresentation", "JAN 2025", null, "gpt-viewed"],
     ["52.219-8", "Utilization of Small Business Concerns", "JAN 2025", null, "gpt-viewed"],
-    ["52.219-9", "Small Business Subcontracting Plan", "JAN 2025", null, "gpt-viewed"],
+    ["52.219-9", "Small Business Subcontracting Plan", "JAN 2025", null, "official"],
     ["52.222-19", "Child Labor-Cooperation with Authorities and Remedies", "MAR 2026", null, "gpt-viewed"],
     ["52.222-2", "Payment for Overtime Premiums", "JUL 1990", null, null],
     // Batch 5 (FAR, GPT run 2026-11-24). 52.222-54: D1/D2 cite only MAY 2022 (older), so gpt-viewed.
