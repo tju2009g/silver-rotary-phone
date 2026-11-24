@@ -99,13 +99,46 @@
     C("252.244-7000", "DFARS", "clause", "Subcontracts for Commercial Products or Commercial Services", "flowdown", "required", ["dod", "commercial"], "DoD list of flow-down clauses for commercial subcontracts.", "Medium")
   ];
 
+  // ---- Reference register (title + clause date only; no flow-down/when logic, so it never drives "missing clause" findings) ----
+  // Batch 1 (DFARS, owner's GPT run, 2026-11-24). Tier "corroborated": each date equals the version cited in the D1 and/or D2
+  // solicitation clause lists (a cited version cannot be newer than the current one, so no contradiction found), but the
+  // acquisition.gov page itself was not opened by us. Entries with date null carry the unconfirmed claim in `claimedDate`.
+  const REG = [
+    ["252.203-7001", "Prohibition on Persons Convicted of Fraud or Other Defense Contract-Related Felonies", "JAN 2023"],
+    ["252.203-7005", "Representation Relating to Compensation of Former DoD Officials", "SEP 2022"],
+    ["252.204-7000", "Disclosure of Information", "OCT 2016"],
+    ["252.204-7003", "Control of Government Personnel Work Product", "APR 1992"],
+    ["252.204-7004", "Antiterrorism Awareness Training for Contractors", "JAN 2023"],
+    ["252.204-7006", "Billing Instructions-Cost Vouchers", "MAY 2023"],
+    ["252.204-7008", "Compliance with Safeguarding Covered Defense Information Controls", "OCT 2016"],
+    ["252.204-7017", "Prohibition on the Acquisition of Covered Defense Telecommunications Equipment or Services-Representation", "MAY 2021"],
+    ["252.204-7018", "Prohibition on the Acquisition of Covered Defense Telecommunications Equipment or Services", "JAN 2023"],
+    ["252.204-7024", "Notice on the Use of the Supplier Performance Risk System", "MAR 2023"],
+    ["252.209-7004", "Subcontracting with Firms that are Owned or Controlled by the Government of a Country that is a State Sponsor of Terrorism", "MAY 2019"],
+    ["252.215-7002", "Cost Estimating System Requirements", "JAN 2025"],
+    ["252.215-7013", "Supplies and Services Provided by Nontraditional Defense Contractors", "JAN 2023"],
+    ["252.222-7006", "Restrictions on the Use of Mandatory Arbitration Agreements", "JAN 2023"],
+    ["252.223-7006", "Prohibition on Storage, Treatment, and Disposal of Toxic or Hazardous Materials", "SEP 2014"],
+    ["252.223-7008", "Prohibition of Hexavalent Chromium", "JAN 2023"],
+    ["252.225-7012", "Preference for Certain Domestic Commodities", "APR 2022"],
+    // Not corroborated: D1/D2 list no parseable date for 252.204-7016 (provision).
+    ["252.204-7016", "Covered Defense Telecommunications Equipment or Services-Representation", null, "DEC 2019"],
+    // CONFLICT: GPT says JUN 2023, but D1 cites OCT 2024 (newer), so the GPT date is stale/wrong. Left unverified.
+    ["252.205-7000", "Provision of Information to Cooperative Agreement Holders", null, "JUN 2023 (contradicted: D1 cites OCT 2024)"]
+  ].filter(([id]) => !CLAUSES.some((c) => c.id === id)).map(([id, title, date, claimed]) => ({
+    id, auth: "DFARS", kind: "clause", title, topic: "reference", flowdown: "none", when: [],
+    note: "Reference entry: title and date only (flow-down not assessed).", severity: "Medium",
+    link: DFARS_PART, currentDate: date, verified: !!date, tier: date ? "corroborated" : "unconfirmed", claimedDate: claimed || null
+  }));
+  CLAUSES.push(...REG);
+
   const byId = Object.fromEntries(CLAUSES.map((c) => [c.id, c]));
 
   const api = {
     meta: {
       version: "v0.1",
       compiledOn: "2026-11-22",
-      datesVerifiedOn: "2026-11-23",
+      datesVerifiedOn: "2026-11-24",
       verification: "Clause dates verified 2026-11-23 (FAC 2026-01 / DFARS Change 5/7/2026). Class deviations: 13 DoD/GSA entries recorded from a partial register (affected clause numbers not yet mapped) — confirm before client use.",
       rfo: "Revolutionary FAR Overhaul in progress: agency class deviations apply now; formal notice-and-comment rulemaking is ongoing. Clause text and dates may differ by agency and may change."
     },
