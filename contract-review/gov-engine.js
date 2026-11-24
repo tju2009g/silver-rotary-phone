@@ -19,6 +19,17 @@
   const HOURWORDS = { "twelve": 12, "twenty-four": 24, "twenty four": 24, "forty-eight": 48, "forty eight": 48, "seventy-two": 72, "seventy two": 72, "ninety-six": 96, "ninety six": 96 };
 
   /* ---------------- citations ---------------- */
+  // Reference lookup (gov-ref.js): any DFARS clause gets its official current date; FAR clauses get title + RFO status only.
+  function refEntry(id) {
+    const R = root.GOV_REF; if (!R) return null;
+    const e = id.startsWith("252.") ? R.dfars[id] : R.far[id];
+    if (!e) return null;
+    const dfars = id.startsWith("252."), v = e[1];
+    const date = dfars && v && v !== "R" ? v : null;
+    return { id, auth: dfars ? "DFARS" : "FAR", title: e[0], currentDate: date, verified: !!date, flowdown: null, when: [], ref: true, tier: "reference",
+      reserved: dfars && v === "R", rfo: dfars ? null : v === "R" ? "reserved" : v === "D" ? "revised" : "dated" };
+  }
+
   function extractCites(clauses) {
     const out = [];
     clauses.forEach((c) => {
@@ -53,7 +64,7 @@
         if (!cur.clauses.includes(c.clause)) cur.clauses.push(c.clause);
       }
     });
-    return [...map.values()].map((d) => Object.assign(d, { db: DB.byId[d.id] || null }));
+    return [...map.values()].map((d) => Object.assign(d, { db: DB.byId[d.id] || refEntry(d.id) }));
   }
 
   /* ---------------- signals ---------------- */
@@ -129,9 +140,10 @@
   E.G02 = (ctx) => {
     const list = ctx.distinct;
     if (!list.length) return { status: "Review", refs: [], quote: "", notes: ["No FAR/DFARS clause citations found — currency cannot be assessed."] };
-    const stale = [], unknown = [], undated = [], unverified = [], variant = [];
+    const stale = [], unknown = [], undated = [], unverified = [], variant = [], retired = [];
     list.forEach((d) => {
       if (!d.db) unknown.push(d);
+      else if (d.db.reserved) retired.push(d);
       else if (!d.dates.length) undated.push(d);
       else if (!d.baseDates.length) variant.push(d);
       else if (d.db.verified && d.db.currentDate && !d.baseDates.includes(d.db.currentDate)) stale.push(d);
@@ -139,11 +151,17 @@
     });
     const dev = list.filter((d) => d.deviation).length || /class deviation|\bRFO\b|FAR Overhaul/i.test(ctx.flat);
     const notes = [];
-    if (stale.length) notes.push("Cited date differs from the verified current date: " + stale.map((d) => `${d.id} cited ${d.baseDates.join("/")} vs ${d.db.currentDate}`).join("; ") + ". An older date can be correct if it matches the prime contract in force at award — compare against the prime contract before accepting or changing it.");
+    const MIDX = { JAN: 1, FEB: 2, MAR: 3, APR: 4, MAY: 5, JUN: 6, JUL: 7, AUG: 8, SEP: 9, OCT: 10, NOV: 11, DEC: 12 };
+    const midx = (d) => { const m = /^([A-Z]{3}) (\d{4})$/.exec(d || ""); return m ? +m[2] * 12 + MIDX[m[1]] : null; };
+    const newer = stale.filter((d) => d.baseDates.every((x) => midx(x) !== null && midx(d.db.currentDate) !== null && midx(x) > midx(d.db.currentDate)));
+    const older = stale.filter((d) => !newer.includes(d));
+    if (older.length) notes.push("Cited date is older than the verified current date: " + older.map((d) => `${d.id} cited ${d.baseDates.join("/")} vs ${d.db.currentDate}`).slice(0, 15).join("; ") + (older.length > 15 ? `; … +${older.length - 15} more` : "") + ". An older date can be correct if it matches the prime contract in force at award — compare against the prime contract before accepting or changing it.");
+    if (newer.length) notes.push("Cited date is LATER than the official current date, which should not happen for a published version (typo, an unpublished or agency-specific version, or a stale reference file): " + newer.map((d) => `${d.id} cited ${d.baseDates.join("/")} vs ${d.db.currentDate}`).join("; ") + ". Verify against acquisition.gov before relying on either date.");
     if (variant.length) notes.push(`${variant.length} clause(s) appear only as an Alternate or agency deviation, whose dates follow their own version track and are not compared to the base clause date: ${variant.map((d) => `${d.id} (${d.variants.join("/")})`).slice(0, 12).join(", ")}${variant.length > 12 ? ", …" : ""}.`);
-    if (unknown.length) notes.push("Not in Clause DB v0 (manual check): " + unknown.map((d) => d.id).join(", ") + ".");
+    if (retired.length) notes.push("Cited clause(s) shown as [Reserved] in the current DFARS (withdrawn): " + retired.map((d) => d.id).join(", ") + ". Confirm with the prime contract.");
+    if (unknown.length) notes.push("Not found in the Clause DB or the official reference data (check for a typo or a non-FAR/DFARS number): " + unknown.map((d) => d.id).join(", ") + ".");
     if (undated.length) notes.push("Cited without a date: " + undated.map((d) => d.id).join(", ") + ".");
-    if (unverified.length) notes.push(`${unverified.length} dated clause(s) could not be compared — the DB has no verified current date for them: ${unverified.map((d) => `${d.id} (${d.dates.join("/")})`).join(", ")}.`);
+    if (unverified.length) notes.push(`${unverified.length} dated clause(s) could not be compared — no verified current date on file (most are FAR clauses whose codified date is not yet loaded): ${unverified.map((d) => `${d.id} (${d.dates.join("/")})`).slice(0, 12).join(", ")}${unverified.length > 12 ? `, … +${unverified.length - 12} more` : ""}.`);
     const devNos = [...new Set(ctx.cites.map((c) => c.deviation).filter(Boolean).map((t) => (t.match(/\b\d{4}-O\d{4}\b|RFO-\d{4}-\d+/) || [])[0]).filter(Boolean))];
     if (devNos.length) {
       const known = devNos.filter((n) => DB.deviations.some((x) => x.no === n)), unknownDev = devNos.filter((n) => !known.includes(n));
@@ -152,14 +170,14 @@
     }
     notes.push(dev ? "A class deviation / overhaul reference appears in the document." : "No class deviation is named. The FAR is being overhauled through agency class deviations — confirm which text applies.");
     const rfoRes = list.filter((d) => d.db && d.db.rfo === "reserved");
-    if (rfoRes.length) notes.push(`Under the DoD Revolutionary FAR Overhaul Part 52 (class deviation 2026-O0038, effective 2026-02-01) ${rfoRes.map((d) => d.id).join(", ")} ${rfoRes.length > 1 ? "are" : "is"} [Reserved] (removed or relocated). The codified clause may still be cited, so confirm which text the prime contract applies.`);
+    if (rfoRes.length) notes.push(`Under the DoD Revolutionary FAR Overhaul Part 52 (class deviation 2026-O0038, effective 2026-02-01) ${rfoRes.map((d) => d.id).slice(0, 12).join(", ")}${rfoRes.length > 12 ? `, … +${rfoRes.length - 12} more` : ""} ${rfoRes.length > 1 ? "are" : "is"} [Reserved] (removed or relocated). The codified clause may still be cited, so confirm which text the prime contract applies.`);
     const rfoRev = list.filter((d) => d.db && d.db.rfo === "revised").length;
     if (rfoRev) notes.push(`${rfoRev} cited clause(s) have revised RFO text dated by "Deviation Date" rather than a clause-version date, so a date difference against the codified clause is expected.`);
     notes.push(DB.meta.rfo);
     const refs = [...new Set(list.flatMap((d) => d.clauses))].slice(0, 8);
     const quote = short(ctx.cites[0] ? (sentOf(ctx.cites[0].clause).find((s) => s.includes(ctx.cites[0].id)) || "") : "");
     let status;
-    if (stale.length || unknown.length || undated.length) status = "Review";
+    if (stale.length || unknown.length || undated.length || retired.length) status = "Review";
     else if (unverified.length || !dev) status = "Fallback";
     else status = "Compliant";
     return { status, refs, quote, notes };
@@ -487,7 +505,7 @@
       gov: {
         docKind, dbVersion: DB.meta.version, dbVerification: DB.meta.verification,
         signals: Object.keys(sig).filter((k) => sig[k]),
-        cites: dist.map((d) => ({ id: d.id, auth: d.auth, dates: d.dates, deviation: d.deviation, inDb: !!d.db, verified: !!(d.db && d.db.verified), flowdown: d.db ? d.db.flowdown : null })),
+        cites: dist.map((d) => ({ id: d.id, auth: d.auth, dates: d.dates, deviation: d.deviation, inDb: !!(d.db && !d.db.ref), inRef: !!(d.db && d.db.ref), verified: !!(d.db && d.db.verified), flowdown: d.db ? d.db.flowdown : null })),
         flowdown: g01 || null
       },
       engine: "rules", createdAt: new Date().toISOString()
