@@ -100,7 +100,7 @@
   ];
 
   // ---- Reference register (title + clause date only; no flow-down/when logic, so it never drives "missing clause" findings) ----
-  // Batches 1-4 (DFARS/FAR, owner's GPT run, 2026-11-24). Tier "corroborated": each date equals the version cited in the D1 and/or D2
+  // Batches 1-5 (DFARS/FAR, owner's GPT run, 2026-11-24). Tier "corroborated": each date equals the version cited in the D1 and/or D2
   // solicitation clause lists (a cited version cannot be newer than the current one, so no contradiction found), but the
   // acquisition.gov page itself was not opened by us. Entries with date null carry the unconfirmed claim in `claimedDate`.
   const REG = [
@@ -186,6 +186,29 @@
     ["52.219-9", "Small Business Subcontracting Plan", "JAN 2025", null, "gpt-viewed"],
     ["52.222-19", "Child Labor-Cooperation with Authorities and Remedies", "MAR 2026", null, "gpt-viewed"],
     ["52.222-2", "Payment for Overtime Premiums", "JUL 1990", null, null],
+    // Batch 5 (FAR, GPT run 2026-11-24). 52.222-54: D1/D2 cite only MAY 2022 (older), so gpt-viewed.
+    ["52.222-35", "Equal Opportunity for Veterans", "JUN 2020", null, null],
+    ["52.222-36", "Equal Opportunity for Workers with Disabilities", "JUN 2020", null, null],
+    ["52.222-37", "Employment Reports on Veterans", "JUN 2020", null, null],
+    ["52.222-40", "Notification of Employee Rights Under the National Labor Relations Act", "DEC 2010", null, null],
+    ["52.222-54", "Employment Eligibility Verification", "JAN 2025", null, "gpt-viewed"],
+    ["52.224-3", "Privacy Training", "JAN 2017", null, null],
+    ["52.228-7", "Insurance-Liability to Third Persons", "MAR 1996", null, null],
+    ["52.229-3", "Federal, State, and Local Taxes", "FEB 2013", null, null],
+    ["52.230-6", "Administration of Cost Accounting Standards", "JUN 2010", null, null],
+    ["52.232-2", "Payments under Fixed-Price Research and Development Contracts", "APR 1984", null, null],
+    ["52.232-20", "Limitation of Cost", "APR 1984", null, null],
+    ["52.232-22", "Limitation of Funds", "APR 1984", null, null],
+    ["52.232-25", "Prompt Payment", "JAN 2017", null, null],
+    ["52.232-33", "Payment by Electronic Funds Transfer-System for Award Management", "OCT 2018", null, null],
+    ["52.232-39", "Unenforceability of Unauthorized Obligations", "JUN 2013", null, null],
+    ["52.232-8", "Discounts for Prompt Payment", "FEB 2002", null, null],
+    ["52.233-2", "Service of Protest", "SEP 2006", null, null],
+    ["52.233-3", "Protest after Award", "AUG 1996", null, null],
+    ["52.233-4", "Applicable Law for Breach of Contract Claim", "OCT 2004", null, null],
+    ["52.242-1", "Notice of Intent to Disallow Costs", "APR 1984", null, null],
+    ["52.242-13", "Bankruptcy", "JUL 1995", null, null],
+    ["52.242-15", "Stop-Work Order", "AUG 1989", null, null],
     // 252.204-7016 is a provision that D1/D2 only mention inside other clauses (no list row), so no corroboration; GPT
     // re-check on 2026-11-24 marked it directly viewed (DEC 2019) with the acquisition.gov page address.
     ["252.204-7016", "Covered Defense Telecommunications Equipment or Services-Representation", "DEC 2019"],
