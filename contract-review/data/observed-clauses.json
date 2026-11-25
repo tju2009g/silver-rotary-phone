@@ -1,0 +1,6177 @@
+{
+ "note": "Observed in public solicitation clause lists (D1 HT9425-23-S-SOC1-0002 Att.7; D2 FA2384-24-S-2335 Att.1 20Nov2025). Dates are the INCORPORATED version in those documents, NOT the current clause date. Titles are machine-extracted and unreviewed.",
+ "generatedOn": "2026-11-23",
+ "stats": {
+  "D1": {
+   "rows": 233,
+   "titled": 223,
+   "dated": 223
+  },
+  "D2": {
+   "rows": 322,
+   "titled": 238,
+   "dated": 239
+  }
+ },
+ "rows": [
+  {
+   "id": "52.202-1",
+   "alt": null,
+   "deviation": null,
+   "title": "Definitions",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2020-06",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2020-06",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.203-2",
+   "alt": null,
+   "deviation": null,
+   "title": "Certificate of Independent Price Determination",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1985-04",
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.203-3",
+   "alt": null,
+   "deviation": null,
+   "title": "Gratuities",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1984-04",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "1984-04",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.203-5",
+   "alt": null,
+   "deviation": null,
+   "title": "Covenant Against Contingent Fees",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2014-05",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2014-05",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.203-6",
+   "alt": null,
+   "deviation": null,
+   "title": "Restrictions on Subcontractor Sales to the Government",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2020-06",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2020-06",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.203-7",
+   "alt": null,
+   "deviation": null,
+   "title": "Anti-Kickback Procedures",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2020-06",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2020-06",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.203-8",
+   "alt": null,
+   "deviation": null,
+   "title": "Cancellation, Rescission, and Recovery of Funds for Illegal or Improper Activity",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2014-05",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2014-05",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.203-10",
+   "alt": null,
+   "deviation": null,
+   "title": "Price or Fee Adjustment for Illegal or Improper Activity",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2014-05",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2014-05",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.203-11",
+   "alt": null,
+   "deviation": null,
+   "title": "Certification and Disclosure Regarding Payments to Influence Certain Federal Transactions",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2024-09",
+     "section": "K"
+    },
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.203-12",
+   "alt": null,
+   "deviation": null,
+   "title": "Limitation on Payments to Influence Certain Federal Transactions",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2020-06",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2020-06",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.203-13",
+   "alt": null,
+   "deviation": null,
+   "title": "Contractor Code of Business Ethics and Conduct",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2021-11",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.203-18",
+   "alt": null,
+   "deviation": null,
+   "title": "Prohibition on Contracting with Entities that Require Certain Internal Confidentiality Agreements or Statements- Representation",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2017-01",
+     "section": "L"
+    },
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.203-19",
+   "alt": null,
+   "deviation": null,
+   "title": "Prohibition on Requiring Certain Internal Confidentiality Agreements or Statements",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2017-01",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2017-01",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.204-1",
+   "alt": null,
+   "deviation": null,
+   "title": "Approval of Contract",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1989-12",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.204-2",
+   "alt": null,
+   "deviation": null,
+   "title": "Security Requirements",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2021-03",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.204-3",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.204-4",
+   "alt": null,
+   "deviation": null,
+   "title": "Printed or Copied Double-Sided on Postconsumer Fiber",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2023-12",
+     "section": "K"
+    }
+   ]
+  },
+  {
+   "id": "52.204-5",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.204-7",
+   "alt": null,
+   "deviation": "2026- O0038",
+   "title": "System for Award Management-Registration",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "L"
+    }
+   ]
+  },
+  {
+   "id": "52.204-7",
+   "alt": null,
+   "deviation": null,
+   "title": "System for Award Management",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": null,
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": "2018-10",
+     "section": "L"
+    },
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.204-8",
+   "alt": null,
+   "deviation": null,
+   "title": "Annual Representations and Certifications",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": "2025-01",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.204-8",
+   "alt": "I",
+   "deviation": null,
+   "title": "Annual Representations and Certifications",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2023-03",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.204-9",
+   "alt": null,
+   "deviation": null,
+   "title": "Personal Identity Verification of Contractor Personnel",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2011-01",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.204-10",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Reporting Executive Compensation and First-Tier Subcontract Awards",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.204-10",
+   "alt": null,
+   "deviation": null,
+   "title": "Reporting Executive Compensation and First-Tier Subcontract",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2020-06",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.204-13",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "System for Award Management-Maintenance",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.204-13",
+   "alt": null,
+   "deviation": null,
+   "title": "System for Award Management Maintenance",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2018-10",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.204-16",
+   "alt": null,
+   "deviation": null,
+   "title": "Commercial and Government Entity Code Reporting",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2020-08",
+     "section": "L"
+    }
+   ]
+  },
+  {
+   "id": "52.204-17",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.204-18",
+   "alt": null,
+   "deviation": null,
+   "title": "Commercial and Government Entity Code Maintenance",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2020-08",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.204-19",
+   "alt": null,
+   "deviation": null,
+   "title": "Incorporation by Reference of Representations and Certifications",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2014-12",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2014-12",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.204-20",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.204-21",
+   "alt": null,
+   "deviation": null,
+   "title": "Basic Safeguarding of Covered Contractor Information Systems",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2021-11",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.204-22",
+   "alt": null,
+   "deviation": null,
+   "title": "Alternative Line Item Proposal",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2017-01",
+     "section": "L"
+    }
+   ]
+  },
+  {
+   "id": "52.204-23",
+   "alt": null,
+   "deviation": null,
+   "title": "Services Developed or Provided by Kaspersky Lab Covered",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2023-12",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.204-24",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.204-25",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.204-26",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.204-27",
+   "alt": null,
+   "deviation": null,
+   "title": "Prohibition on a ByteDance Covered Application",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2023-06",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.204-29",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.207-4",
+   "alt": null,
+   "deviation": null,
+   "title": "Economic Purchase Quantity-Supplies",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1987-08",
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": "1987-08",
+     "section": "L"
+    }
+   ]
+  },
+  {
+   "id": "52.207-6",
+   "alt": null,
+   "deviation": null,
+   "title": "Solicitation of Offers from Small Business Concerns and Small Business Teaming Arrangements or Joint Ventures",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2022-12",
+     "section": "L"
+    }
+   ]
+  },
+  {
+   "id": "52.208-9",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Contractor Use of Mandatory Sources of Supply or Services",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.209-2",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.209-5",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.209-6",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Protecting the Government's Interest When Subcontracting With Contractors Debarred, Suspended, Proposed for Debarment, or Voluntarily Excluded",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.209-6",
+   "alt": null,
+   "deviation": null,
+   "title": "with Contractors Debarred, Suspended, or Proposed for Debarment",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2021-11",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.209-7",
+   "alt": null,
+   "deviation": "2026- O0038",
+   "title": "Information Regarding Responsibility Matters",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.209-7",
+   "alt": null,
+   "deviation": null,
+   "title": "Information Regarding Responsibility Matters",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2018-10",
+     "section": "K"
+    }
+   ]
+  },
+  {
+   "id": "52.209-9",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Updates of Publicly Available Information Regarding Responsibility Matters",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.209-9",
+   "alt": null,
+   "deviation": null,
+   "title": "Updates of Publicly Available Information Regarding",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2018-10",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.209-10",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Prohibition on Contracting With Inverted Domestic Corporations",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.209-10",
+   "alt": null,
+   "deviation": null,
+   "title": "Prohibition on Contracting with Inverted Domestic Corporations",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2015-11",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.209-11",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.209-13",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Violation of Arms Control Treaties or Agreements-Certification",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.209-13",
+   "alt": null,
+   "deviation": null,
+   "title": "Violation of Arms Control Treaties or Agreements- Certification. Protecting the Government's Interest When Subcontracting",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2021-11",
+     "section": "K"
+    }
+   ]
+  },
+  {
+   "id": "52.209-14",
+   "alt": null,
+   "deviation": null,
+   "title": "Reserve Officer Training Corps and Military Recruiting on Campus",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2021-11",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.210-1",
+   "alt": null,
+   "deviation": null,
+   "title": "Market Research",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2021-11",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.211-5",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Material Requirements",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.211-5",
+   "alt": null,
+   "deviation": null,
+   "title": "Material Requirements",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2000-08",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.211-11",
+   "alt": null,
+   "deviation": null,
+   "title": "Liquidated Damages-Supplies, Services, or Research and Development",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2000-09",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.211-16",
+   "alt": null,
+   "deviation": null,
+   "title": "Variation in Quantity",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1984-04",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.211-17",
+   "alt": null,
+   "deviation": null,
+   "title": "Delivery of Excess Quantities",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1989-09",
+     "section": "F"
+    }
+   ]
+  },
+  {
+   "id": "52.213-1",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D1",
+     "date": null,
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.214-14",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.215-1",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Instructions to Offerors-Competitive Acquisition",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "L"
+    }
+   ]
+  },
+  {
+   "id": "52.215-1",
+   "alt": "I",
+   "deviation": "2026-O0038",
+   "title": "Instructions to Offerors-Competitive Acquisition",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "L"
+    }
+   ]
+  },
+  {
+   "id": "52.215-2",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Audit and Records-Negotiation",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.215-2",
+   "alt": null,
+   "deviation": null,
+   "title": "Audit and Records-Negotiation",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2020-06",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.215-6",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Place of Performance",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.215-6",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.215-8",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Order of Precedence-Uniform Contract Format",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.215-8",
+   "alt": null,
+   "deviation": null,
+   "title": "Order of Precedence-Uniform Contract Format",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1997-10",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.215-10",
+   "alt": null,
+   "deviation": null,
+   "title": "Price Reduction for Defective Certified Cost or Pricing Data",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2011-08",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2011-08",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.215-12",
+   "alt": null,
+   "deviation": "2026- O0038",
+   "title": "Subcontractor Certified Cost or Pricing Data",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.215-12",
+   "alt": null,
+   "deviation": null,
+   "title": "Subcontractor Certified Cost or Pricing Data",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2020-06",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.215-14",
+   "alt": null,
+   "deviation": null,
+   "title": "Integrity of Unit Prices",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2021-11",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.215-14",
+   "alt": "I",
+   "deviation": null,
+   "title": "Integrity of Unit Prices",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1997-10",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.215-15",
+   "alt": null,
+   "deviation": "2026- O0038",
+   "title": "Pension Adjustments and Asset Reversions",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.215-15",
+   "alt": null,
+   "deviation": null,
+   "title": "Pension Adjustments and Asset Reversions",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2010-10",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.215-16",
+   "alt": null,
+   "deviation": null,
+   "title": "Facilities Capital Cost of Money",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2003-06",
+     "section": "L"
+    }
+   ]
+  },
+  {
+   "id": "52.215-17",
+   "alt": null,
+   "deviation": null,
+   "title": "Waiver of Facilities Capital Cost of Money",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1997-10",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.215-18",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Reversion or Adjustment of Plans for Postretirement Benefits (PRB) Other Than Pensions",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.215-18",
+   "alt": null,
+   "deviation": null,
+   "title": "Reversion or Adjustment of Plans for Postretirement Benefits (PRB) Other Than Pensions",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2005-07",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.215-19",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Notification of Ownership Changes",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.215-19",
+   "alt": null,
+   "deviation": null,
+   "title": "Notification of Ownership Changes",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1997-10",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.215-20",
+   "alt": null,
+   "deviation": "2026- O0038",
+   "title": "Requirements for Certified Cost or Pricing Data and Data Other Than Certified Cost or Pricing Data",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "L"
+    },
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": null
+    },
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.215-20",
+   "alt": null,
+   "deviation": null,
+   "title": "Requirements for Certified Cost or Pricing Data and Data Other Than Certified Cost or Pricing Data. ALT III",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1997-10",
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": "2021-11",
+     "section": "L"
+    }
+   ]
+  },
+  {
+   "id": "52.215-20",
+   "alt": "III",
+   "deviation": null,
+   "title": "Requirements for Certified Cost or Pricing Data and Data Other Than Certified Cost or Pricing Data",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1997-10",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.215-21",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Requirements for Certified Cost or Pricing Data and Data Other Than Certified Cost or Pricing Data-Modifications",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    },
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.215-21",
+   "alt": null,
+   "deviation": null,
+   "title": "Requirements for Certified Cost or Pricing Data and Data Other Than Certified Cost or Pricing Data-Modifications. ALT III",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1997-10",
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": "2021-11",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.215-21",
+   "alt": "III",
+   "deviation": null,
+   "title": "Requirements for Certified Cost or Pricing Data and Data Other Than Certified Cost or Pricing Data-Modifications. Page 40 of 60",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1997-10",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.215-22",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Limitations on Pass-Through Charges-Identification of Subcontract Effort",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "L"
+    }
+   ]
+  },
+  {
+   "id": "52.215-23",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Limitations on Pass-Through Charges",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.215-23",
+   "alt": null,
+   "deviation": null,
+   "title": "Limitations on Pass-Through Charges",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2020-06",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.215-23",
+   "alt": "I",
+   "deviation": null,
+   "title": "Limitations on Pass-Through Charges",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2009-10",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.216-1",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Type of Contract",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.216-1",
+   "alt": null,
+   "deviation": null,
+   "title": "Type of Contract",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1984-04",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.216-7",
+   "alt": null,
+   "deviation": null,
+   "title": "Allowable Cost and Payment",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": null,
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": "2018-08",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.216-8",
+   "alt": null,
+   "deviation": null,
+   "title": "Fixed Fee",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2011-06",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2011-06",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.216-10",
+   "alt": null,
+   "deviation": null,
+   "title": "Incentive Fee",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2011-06",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.216-11",
+   "alt": null,
+   "deviation": null,
+   "title": "Cost Contract-No Fee",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1984-04",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "1984-04",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.216-11",
+   "alt": "I",
+   "deviation": "2026-O0038",
+   "title": "Cost Contract-No Fee",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.216-11",
+   "alt": "I",
+   "deviation": null,
+   "title": "Cost Contract-No Fee",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1984-04",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.216-12",
+   "alt": null,
+   "deviation": null,
+   "title": "Cost-Sharing Contract-No Fee",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1984-04",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.216-15",
+   "alt": null,
+   "deviation": null,
+   "title": "Predetermined Indirect Cost Rates",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1998-04",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.216-16",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Incentive Price Revision-Firm Target",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.216-26",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.216-30",
+   "alt": null,
+   "deviation": null,
+   "title": "Time-and-Materials/Labor-Hour Proposal Requirements-Other Than Commercial Acquisition Without Adequate Price Competition",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2021-11",
+     "section": "L"
+    }
+   ]
+  },
+  {
+   "id": "52.217-2",
+   "alt": null,
+   "deviation": null,
+   "title": "Cancellation Under Multi-year Contracts",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1997-10",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "1997-10",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.217-8",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D1",
+     "date": null,
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.219-1",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.219-2",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.219-4",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Notice of Price Evaluation Preference for HUBZone Small Business Concerns",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.219-4",
+   "alt": null,
+   "deviation": null,
+   "title": "Notice of Price Evaluation Preference for HUBZone Small Business Concerns",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2022-10",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.219-8",
+   "alt": null,
+   "deviation": "2026- O0038",
+   "title": "Utilization of Small Business Concerns",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.219-8",
+   "alt": null,
+   "deviation": null,
+   "title": "Utilization of Small Business Concerns",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2024-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.219-9",
+   "alt": null,
+   "deviation": null,
+   "title": "Small Business Subcontracting Plan",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2023-09",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.219-9",
+   "alt": "II",
+   "deviation": "2026-O0038",
+   "title": "Small Business Subcontracting Plan",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.219-9",
+   "alt": "II",
+   "deviation": null,
+   "title": "Small Business Subcontracting Plan",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2016-11",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.219-16",
+   "alt": null,
+   "deviation": "2026- O0038",
+   "title": "Liquidated Damages-Subcontracting Plan",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.219-16",
+   "alt": null,
+   "deviation": null,
+   "title": "Liquidated Damages-Subcontracting Plan",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2021-09",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.219-28",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Postaward Small Business Program Rerepresentation. ALT I",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": null
+    },
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.219-28",
+   "alt": null,
+   "deviation": null,
+   "title": "Post-Award Small Business Program Rerepresentation",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2024-02",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.219-28",
+   "alt": "I",
+   "deviation": null,
+   "title": "Post-Award Small Business Program Rerepresentation",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2020-03",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.219-31",
+   "alt": null,
+   "deviation": null,
+   "title": "Notice of Small Business Reserve",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2020-03",
+     "section": "L"
+    }
+   ]
+  },
+  {
+   "id": "52.222-2",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Payment for Overtime Premiums",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.222-2",
+   "alt": null,
+   "deviation": null,
+   "title": "Payment for Overtime Premiums",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1990-07",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.222-3",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Convict Labor",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.222-18",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.222-19",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Child Labor-Cooperation with Authorities and Remedies",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-03",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.222-19",
+   "alt": null,
+   "deviation": null,
+   "title": "Child Labor-Cooperation with Authorities and Remedies",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2024-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.222-20",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Contracts for Materials, Supplies, Articles, and Equipment",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.222-35",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Equal Opportunity for Veterans",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.222-35",
+   "alt": null,
+   "deviation": null,
+   "title": "Equal Opportunity for Veterans",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2020-06",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.222-36",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Equal Opportunity for Workers with Disabilities",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.222-36",
+   "alt": null,
+   "deviation": null,
+   "title": "Equal Opportunity for Workers with Disabilities",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2020-06",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.222-37",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Employment Reports on Veterans",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.222-37",
+   "alt": null,
+   "deviation": null,
+   "title": "Employment Reports on Veterans",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2020-06",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.222-38",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.222-40",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Notification of Employee Rights Under the National Labor Relations Act",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.222-40",
+   "alt": null,
+   "deviation": null,
+   "title": "Notification of Employee Rights Under the National Labor Relations Act",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2010-12",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.222-41",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Service Contract Labor Standards",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.222-42",
+   "alt": null,
+   "deviation": null,
+   "title": "Statement of Equivalent Rates for Federal Hires",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2014-05",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.222-44",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Fair Labor Standards Act and Service Contract Labor Standards-Price Adjustment",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.222-48",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.222-50",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Combating Trafficking in Persons",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.222-50",
+   "alt": null,
+   "deviation": null,
+   "title": "Combating Trafficking in Persons",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2021-11",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.222-51",
+   "alt": null,
+   "deviation": null,
+   "title": "Exemption from Application of the Service Contract Labor Standards to Contracts for Maintenance, Calibration, or Repair",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2014-05",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.222-52",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.222-54",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Employment Eligibility Verification",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.222-54",
+   "alt": null,
+   "deviation": null,
+   "title": "Employment Eligibility Verification",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2022-05",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.222-55",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Minimum Wages for Contractor Workers Under Executive Order 14026",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.222-62",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Paid Sick Leave Under Executive Order 13706",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.223-1",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.223-2",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.223-4",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.223-5",
+   "alt": null,
+   "deviation": null,
+   "title": "Pollution Prevention and Right-to-Know Information",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2024-05",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.223-6",
+   "alt": null,
+   "deviation": null,
+   "title": "Drug-Free Workplace",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2001-05",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.223-18",
+   "alt": null,
+   "deviation": null,
+   "title": "Encouraging Contractor Policies to Ban Text Messaging While",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2020-06",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.223-22",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.223-23",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Sustainable Products",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.224-3",
+   "alt": null,
+   "deviation": null,
+   "title": "Privacy Training",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2017-01",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2017-01",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.224-3",
+   "alt": "I",
+   "deviation": null,
+   "title": "Privacy Training",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2017-01",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2017-01",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.225-1",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.225-2",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.225-3",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.225-4",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.225-5",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.225-6",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.225-13",
+   "alt": null,
+   "deviation": null,
+   "title": "Restrictions on Certain Foreign Purchases",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2021-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.225-20",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.225-25",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.226-2",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.226-7",
+   "alt": null,
+   "deviation": null,
+   "title": "Drug-Free Workplace",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2024-05",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.226-8",
+   "alt": null,
+   "deviation": null,
+   "title": "Encouraging Contractor Policies to Ban Text Messaging While Driving",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2024-05",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.227-1",
+   "alt": "I",
+   "deviation": null,
+   "title": "Authorization and Consent",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1984-04",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.227-1",
+   "alt": null,
+   "deviation": null,
+   "title": "Authorization and Consent",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2020-06",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.227-2",
+   "alt": null,
+   "deviation": null,
+   "title": "Infringement",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2020-06",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.227-6",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.227-10",
+   "alt": null,
+   "deviation": null,
+   "title": "Filing of Patent Applications-Classified Subject Matter",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2007-12",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.227-11",
+   "alt": null,
+   "deviation": null,
+   "title": "Patent Rights-Ownership by the Contractor",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2014-05",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.227-13",
+   "alt": null,
+   "deviation": null,
+   "title": "Patent Rights-Ownership by the Government",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2007-12",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.227-14",
+   "alt": null,
+   "deviation": null,
+   "title": "Rights in Data-General",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2014-05",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.227-15",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.228-5",
+   "alt": null,
+   "deviation": null,
+   "title": "Insurance-Work on a Government Installation",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1997-01",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.228-7",
+   "alt": null,
+   "deviation": null,
+   "title": "Insurance-Liability to Third Persons",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1996-03",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "1996-03",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.229-3",
+   "alt": null,
+   "deviation": null,
+   "title": "Federal, State, and Local Taxes",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2013-02",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2013-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.229-6",
+   "alt": null,
+   "deviation": null,
+   "title": "Taxes-Foreign Fixed-Price Contracts",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2013-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.229-8",
+   "alt": null,
+   "deviation": null,
+   "title": "Taxes-Foreign Cost-Reimbursement Contracts",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1990-03",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.229-10",
+   "alt": null,
+   "deviation": null,
+   "title": "State of New Mexico Gross Receipts and Compensating Tax",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2003-04",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.229-11",
+   "alt": null,
+   "deviation": null,
+   "title": "Tax on Certain Foreign Procurements-Notice and",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2020-06",
+     "section": "K"
+    }
+   ]
+  },
+  {
+   "id": "52.229-12",
+   "alt": null,
+   "deviation": null,
+   "title": "Tax on Certain Foreign Procurements",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2021-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.230-1",
+   "alt": null,
+   "deviation": null,
+   "title": "Cost Accounting Standards Notices and Certification",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2020-06",
+     "section": "K"
+    }
+   ]
+  },
+  {
+   "id": "52.230-2",
+   "alt": null,
+   "deviation": null,
+   "title": "Cost Accounting Standards",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2020-06",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.230-3",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Disclosure and Consistency of Cost Accounting Practices",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.230-5",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Cost Accounting Standards-Educational Institution",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.230-6",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Administration of Cost Accounting Standards",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.230-6",
+   "alt": null,
+   "deviation": null,
+   "title": "Administration of Cost Accounting Standards",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2010-06",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.230-7",
+   "alt": null,
+   "deviation": null,
+   "title": "Proposal Disclosure-Cost Accounting Practice Changes",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2005-04",
+     "section": "K"
+    }
+   ]
+  },
+  {
+   "id": "52.232-1",
+   "alt": null,
+   "deviation": null,
+   "title": "Payments",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1984-04",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.232-2",
+   "alt": null,
+   "deviation": null,
+   "title": "Payments under Fixed-Price Research and Development Contracts",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1984-04",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "1984-04",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.232-7",
+   "alt": null,
+   "deviation": null,
+   "title": "Payments under Time-and-Materials and Labor-Hour Contracts",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2021-11",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.232-8",
+   "alt": null,
+   "deviation": null,
+   "title": "Discounts for Prompt Payment",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2002-02",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2002-02",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.232-9",
+   "alt": null,
+   "deviation": null,
+   "title": "Limitation on Withholding of Payments",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1984-04",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.232-11",
+   "alt": null,
+   "deviation": null,
+   "title": "Extras",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1984-04",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.232-17",
+   "alt": null,
+   "deviation": null,
+   "title": "Interest",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2014-05",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2014-05",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.232-20",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Limitation of Cost",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.232-20",
+   "alt": null,
+   "deviation": null,
+   "title": "Limitation of Cost",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1984-04",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.232-22",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Limitation of Funds",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.232-22",
+   "alt": null,
+   "deviation": null,
+   "title": "Limitation of Funds",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1984-04",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.232-23",
+   "alt": null,
+   "deviation": null,
+   "title": "Assignment of Claims",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2014-05",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.232-25",
+   "alt": null,
+   "deviation": null,
+   "title": "Prompt Payment",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2017-01",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2017-01",
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.232-25",
+   "alt": "I",
+   "deviation": null,
+   "title": "Prompt Payment",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2002-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.232-33",
+   "alt": null,
+   "deviation": null,
+   "title": "Payment by Electronic Funds Transfer-System for Award Management",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2018-10",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2018-10",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.232-34",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.232-38",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.232-39",
+   "alt": null,
+   "deviation": null,
+   "title": "Unenforceability of Unauthorized Obligations",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2013-06",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2013-06",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.232-40",
+   "alt": null,
+   "deviation": null,
+   "title": "Providing Accelerated Payments to Small Business Subcontractors",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2023-03",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2023-03",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.233-1",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Disputes",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.233-1",
+   "alt": "I",
+   "deviation": "2026-O0038",
+   "title": "Disputes",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.233-1",
+   "alt": null,
+   "deviation": null,
+   "title": "Disputes",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2014-05",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.233-2",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Service of Protest",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "L"
+    }
+   ]
+  },
+  {
+   "id": "52.233-2",
+   "alt": null,
+   "deviation": null,
+   "title": "Service of Protest",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2006-09",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.233-3",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Protest after Award",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.233-3",
+   "alt": "I",
+   "deviation": "2026-O0038",
+   "title": "Protest after Award",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.233-3",
+   "alt": null,
+   "deviation": null,
+   "title": "Protest after Award",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1996-08",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.233-3",
+   "alt": "I",
+   "deviation": null,
+   "title": "Protest after Award",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1985-06",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.233-4",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Applicable Law for Breach of Contract Claim",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.233-4",
+   "alt": null,
+   "deviation": null,
+   "title": "Applicable Law for Breach of Contract Claim",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2004-10",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.237-1",
+   "alt": null,
+   "deviation": null,
+   "title": "Site Visit",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1984-04",
+     "section": "L"
+    }
+   ]
+  },
+  {
+   "id": "52.237-2",
+   "alt": null,
+   "deviation": null,
+   "title": "Protection of Government Buildings, Equipment, and Vegetation",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1984-04",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.240-90",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Security Prohibitions and Exclusions Representations and Certifications",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "K"
+    }
+   ]
+  },
+  {
+   "id": "52.240-91",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Security Prohibitions and Exclusions",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.240-92",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Security Requirements",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.240-92",
+   "alt": "I",
+   "deviation": "2026-O0038",
+   "title": "Security Requirements",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.242-1",
+   "alt": null,
+   "deviation": null,
+   "title": "Notice of Intent to Disallow Costs",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1984-04",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "1984-04",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.242-3",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Penalties for Unallowable Costs",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.242-3",
+   "alt": null,
+   "deviation": null,
+   "title": "Penalties for Unallowable Costs",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2022-12",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.242-4",
+   "alt": null,
+   "deviation": null,
+   "title": "Certification of Final Indirect Costs",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1997-01",
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": "1997-01",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.242-5",
+   "alt": null,
+   "deviation": null,
+   "title": "Payments to Small Business Subcontractors",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2017-01",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2017-01",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.242-13",
+   "alt": null,
+   "deviation": null,
+   "title": "Bankruptcy",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1995-07",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "1995-07",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.242-15",
+   "alt": null,
+   "deviation": null,
+   "title": "Stop-Work Order",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1989-08",
+     "section": "F"
+    },
+    {
+     "doc": "D2",
+     "date": "1989-08",
+     "section": "F"
+    }
+   ]
+  },
+  {
+   "id": "52.242-15",
+   "alt": "I",
+   "deviation": null,
+   "title": "Stop-Work Order",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1984-04",
+     "section": "F"
+    },
+    {
+     "doc": "D2",
+     "date": "1984-04",
+     "section": "F"
+    }
+   ]
+  },
+  {
+   "id": "52.242-17",
+   "alt": null,
+   "deviation": null,
+   "title": "Government Delay of Work",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1984-04",
+     "section": "F"
+    },
+    {
+     "doc": "D2",
+     "date": "1984-04",
+     "section": "F"
+    }
+   ]
+  },
+  {
+   "id": "52.243-1",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Changes-Fixed-Price",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.243-1",
+   "alt": "V",
+   "deviation": "2026-O0038",
+   "title": "Changes-Fixed-Price",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.243-1",
+   "alt": null,
+   "deviation": null,
+   "title": "Changes-Fixed-Price",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1987-08",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.243-1",
+   "alt": "V",
+   "deviation": null,
+   "title": "Changes-Fixed-Price",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1984-04",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.243-2",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Changes-Cost-Reimbursement",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.243-2",
+   "alt": "II",
+   "deviation": "2026-O0038",
+   "title": "Changes-Cost-Reimbursement",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.243-2",
+   "alt": "V",
+   "deviation": "2026-O0038",
+   "title": "Changes-Cost-Reimbursement",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.243-2",
+   "alt": null,
+   "deviation": null,
+   "title": "Changes-Cost-Reimbursement",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1987-08",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.243-3",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Changes-Time-and-Materials or Labor-Hours",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.243-6",
+   "alt": null,
+   "deviation": null,
+   "title": "Change Order Accounting",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1984-04",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.243-7",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Notification of Changes",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.243-7",
+   "alt": null,
+   "deviation": null,
+   "title": "Notification of Changes",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2017-01",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.244-2",
+   "alt": null,
+   "deviation": null,
+   "title": "Subcontracts",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": null,
+     "section": null
+    },
+    {
+     "doc": "D1",
+     "date": "2020-06",
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": "2020-06",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.244-5",
+   "alt": null,
+   "deviation": null,
+   "title": "Competition in Subcontracting",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1996-12",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.244-6",
+   "alt": null,
+   "deviation": "2026-O0038",
+   "title": "Subcontracts for Commercial Products and Commercial Services",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2026-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.244-6",
+   "alt": null,
+   "deviation": null,
+   "title": "Subcontracts for Commercial Products and Commercial",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2025-03",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.245-1",
+   "alt": null,
+   "deviation": null,
+   "title": "Government Property",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2021-09",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2021-09",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.245-1",
+   "alt": "II",
+   "deviation": null,
+   "title": "Government Property",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2012-04",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.245-9",
+   "alt": null,
+   "deviation": null,
+   "title": "Use and Charges",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2012-04",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2012-04",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.246-2",
+   "alt": null,
+   "deviation": null,
+   "title": "Inspection of Supplies-Fixed-Price",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1996-08",
+     "section": "E"
+    },
+    {
+     "doc": "D2",
+     "date": "1996-08",
+     "section": "E"
+    }
+   ]
+  },
+  {
+   "id": "52.246-2",
+   "alt": "I",
+   "deviation": null,
+   "title": "Inspection of Supplies-Fixed-Price",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1985-07",
+     "section": "E"
+    }
+   ]
+  },
+  {
+   "id": "52.246-3",
+   "alt": null,
+   "deviation": null,
+   "title": "Inspection of Supplies-Cost-Reimbursement",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2001-05",
+     "section": "E"
+    },
+    {
+     "doc": "D2",
+     "date": "2001-05",
+     "section": "E"
+    }
+   ]
+  },
+  {
+   "id": "52.246-4",
+   "alt": null,
+   "deviation": null,
+   "title": "Inspection of Services-Fixed-Price",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1996-08",
+     "section": "E"
+    },
+    {
+     "doc": "D2",
+     "date": "1996-08",
+     "section": "E"
+    }
+   ]
+  },
+  {
+   "id": "52.246-6",
+   "alt": null,
+   "deviation": null,
+   "title": "Inspection-Time-and-Material and Labor-Hour",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2001-05",
+     "section": "E"
+    }
+   ]
+  },
+  {
+   "id": "52.246-6",
+   "alt": "I",
+   "deviation": null,
+   "title": "Inspection-Time-and-Material and Labor-Hour",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1984-04",
+     "section": "E"
+    }
+   ]
+  },
+  {
+   "id": "52.246-7",
+   "alt": null,
+   "deviation": null,
+   "title": "Inspection of Research and Development-Fixed-Price",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1996-08",
+     "section": "E"
+    },
+    {
+     "doc": "D2",
+     "date": "1996-08",
+     "section": "E"
+    }
+   ]
+  },
+  {
+   "id": "52.246-8",
+   "alt": null,
+   "deviation": null,
+   "title": "Inspection of Research and Development-Cost-Reimbursement",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2001-05",
+     "section": "E"
+    },
+    {
+     "doc": "D2",
+     "date": "2001-05",
+     "section": "E"
+    }
+   ]
+  },
+  {
+   "id": "52.246-8",
+   "alt": "I",
+   "deviation": null,
+   "title": "Inspection of Research and Development-Cost- Reimbursement",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1984-04",
+     "section": "E"
+    },
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.246-9",
+   "alt": null,
+   "deviation": null,
+   "title": "Inspection of Research and Development (Short Form)",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1984-04",
+     "section": "E"
+    }
+   ]
+  },
+  {
+   "id": "52.246-15",
+   "alt": null,
+   "deviation": null,
+   "title": "Certificate of Conformance",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1984-04",
+     "section": "E"
+    }
+   ]
+  },
+  {
+   "id": "52.246-16",
+   "alt": null,
+   "deviation": null,
+   "title": "Responsibility for Supplies",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1984-04",
+     "section": "E"
+    },
+    {
+     "doc": "D2",
+     "date": "1984-04",
+     "section": "E"
+    }
+   ]
+  },
+  {
+   "id": "52.246-17",
+   "alt": "IV",
+   "deviation": null,
+   "title": "Warranty of Supplies of a Noncomplex Nature",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1984-04",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.246-17",
+   "alt": null,
+   "deviation": null,
+   "title": "Warranty of Supplies of a Noncomplex Nature",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2003-06",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.246-18",
+   "alt": null,
+   "deviation": null,
+   "title": "Warranty of Supplies of a Complex Nature",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2001-05",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.246-23",
+   "alt": null,
+   "deviation": null,
+   "title": "Limitation of Liability",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1997-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.246-26",
+   "alt": null,
+   "deviation": null,
+   "title": "Reporting Nonconforming Items",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2021-11",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.247-1",
+   "alt": null,
+   "deviation": null,
+   "title": "Commercial Bill of Lading Notations",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2006-02",
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": "2006-02",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.247-6",
+   "alt": null,
+   "deviation": null,
+   "title": "Financial Statement",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1984-04",
+     "section": "L"
+    }
+   ]
+  },
+  {
+   "id": "52.247-18",
+   "alt": null,
+   "deviation": null,
+   "title": "Multiple Shipments",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1984-04",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.247-34",
+   "alt": null,
+   "deviation": null,
+   "title": "F.o.b. Destination",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1991-01",
+     "section": "F"
+    },
+    {
+     "doc": "D2",
+     "date": "1991-11",
+     "section": "F"
+    }
+   ]
+  },
+  {
+   "id": "52.247-35",
+   "alt": null,
+   "deviation": null,
+   "title": "F.o.b. Destination, Within Consignee's Premises",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1984-04",
+     "section": "F"
+    },
+    {
+     "doc": "D2",
+     "date": "1984-04",
+     "section": "F"
+    }
+   ]
+  },
+  {
+   "id": "52.247-68",
+   "alt": null,
+   "deviation": null,
+   "title": "Report of Shipment (REPSHIP)",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2006-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.249-1",
+   "alt": "I",
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.249-1",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.249-2",
+   "alt": null,
+   "deviation": null,
+   "title": "Termination for Convenience of the Government (Fixed-Price)",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2012-04",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.249-4",
+   "alt": null,
+   "deviation": null,
+   "title": "Termination for Convenience of the Government (Services) (Short Form)",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1984-04",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.249-5",
+   "alt": null,
+   "deviation": null,
+   "title": "Termination for Convenience of the Government (Educational and Other Nonprofit Institutions)",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2016-08",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.249-6",
+   "alt": null,
+   "deviation": null,
+   "title": "Termination (Cost-Reimbursement)",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2004-05",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.249-6",
+   "alt": "IV",
+   "deviation": null,
+   "title": "Termination (Cost-Reimbursement)",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1996-09",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.249-8",
+   "alt": null,
+   "deviation": null,
+   "title": "Default (Fixed-Price Supply and Service)",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1984-04",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "1984-04",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.249-9",
+   "alt": null,
+   "deviation": null,
+   "title": "Default (Fixed-Price Research and Development)",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1984-04",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "52.249-14",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.252-1",
+   "alt": null,
+   "deviation": null,
+   "title": "Solicitation Provisions Incorporated by Reference",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1998-02",
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": "1998-02",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.252-2",
+   "alt": null,
+   "deviation": null,
+   "title": "Clauses Incorporated by Reference",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1998-02",
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": "1998-02",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.252-3",
+   "alt": null,
+   "deviation": null,
+   "title": "Alterations in Solicitation",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1984-04",
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": "1984-04",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.252-4",
+   "alt": null,
+   "deviation": null,
+   "title": "Alterations in Contract",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1984-04",
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": "1984-04",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.252-5",
+   "alt": null,
+   "deviation": null,
+   "title": "Authorized Deviations in Provisions",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2020-11",
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": "2020-11",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.252-6",
+   "alt": null,
+   "deviation": null,
+   "title": "Authorized Deviations in Clauses",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2020-11",
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": "2020-11",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "52.253-1",
+   "alt": null,
+   "deviation": null,
+   "title": "Computer Generated Forms",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1991-01",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.201-7000",
+   "alt": null,
+   "deviation": null,
+   "title": "Contracting Officer's Representative",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1991-12",
+     "section": "G"
+    }
+   ]
+  },
+  {
+   "id": "252.203-7000",
+   "alt": null,
+   "deviation": null,
+   "title": "Requirements Relating to Compensation of Former DoD Officials",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2011-09",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2011-09",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.203-7001",
+   "alt": null,
+   "deviation": null,
+   "title": "Prohibition on Persons Convicted of Fraud or Other Defense- Contract-Related Felonies",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2023-01",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2023-01",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.203-7002",
+   "alt": null,
+   "deviation": null,
+   "title": "Requirement to Inform Employees of Whistleblower Rights",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2022-12",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2022-12",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.203-7003",
+   "alt": null,
+   "deviation": null,
+   "title": "Agency Office of the Inspector General",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2019-08",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.203-7004",
+   "alt": null,
+   "deviation": null,
+   "title": "Display of Hotline Posters",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2023-01",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.203-7005",
+   "alt": null,
+   "deviation": null,
+   "title": "Representation Relating to Compensation of Former DoD Officials",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2022-09",
+     "section": "K"
+    },
+    {
+     "doc": "D2",
+     "date": "2022-09",
+     "section": "K"
+    }
+   ]
+  },
+  {
+   "id": "252.204-7000",
+   "alt": null,
+   "deviation": null,
+   "title": "Disclosure of Information",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2016-10",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2016-10",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.204-7002",
+   "alt": null,
+   "deviation": null,
+   "title": "Payment for Contract Line or Subline Items Not Separately Priced",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2020-04",
+     "section": "G"
+    }
+   ]
+  },
+  {
+   "id": "252.204-7003",
+   "alt": null,
+   "deviation": null,
+   "title": "Control of Government Personnel Work Product",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1992-04",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "1992-04",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.204-7004",
+   "alt": null,
+   "deviation": null,
+   "title": "Antiterrorism Awareness Training for Contractors",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2023-01",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2023-01",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.204-7006",
+   "alt": null,
+   "deviation": null,
+   "title": "Billing Instructions-Cost Vouchers",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2023-05",
+     "section": "G"
+    },
+    {
+     "doc": "D2",
+     "date": "2023-05",
+     "section": "G"
+    }
+   ]
+  },
+  {
+   "id": "252.204-7007",
+   "alt": null,
+   "deviation": null,
+   "title": "ALT A Alternate A, Annual Representations and Certifications",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2023-11",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "252.204-7008",
+   "alt": null,
+   "deviation": null,
+   "title": "Compliance with Safeguarding Covered Defense Information Controls",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2016-10",
+     "section": "K"
+    },
+    {
+     "doc": "D2",
+     "date": "2016-10",
+     "section": "K"
+    }
+   ]
+  },
+  {
+   "id": "252.204-7009",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "252.204-7012",
+   "alt": null,
+   "deviation": null,
+   "title": "Safeguarding Covered Defense Information and Cyber Incident Reporting",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2024-05",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2023-01",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "252.204-7015",
+   "alt": null,
+   "deviation": null,
+   "title": "Notice of Authorized Disclosure of Information for Litigation Support",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2023-01",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.204-7016",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D1",
+     "date": null,
+     "section": null
+    },
+    {
+     "doc": "D1",
+     "date": null,
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "252.204-7017",
+   "alt": null,
+   "deviation": null,
+   "title": "Prohibition on the Acquisition of Covered Defense Telecommunications Equipment or Services-Representation",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2021-05",
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": "2021-05",
+     "section": "K"
+    }
+   ]
+  },
+  {
+   "id": "252.204-7018",
+   "alt": null,
+   "deviation": null,
+   "title": "Prohibition on the Acquisition of Covered Defense Telecommunications Equipment or Services",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2023-01",
+     "section": "I"
+    },
+    {
+     "doc": "D1",
+     "date": null,
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": "2023-01",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.204-7019",
+   "alt": null,
+   "deviation": null,
+   "title": "Notice of NIST SP 800-171 DoD Assessment Requirements",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2023-11",
+     "section": "L"
+    }
+   ]
+  },
+  {
+   "id": "252.204-7020",
+   "alt": null,
+   "deviation": null,
+   "title": "NIST SP 800-171 DoD Assessment Requirements",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2023-11",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.204-7022",
+   "alt": null,
+   "deviation": null,
+   "title": "Expediting Contract Closeout",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2021-05",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.204-7024",
+   "alt": null,
+   "deviation": null,
+   "title": "Notice on the Use of the Supplier Performance Risk System",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2023-03",
+     "section": "L"
+    },
+    {
+     "doc": "D2",
+     "date": "2023-03",
+     "section": "L"
+    }
+   ]
+  },
+  {
+   "id": "252.205-7000",
+   "alt": null,
+   "deviation": null,
+   "title": "Provision of Information to Cooperative Agreement Holders",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2024-10",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2023-06",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.209-7002",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "252.209-7004",
+   "alt": null,
+   "deviation": null,
+   "title": "Subcontracting with Firms that are Owned or Controlled by the Government of a Country that is a State Sponsor of Terrorism",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2019-05",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2019-05",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.211-7003",
+   "alt": null,
+   "deviation": null,
+   "title": "Item Unique Identification and Valuation",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2023-01",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "252.215-7002",
+   "alt": null,
+   "deviation": null,
+   "title": "Cost Estimating System Requirements",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2025-01",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2012-12",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.215-7008",
+   "alt": null,
+   "deviation": null,
+   "title": "Only One Offer",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2022-12",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "252.215-7009",
+   "alt": null,
+   "deviation": null,
+   "title": "Proposal Adequacy Checklist",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2023-03",
+     "section": "L"
+    }
+   ]
+  },
+  {
+   "id": "252.215-7010",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "252.215-7012",
+   "alt": null,
+   "deviation": null,
+   "title": "Requirements for Submission of Proposals via Electronic Media",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2018-01",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "252.215-7013",
+   "alt": null,
+   "deviation": null,
+   "title": "Supplies and Services Provided by Nontraditional Defense Contractors",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2023-01",
+     "section": "L"
+    },
+    {
+     "doc": "D2",
+     "date": "2023-01",
+     "section": "L"
+    }
+   ]
+  },
+  {
+   "id": "252.215-7014",
+   "alt": null,
+   "deviation": null,
+   "title": "Exception from Certified Cost or Pricing Data Requirements for Foreign Military Sales Indirect Offsets",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2022-12",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.215-7016",
+   "alt": null,
+   "deviation": null,
+   "title": "Notification to Offerors-Postaward Debriefings",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2022-12",
+     "section": "L"
+    }
+   ]
+  },
+  {
+   "id": "252.216-7004",
+   "alt": null,
+   "deviation": null,
+   "title": "Award Fee Reduction or Denial for Jeopardizing the Health or Safety of Government Personnel",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2011-09",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.216-7008",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "252.216-7010",
+   "alt": null,
+   "deviation": null,
+   "title": "Postaward Debriefings for Task Orders and Delivery Orders",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2022-12",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.217-7027",
+   "alt": null,
+   "deviation": null,
+   "title": "Contract Definitization",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2023-05",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "252.219-7003",
+   "alt": null,
+   "deviation": null,
+   "title": "Small Business Subcontracting Plan (DoD Contracts)",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2019-12",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.222-7006",
+   "alt": null,
+   "deviation": null,
+   "title": "Restrictions on the Use of Mandatory Arbitration Agreements",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2023-01",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2023-01",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.223-7004",
+   "alt": null,
+   "deviation": null,
+   "title": "Drug-Free Work Force",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1988-09",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.223-7006",
+   "alt": null,
+   "deviation": null,
+   "title": "Prohibition on Storage, Treatment, and Disposal of Toxic or Hazardous Materials",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2014-09",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2014-09",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.223-7008",
+   "alt": null,
+   "deviation": null,
+   "title": "Prohibition of Hexavalent Chromium",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2023-01",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2023-01",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.225-7000",
+   "alt": null,
+   "deviation": null,
+   "title": "Buy American--Balance of Payments Program Certificate",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2024-02",
+     "section": "K"
+    },
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "252.225-7001",
+   "alt": null,
+   "deviation": null,
+   "title": "Buy American and Balance of Payments Program",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2024-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.225-7002",
+   "alt": null,
+   "deviation": null,
+   "title": "Qualifying Country Sources as Subcontractors",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2022-03",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.225-7003",
+   "alt": null,
+   "deviation": null,
+   "title": "Report of Intended Performance Outside the United States and Canada -Submission with Offer Report of Intended Performance Outside the United States and",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2020-10",
+     "section": "L"
+    }
+   ]
+  },
+  {
+   "id": "252.225-7004",
+   "alt": null,
+   "deviation": null,
+   "title": "Canada -Submission after Award",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2020-10",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.225-7005",
+   "alt": null,
+   "deviation": null,
+   "title": "Identification of Expenditures in the United States",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2005-06",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.225-7012",
+   "alt": null,
+   "deviation": null,
+   "title": "Preference for Certain Domestic Commodities",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2022-04",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2022-04",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.225-7020",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "252.225-7031",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "252.225-7035",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "252.225-7041",
+   "alt": null,
+   "deviation": null,
+   "title": "Correspondence in English",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1997-06",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.225-7042",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "252.225-7048",
+   "alt": null,
+   "deviation": null,
+   "title": "Export-Controlled Items",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2013-06",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2013-06",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.225-7049",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "252.225-7050",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "252.225-7052",
+   "alt": null,
+   "deviation": null,
+   "title": "Restriction on the Acquisition of Certain Magnets, Tantalum, and Tungsten",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1984-04",
+     "section": "E"
+    }
+   ]
+  },
+  {
+   "id": "252.225-7055",
+   "alt": null,
+   "deviation": null,
+   "title": "Representation Regarding Business Operations with the Maduro Regime",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2022-05",
+     "section": "K"
+    },
+    {
+     "doc": "D2",
+     "date": "2022-05",
+     "section": "K"
+    }
+   ]
+  },
+  {
+   "id": "252.225-7056",
+   "alt": null,
+   "deviation": null,
+   "title": "Prohibition Regarding Business Operations with the Maduro Regime",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2023-01",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2023-01",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.225-7057",
+   "alt": null,
+   "deviation": null,
+   "title": "Preaward Disclosure of Employment of Individuals Who Work in the People's Republic of China",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2022-08",
+     "section": "K"
+    }
+   ]
+  },
+  {
+   "id": "252.225-7058",
+   "alt": null,
+   "deviation": null,
+   "title": "Postaward Disclosure of Employment of Individuals Who Work in the People's Republic of China",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2023-01",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.225-7059",
+   "alt": null,
+   "deviation": null,
+   "title": "Prohibition on Certain Procurements from the Xinjiang Uyghur Autonomous Region-Representation",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2023-06",
+     "section": "K"
+    },
+    {
+     "doc": "D2",
+     "date": "2023-06",
+     "section": "K"
+    }
+   ]
+  },
+  {
+   "id": "252.225-7060",
+   "alt": null,
+   "deviation": null,
+   "title": "Prohibition on Certain Procurements from the Xinjiang Uyghur Autonomous Region",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2023-06",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2023-06",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.225-7061",
+   "alt": null,
+   "deviation": null,
+   "title": "Restriction on the Acquisition of Personal Protective Equipment and Certain Other Items from Non-Allied Foreign Nations",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2023-01",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.225-7966",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "252.226-7001",
+   "alt": null,
+   "deviation": null,
+   "title": "Utilization of Indian Organizations, Indian-Owned Economic Enterprises, and Native Hawaiian Small Business Concerns",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2023-01",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2023-01",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.226-7002",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "252.226-7003",
+   "alt": null,
+   "deviation": null,
+   "title": "Drug-Free Work Force",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2024-08",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.227-7013",
+   "alt": "II",
+   "deviation": null,
+   "title": "Rights in Technical Data-Other Than Commercial Products and Commercial Services",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2025-01",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.227-7013",
+   "alt": null,
+   "deviation": null,
+   "title": "Rights in Technical Data-Other Than Commercial Products and Commercial Services",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2023-03",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.227-7013",
+   "alt": "I",
+   "deviation": null,
+   "title": "Rights in Technical Data-Other Than Commercial Products and Commercial Services",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1995-06",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.227-7014",
+   "alt": null,
+   "deviation": null,
+   "title": "Rights in Other Than Commercial Computer Software and Other Than Commercial Computer Software Documentation. Rights in Other Than Commercial Computer Software and",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2023-03",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.227-7014",
+   "alt": "I",
+   "deviation": null,
+   "title": "Other Than Commercial Computer Software Documentation",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1995-06",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.227-7015",
+   "alt": null,
+   "deviation": null,
+   "title": "Technical Data-Commercial Products and Commercial Services",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2025-01",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.227-7016",
+   "alt": null,
+   "deviation": null,
+   "title": "Rights in Bid or Proposal Information",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2025-01",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.227-7022",
+   "alt": null,
+   "deviation": null,
+   "title": "Government Rights (Unlimited)",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1979-03",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.227-7025",
+   "alt": null,
+   "deviation": null,
+   "title": "Limitations on the Use or Disclosure of Government- Furnished Information Marked With Restrictive Legends",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2023-01",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.227-7030",
+   "alt": null,
+   "deviation": null,
+   "title": "Technical Data-Withholding of Payment",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2000-03",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.227-7037",
+   "alt": null,
+   "deviation": null,
+   "title": "Validation of Asserted Restrictions on Technical Data",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2025-01",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.227-7038",
+   "alt": null,
+   "deviation": null,
+   "title": "Patent Rights-Ownership by the Contractor (Large Business)",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2012-06",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.227-7038",
+   "alt": "I",
+   "deviation": null,
+   "title": "Patent Rights-Ownership by the Contractor (Large Business)",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2007-12",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "252.227-7039",
+   "alt": null,
+   "deviation": null,
+   "title": "Patents--Reporting of Subject Inventions",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1990-04",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "1990-04",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.228-7001",
+   "alt": null,
+   "deviation": null,
+   "title": "Ground and Flight Risk",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2023-03",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.229-7012",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "252.229-7013",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "252.231-7000",
+   "alt": null,
+   "deviation": null,
+   "title": "Supplemental Cost Principles",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "1991-12",
+     "section": "G"
+    }
+   ]
+  },
+  {
+   "id": "252.232-7003",
+   "alt": null,
+   "deviation": null,
+   "title": "Electronic Submission of Payment Requests and Receiving Reports",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2018-12",
+     "section": "G"
+    },
+    {
+     "doc": "D1",
+     "date": null,
+     "section": null
+    },
+    {
+     "doc": "D1",
+     "date": null,
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": "2018-12",
+     "section": "G"
+    },
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "252.232-7006",
+   "alt": null,
+   "deviation": null,
+   "title": "Wide Area WorkFlow Payment Instructions",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2023-01",
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": "2023-01",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "252.232-7007",
+   "alt": null,
+   "deviation": null,
+   "title": "Limitation of Government's Obligation",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2014-04",
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": "2014-04",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "252.232-7008",
+   "alt": null,
+   "deviation": null,
+   "title": "Assignment of Claims (Overseas)",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1997-06",
+     "section": "G"
+    }
+   ]
+  },
+  {
+   "id": "252.232-7010",
+   "alt": null,
+   "deviation": null,
+   "title": "Levies on Contract Payments",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2006-12",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2006-12",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.232-7011",
+   "alt": null,
+   "deviation": null,
+   "title": "Payments in Support of Emergencies and Contingency",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2013-05",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.232-7015",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "252.235-7000",
+   "alt": null,
+   "deviation": null,
+   "title": "Indemnification Under 10 U.S.C. 3861--Fixed Price",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2022-12",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.235-7004",
+   "alt": null,
+   "deviation": null,
+   "title": "Protection of Human Subjects",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2009-07",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.235-7010",
+   "alt": null,
+   "deviation": null,
+   "title": "Acknowledgment of Support and Disclaimer",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1995-05",
+     "section": null
+    },
+    {
+     "doc": "D2",
+     "date": "1995-05",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "252.235-7011",
+   "alt": null,
+   "deviation": null,
+   "title": "Final Scientific or Technical Report",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2019-12",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2019-12",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.239-7009",
+   "alt": null,
+   "deviation": null,
+   "title": "Representation of Use of Cloud Computing",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2015-09",
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "252.239-7009",
+   "alt": null,
+   "deviation": "2024-O00013 Revision 1",
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2015-09",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.239-7010",
+   "alt": null,
+   "deviation": null,
+   "title": "Cloud Computing Services",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2023-01",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.239-7018",
+   "alt": null,
+   "deviation": null,
+   "title": "Supply Chain Risk",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2022-12",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.242-7004",
+   "alt": null,
+   "deviation": null,
+   "title": "Material Management and Accounting System",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2011-05",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.242-7005",
+   "alt": null,
+   "deviation": null,
+   "title": "Contractor Business Systems",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2012-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.242-7006",
+   "alt": null,
+   "deviation": null,
+   "title": "Accounting System Administration",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2012-02",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.243-7001",
+   "alt": null,
+   "deviation": null,
+   "title": "Pricing of Contract Modifications",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "1991-12",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "1991-12",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.243-7002",
+   "alt": null,
+   "deviation": null,
+   "title": "Requests for Equitable Adjustment",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2022-12",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2022-12",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.244-7000",
+   "alt": null,
+   "deviation": null,
+   "title": "Subcontracts for Commercial Products or Commercial",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2023-11",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.244-7001",
+   "alt": null,
+   "deviation": null,
+   "title": "Contractor Purchasing System Administration",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2014-05",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.245-7000",
+   "alt": null,
+   "deviation": null,
+   "title": "Government-Furnished Mapping, Charting, and Geodesy",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2012-04",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.245-7003",
+   "alt": null,
+   "deviation": null,
+   "title": "Contractor Property Management System Administration",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2025-01",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2012-04",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.245-7005",
+   "alt": null,
+   "deviation": null,
+   "title": "Management and Reporting of Government Property",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2024-01",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2024-01",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.246-7007",
+   "alt": null,
+   "deviation": null,
+   "title": "Contractor Counterfeit Electronic Part Detection and",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2023-01",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.246-7008",
+   "alt": null,
+   "deviation": null,
+   "title": "Sources of Electronic Parts",
+   "observations": [
+    {
+     "doc": "D2",
+     "date": "2023-01",
+     "section": "I"
+    }
+   ]
+  },
+  {
+   "id": "252.247-7022",
+   "alt": null,
+   "deviation": null,
+   "title": null,
+   "observations": [
+    {
+     "doc": "D2",
+     "date": null,
+     "section": null
+    }
+   ]
+  },
+  {
+   "id": "252.247-7023",
+   "alt": null,
+   "deviation": null,
+   "title": "Transportation of Supplies by Sea",
+   "observations": [
+    {
+     "doc": "D1",
+     "date": "2024-10",
+     "section": "I"
+    },
+    {
+     "doc": "D2",
+     "date": "2023-01",
+     "section": null
+    }
+   ]
+  }
+ ]
+}
